@@ -17,7 +17,7 @@
 }
 
 .hero h1{
-  text-shadow: -1px 1px 2px rgb(64, 62, 62);
+  text-shadow: -4px 4px 4px black;
   margin-top: 2em;
   line-height: 3.3rem;
   font-size: 80px;
@@ -33,11 +33,12 @@ section .leftherosec{
 
 
 .subhead {
-  text-shadow: -1px 1px 2px rgb(64, 62, 62);
+  text-shadow: -4px 4px 4px black;
   font-size: 30px;
   font-weight: 10;
   margin-bottom: 30px;
   margin-top: 50px;
+  line-height: 1;
 }
 
 
@@ -53,42 +54,36 @@ section .leftherosec{
 
 
 /* bottone rosso */
-.btn-8{
-  position: absolute;
-  left: 15%;
-  text-shadow: -1px 1px 2px rgb(64, 62, 62);
-}
 
 .custom-btn {
-  width: 130px;
-  height: 40px;
+  position: relative;
+  font-size: 30px;
+  width: 200px;
+  height: 60px;
   color: #fff;
   border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
   box-shadow:inset 
   2px 2px 2px 0px rgba(255,255,255,.5),
   7px 7px 20px 0px rgba(0,0,0,.1),
-  4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
+  4px 4px 5px 0px rgba(0,0,0,.1),
+  -4px 4px 10px 2px black;
 }
 
 .btn-8 {
   background-color: #f0ecfc;
   background-image: linear-gradient(315deg, #f0ecfc 0%, #c02936 74%);
-  line-height: 42px;
   padding: 0;
   border: none;
+  position: absolute;
+  text-shadow: -1px 1px 2px rgb(64, 62, 62);
 }
 
 .btn-8 span {
-  position: relative;
+  padding-top: 2vh;
+  position: absolute;
+  top: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -97,9 +92,9 @@ section .leftherosec{
 .btn-8:before,
 .btn-8:after {
   position: absolute;
-  content: "";
   right: 0;
   bottom: 0;
+  content: "";
   background: #c02936;
   transition: all 0.3s ease;
 }
@@ -123,7 +118,7 @@ section .leftherosec{
 }
 
 .btn-8:hover{
-  background: white;
+  background-image: linear-gradient(315deg, #c02936 0%, #f0ecfc 74%);
 }
 
 .btn-8 span:hover{
@@ -133,9 +128,9 @@ section .leftherosec{
 .btn-8 span:before,
 .btn-8 span:after {
   position: absolute;
-  content: "";
   left: 0;
   top: 0;
+  content: "";
   background: #c02936;
   transition: all 0.3s ease;
 }

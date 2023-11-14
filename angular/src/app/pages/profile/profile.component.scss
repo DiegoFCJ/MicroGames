@@ -19,12 +19,13 @@ p{
 
 /** ** first text before each movie list ** **/
 .first-text{
+  color: white;
   font-size: 36px;
   position: relative;
   left: 50%;
   translate: -50%;
   width: 89%;
-  text-shadow: -2px 1px 3px rgb(30, 28, 28);
+  text-shadow: -4px 4px 4px black;
   padding-top: 20px;
   margin-bottom: 70px;
 }
