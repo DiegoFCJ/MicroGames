@@ -1,0 +1,9 @@
+
+<app-nav-after-log *ngIf="authService.isAuthenticated(); else notLoggedNavbar"></app-nav-after-log>
+<ng-template #notLoggedNavbar>
+    <app-nav-before-log></app-nav-before-log>
+</ng-template>
+
+<div class="bod">
+    <router-outlet></router-outlet>
+</div>

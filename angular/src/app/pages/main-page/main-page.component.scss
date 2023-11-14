@@ -1,0 +1,159 @@
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.wrapper {
+  margin: 1.5rem 5rem;
+  margin-top: 0;
+}
+
+.hero {
+  color: rgb(7, 7, 7);
+  height: 80vh;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.hero h1{
+  text-shadow: -1px 1px 2px rgb(64, 62, 62);
+  margin-top: 2em;
+  line-height: 3.3rem;
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 80px;
+  margin-bottom: 30px;
+}
+
+
+section .leftherosec{
+  width: 42%;
+}
+
+
+.subhead {
+  text-shadow: -1px 1px 2px rgb(64, 62, 62);
+  font-size: 30px;
+  font-weight: 10;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+
+.heroimg {
+  margin-top: 70px;
+  width: 58%;
+  background-image: url('../../../assets/images/postercollage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 10px;
+}
+
+
+/* bottone rosso */
+.btn-8{
+  position: absolute;
+  left: 15%;
+  text-shadow: -1px 1px 2px rgb(64, 62, 62);
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 
+  2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-8 {
+  background-color: #f0ecfc;
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c02936 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c02936;
+  transition: all 0.3s ease;
+}
+
+.btn-8:before{
+  height: 0%;
+  width: 2px;
+}
+
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-8:hover:before {
+  height: 100%;
+}
+
+.btn-8:hover:after {
+  width: 100%;
+}
+
+.btn-8:hover{
+  background: transparent;
+}
+
+.btn-8 span:hover{
+  color: #c02936 ;
+}
+
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c02936;
+  transition: all 0.3s ease;
+}
+
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+
+.btn-8 span:hover:before {
+  height: 100%;
+}
+
+.btn-8 span:hover:after {
+  width: 100%;
+}
