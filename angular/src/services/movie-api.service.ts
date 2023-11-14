@@ -65,5 +65,4 @@ export class MovieAPIService {
   indexSaveToFindFilm(num: number){
     return this.num = num;
   }
-
 }

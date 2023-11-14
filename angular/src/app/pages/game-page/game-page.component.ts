@@ -83,6 +83,7 @@ export class GamePageComponent implements OnInit {
       if (this.randomMovies[i] === this.movieServ.ordMovies[i]) {
         //incrementa la variabile rating di 10 ogni volta che i due array matchano
         this.movieServ.rating = this.movieServ.rating + 10;
+        this.movieServ.ordMovies[i].isCorrect = true;
       }
     }
     //definizione della variabile da inviare al DB node per salvare il punteggio
@@ -107,5 +108,3 @@ export class GamePageComponent implements OnInit {
     return "popolaritá"
   }
 }
-
-

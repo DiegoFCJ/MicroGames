@@ -6,6 +6,7 @@ export interface MovieData {
 }
 
 export interface MovieRootObject {
+    isCorrect: boolean;
     adult: boolean;
     backdrop_path: string;
     belongs_to_collection?: any;

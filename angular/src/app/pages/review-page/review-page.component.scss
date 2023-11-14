@@ -14,32 +14,14 @@ p{
 }
 
 p span{
-  line-height: 0.7em;
   background: none;
-  color: red;
+  color: #c02936;
   font-size: 36px;
   align-items: center;
   text-align: center;
-  text-shadow: 0 0 2px red;
-  animation: neon 3s linear infinite;
+  text-shadow: -3px 3px 3px black,
+               -1px 2px 2px red;
 }
-
-@keyframes neon{
-  0%,18%,20%,50.1%,60%,65.1%,80%,90.1%,92%
-  {
-    color: red;
-  }
-  100%{
-    color: red;
-    text-shadow: 
-    0 0 10px red, 
-    0 0 25px orange, 
-    0 0 50px red, 
-    0 0 90px yellow, 
-    0 0 100px red;
-  }
-}
-
 
 /** ** first text before each movie list ** **/
 .first-text{
@@ -47,32 +29,179 @@ p span{
   left: 50%;
   translate: -50%;
   width: 89%;
-  text-shadow: -2px 1px 3px rgb(30, 28, 28);
-  height: 6vh;
+  text-shadow: -4px 4px 4px black;
+  height: 2vh;
+  color: white;
 }
 
 .first-text p{
   position: relative;
-  top: 4vh;
-  bottom: 10px;
+  top: 5vh;
 }
 
-.under-card{
-  text-align: center;
+/** ** film lists ** **/
+.list {
+  max-width: 1300px;
+  margin: 20vh auto; /* Imposta il margine superiore e inferiore su 20vh e il margine laterale su auto per centrare l'elenco */
+  display: flex;
+  flex-wrap: wrap; /* Permette il wrapping degli elementi sulla nuova riga */
+  justify-content: space-between; /* Distribuisce uniformemente gli elementi lungo l'asse principale (orizzontale) */
+  background: transparent;
+}
+
+.box {
+  position: relative;
+  width: 140px;
+  margin: 40px; /* Aggiunto margine tra gli elementi */
+}
+
+.box img{
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 190px;
+  height: 240px;
+}
+
+.list:hover {
+  min-height: 120px;
+  overflow:visible;
+  cursor: url('data:image/svg+xml;utf8,' + 
+              '<svg xmlns="http://www.w3.org/2000/svg" ' + 
+                'viewBox="0 0 24 24" ' + 
+                'fill="white" ' + 
+                'width="48px" ' + 
+                'height="48px"' + 
+                '>' + 
+                '<path ' + 
+                  'd="M0 0h24v24H0z" ' + 
+                  'fill="none"' + 
+                '/>' + 
+                '<rect ' + 
+                  'width="6" ' + 
+                  'height="24" ' + 
+                  'rx="2" ' + 
+                  'ry="2" ' + 
+                  'transform="rotate(-45 3 19)" ' + 
+                  'opacity=".8"' + 
+                '/>' + 
+                '<rect ' + 
+                  'width="6" ' + 
+                  'height="24" ' + 
+                  'rx="2" ' + 
+                  'ry="2" ' + 
+                  'transform="rotate(-45 3 5)" ' + 
+                  'opacity=".8"' + 
+                '/>' + 
+                '<rect ' + 
+                  'width="6" ' + 
+                  'height="24" ' + 
+                  'rx="2" ' + 
+                  'ry="2" ' + 
+                  'opacity=".8"' + 
+                '/>' + 
+              '</svg>'), pointer;
+}
+
+.box :hover{
+  cursor: url('data:image/svg+xml;utf8,' + 
+    '<svg xmlns="http://www.w3.org/2000/svg" ' + 
+      'viewBox="0 0 24 24" ' + 
+      'fill="white" ' + 
+      '' +
+      'width="48px" ' + 
+      'height="48px"' + 
+      '>' + 
+      '<path ' + 
+        'd="M0 0h24v24H0z" ' + 
+        'fill="none"' + 
+      '/>' + 
+      '<rect ' + 
+        'width="6" ' + 
+        'height="24" ' + 
+        'rx="2" ' + 
+        'ry="2" ' + 
+        'transform="rotate(-45 3 19)" ' + 
+        'opacity=".8"' + 
+      '/>' + 
+      '<rect ' + 
+        'width="6" ' + 
+        'height="24" ' + 
+        'rx="2" ' + 
+        'ry="2" ' + 
+        'transform="rotate(-45 3 5)" ' + 
+        'opacity=".8"' + 
+      '/>' + 
+      '<rect ' + 
+        'width="6" ' + 
+        'height="24" ' + 
+        'rx="2" ' + 
+        'ry="2" ' + 
+        'opacity=".8"' + 
+      '/>' + 
+    '</svg>'), pointer;
+
+  /* Aggiungi l'ombra al cursore */
+  text-shadow:
+  -3px 3px 3px black,
+  -1px 2px 2px red;
+}
+
+/* ************ is correct ********* */
+
+.pos-isCorrect{
+  position: absolute;
+  top: 1vh;
+  scale: 1.8;
+}
+
+.pos-icon{
+  position: absolute;
+  top: 2px;
+  left: 3vh;
+
+  /* ***** shadow for the icon ***** */
+  text-shadow:
+  -3px 3px 3px black,
+  -1px 2px 2px red;
+}
+
+.pos-index{
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 11px;
+
+  /* ***** shadow for the number ***** */
+  text-shadow: none !important;
+  box-shadow:
+  -3px 3px 3px black,
+  -1px 2px 2px white;
+
 }
 
 /** ** buttons ** **/
+.tasto-pos{
+  position: absolute;
+  right: 20vh;
+  top: -51vh;
+}
 
-.close-btn{
+.close-btn{text-shadow: -3px 3px 3px 3px black,
+  -1px 2px 2px #c02936;
   position: absolute;
   top: 12px;
   right: 17px;
   border: none;
   background: black;
   transform: scale(1.2);
-  box-shadow: inset
-  red 0 0 0.5em 0,
-  white 0 0 1em 0;
+  text-shadow:
+    -3px 3px 3px black,
+    -1px 2px 2px red;
   border-radius: 5px;
 }
 
@@ -116,11 +245,6 @@ p span{
   position: absolute;
   left: 50%;
   translate: -50%;
-}
-
-.tasto-pos{
-  position: relative;
-  bottom: 50vh;
 }
 
 /** ** film cards ** **/
@@ -190,50 +314,3 @@ p span{
   text-align: center;
   margin-bottom: 30px;
 }
-
-/** ** film lists ** **/
-.list {
-  margin-top: 10vh;
-  margin-bottom: 10px;
-  
-  box-shadow: 0 5px 5px -3px black,
-              0 8px 10px 1px red,
-              0 3px 14px 2px red;
-
-  position: relative;
-  left: 50%;
-  translate: -50%;
-  top: 20px;
-
-  max-width: 1400px;
-  min-height: 60px;
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-}
-
-.box{
-  width: 140px;
-}
-
-.box img{
-  display: flex;
-  flex-direction: row;
-  width: 140px;
-  height: 240px;
-}
-
-.box button:hover{
-  scale: 1.2;
-  box-shadow: 0 5px 5px -3px black,
-              0 8px 10px 1px red,
-              0 3px 14px 2px red;
-}
-
-
-.list:hover {
-  min-height: 120px;
-  overflow:visible;
-}
-
-

@@ -30,6 +30,7 @@ export class ReviewPageComponent implements OnInit {
       alert("Non puoi accedere a questa pagina senza eseguire prima il login")
       this.router.navigateByUrl("/sign");
     }
+    console.log(this.movieServ.ordMovies);
   }
 
   saveCommentFromForm(el: NgForm) {

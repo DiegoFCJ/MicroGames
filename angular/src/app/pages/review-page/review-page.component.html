@@ -1,7 +1,7 @@
 <div class="first-text">
   <p>HAI TOTALIZZATO <span>{{movieServ.rating}}</span> PUNTI</p>
 </div>
-<div class="first-text">
+<div class="first-text" style="line-height: 1.5;">
   <p>Questo é l'ordine corretto dei film</p>
   <p style="font-size: 20px;">Clicca sulla locandina del film che ti interessa e scegli tra le opzioni preposte</p>
 </div>
@@ -9,7 +9,12 @@
 <div class="list">
   <div class="box" *ngFor="let movieElement of movieServ.ordMovies; let i = index">
     <button (click)="movieServ.openTemplAndSetMovieId(filmCart, movieServ.ordMovies[movieServ.indexSaveToFindFilm(i)].id)">
-      <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
+      <img src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title">
+      <div class="pos-isCorrect">
+        <span class="pos-index">{{i + 1}}</span>
+        <span class="pos-icon" *ngIf="movieServ.ordMovies[i].isCorrect else notCorrect">✅</span>
+        <ng-template #notCorrect><span class="pos-icon">⛔</span></ng-template>
+      </div>
     </button>
   </div>
 </div>

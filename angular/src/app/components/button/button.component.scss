@@ -4,6 +4,8 @@
   scale: 2;
   background-color: #c02936;
   color: aliceblue;
+  box-shadow: -2px 2px 4px 1px rgb(30, 28, 28),
+              -1px 1px 4px 1px red;
 }
 
 .tasto-pos{
@@ -19,5 +21,5 @@
   background-color: aliceblue;
   color: #c02936;
   animation: floor($number: 0);
-  box-shadow: -2px -3px 20px 2px red;
+  box-shadow: none;
 }
