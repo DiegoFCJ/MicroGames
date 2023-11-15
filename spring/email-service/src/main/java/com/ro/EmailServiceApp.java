@@ -2,8 +2,8 @@ package com.ro;
 
 import org.springframework.boot.SpringApplication;
 
-public class EmailService {
+public class EmailServiceApp {
     public static void main(String[] args) {
-        SpringApplication.run(UserService.class, args);
+        SpringApplication.run(UserServiceApp.class, args);
     }
 }

@@ -4,6 +4,11 @@ export interface ScoreInfo {
   score: number;
 }
 
+export interface ScoreDTO {
+  userId: number;
+  score: number;
+}
+
 export interface ScoreFull {
   userId: number;
   userName: string;

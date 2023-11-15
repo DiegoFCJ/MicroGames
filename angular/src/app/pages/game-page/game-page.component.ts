@@ -7,6 +7,7 @@ import { MovieAPIService } from 'src/services/movie-api.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
 import { ScoreService } from 'src/services/score.service';
+import { ScoreDTO } from 'src/models/score';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class GamePageComponent implements OnInit {
   currentUser: Partial<UserFull> = this.authServ.getCurrentUser();
   randomMovies: MovieRootObject[] = [];
   arrayDim: number= 10;
+  scoreForDB!: ScoreDTO;
 
   constructor(
     protected movieServ: MovieAPIService, 
@@ -87,13 +89,12 @@ export class GamePageComponent implements OnInit {
       }
     }
     //definizione della variabile da inviare al DB node per salvare il punteggio
-    this.scoreServ.scoreForDB = {
+    this.scoreForDB = {
       userId: this.authServ.getCurrentUser().id,
-      userName: this.authServ.getCurrentUser().username,
       score: this.movieServ.rating
     }
     //chiamata http post per inviare i dati
-    this.scoreServ.saveNewScore().subscribe();
+    this.scoreServ.saveNewScore(this.scoreForDB).subscribe();
   }
 
   printGameType(){

@@ -2,12 +2,13 @@ package com.ro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-@EnableEurekaServer
-public class Discovery {
+@EnableDiscoveryClient
+public class ScoreServiceApp {
     public static void main(String[] args) {
-        SpringApplication.run(Discovery.class, args);
+        SpringApplication.run(ScoreServiceApp.class, args);
     }
+
 }
