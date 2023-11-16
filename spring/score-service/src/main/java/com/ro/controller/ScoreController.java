@@ -1,6 +1,7 @@
 package com.ro.controller;
 
 import com.ro.dto.ScoreDTO;
+import com.ro.dto.ScoresForRankDTO;
 import com.ro.service.ScoreService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +17,14 @@ public class ScoreController {
     @Autowired
     private ScoreService scoreService;
 
-    @GetMapping("getTotalScoreByUsername")
-    public int getTotalScoreByUsername(int id){
-        return scoreService.getTotalScoreOfUserByUserId(id);
+    @GetMapping("/getScForRunkings")
+    public List<ScoresForRankDTO> getScForRunkings(){
+        return scoreService.getScForRunkings();
+    }
+
+    @GetMapping("/getTotalUserSByUserId")
+    public int getTotalUserSByUserId(int id){
+        return scoreService.getTotalUserSByUserId(id);
     }
 
     @GetMapping("/getAll")

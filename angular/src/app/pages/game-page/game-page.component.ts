@@ -1,6 +1,5 @@
 import { UserFull } from '../../../models/user';
 import { AuthService } from 'src/services/auth.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MovieRootObject } from 'src/models/movie';
 import { MovieAPIService } from 'src/services/movie-api.service';
@@ -78,8 +77,6 @@ export class GamePageComponent implements OnInit {
 
   //funzione di calcolo del risultato
   checkResult() {
-    //cambia pagina per visualizare il punteggio
-    this.router.navigate(['/review']);
     //confronta l'array dei film usati nel gioco con l'array dei film ordinati all'inizio
     for (let i = 0; i < this.arrayDim; i++) {
       if (this.randomMovies[i] === this.movieServ.ordMovies[i]) {
@@ -88,13 +85,15 @@ export class GamePageComponent implements OnInit {
         this.movieServ.ordMovies[i].isCorrect = true;
       }
     }
-    //definizione della variabile da inviare al DB node per salvare il punteggio
-    this.scoreForDB = {
-      userId: this.authServ.getCurrentUser().id,
-      score: this.movieServ.rating
-    }
     //chiamata http post per inviare i dati
-    this.scoreServ.saveNewScore(this.scoreForDB).subscribe();
+    this.scoreServ.saveNewScore(this.scoreForDB = {
+      createdAt: new Date(),
+      user: this.authServ.getCurrentUser(),
+      score: this.movieServ.rating
+    }).subscribe();
+
+    //cambia pagina per visualizare il punteggio
+    this.router.navigate(['/review']);
   }
 
   printGameType(){

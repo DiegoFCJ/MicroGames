@@ -4,15 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ScoreDTO {
+public class UserSimpleDTO {
 
-    Long id;
-    int score;
-    LocalDateTime createdAt;
-    UserSimpleDTO user;
+    private Long id;
 }

@@ -1,6 +1,7 @@
 package com.ro.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -18,8 +19,9 @@ public class Score {
     Long id;
 
     LocalDateTime createdAt;
-    LocalDateTime updatedAt;
-
     int score;
-    int userId;
+
+    @ManyToOne
+    @JoinColumn(name = "userId") // Nome della colonna che fa riferimento all'ID dell'utente
+    private User user;
 }

@@ -1,18 +1,21 @@
-export interface ScoreInfo {
-  userId: number;
-  userName: string;
+import { User } from "./user";
+
+export interface ScoresForRankDTO {
+  rankingNumOrdered: number;
   score: number;
+  username: string;
+  lastGamePlayedAt: Date;
 }
 
 export interface ScoreDTO {
-  userId: number;
+  createdAt: Date;
   score: number;
+  user: User;
 }
 
-export interface ScoreFull {
-  userId: number;
-  userName: string;
-  score: number;
+export interface ScoreFromDBDTO {
+  id: number;
   createdAt: Date;
-  updatedAt: Date;
+  score: number;
+  user: User;
 }
