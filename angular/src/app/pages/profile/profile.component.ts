@@ -1,12 +1,10 @@
 import { FavouriteService } from './../../../services/favourite.service';
-import { Favourite } from './../../../models/favourite';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FavMovie } from 'src/models/favourite';
-import { MovieRootObject, MovieData } from 'src/models/movie';
 import { AuthService } from 'src/services/auth.service';
 import { MovieAPIService } from 'src/services/movie-api.service';
+import { AlertsService } from 'src/mockup/alerts.service';
+import * as Messages from 'src/const-messages/messages'
 
 @Component({
   selector: 'app-profile',
@@ -16,25 +14,42 @@ import { MovieAPIService } from 'src/services/movie-api.service';
 export class ProfileComponent implements OnInit {
 
   constructor(
-    protected authService: AuthService, 
+    protected authServ: AuthService, 
     protected movieServ: MovieAPIService,
     protected favServ: FavouriteService,
-    private router: Router) {}
+    private router: Router, 
+    private alertServ: AlertsService) {}
 
     ngOnInit(): void {
-      if (!this.authService.isAuthenticated()) {
-       alert("Non puoi accedere a questa pagina senza permesso! Esegui l'accesso")
-       this.router.navigateByUrl("/sign");
-     }
-     this.getAllFavouriteMovies(this.authService.getCurrentUser().id);
-
+      if (!this.authServ.isAuthenticated()) {
+        this.alertServ.showAutoDestroyAlert(
+          Messages.ICO_INFO,
+          Messages.LOG_MUST,
+          Messages.LOG_WARNING_NO_ACC,
+          4000
+        ).then(() => {
+          return this.router.navigateByUrl(Messages.ROT_SIGN);
+        });
+      }
+     this.getAllFavouriteMovies(this.authServ.getCurrentUser().id);
     }
 
     printStringIfNoFav(){
       if(this.movieServ.favourites === null){
-        return "niente preferiti"
+        return this.alertServ.showAutoDestroyAlert(
+          Messages.ICO_WARNING,
+          Messages.TIT_WARNING,
+          Messages.FAV_NOTPRESENT,
+          4000
+        )
+      }else{
+        return this.alertServ.showAutoDestroyAlert(
+          Messages.ICO_INFO,
+          Messages.TIT_INFO,
+          Messages.FAV_ISPRESENT,
+          2200
+        )
       }
-      return "Questi sono i film che hai scelto come preferiti"
     }
 
     getAllFavouriteMovies(id : number){
@@ -61,7 +76,5 @@ export class ProfileComponent implements OnInit {
       this.favServ.deleteFavourite(this.movieServ.singleFavourite.id).subscribe();
       window.location.reload()
     }
-
-
 
 }

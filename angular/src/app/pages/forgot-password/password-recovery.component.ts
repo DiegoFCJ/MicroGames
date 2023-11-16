@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginDTO, RecoverDTO } from 'src/models/user';
+import { AlertsService } from 'src/mockup/alerts.service';
+import { RecoverDTO } from 'src/models/user';
+import { AuthService } from 'src/services/auth.service';
 import { EmailService } from 'src/services/email.service';
+import * as Messages from 'src/const-messages/messages'
 
 @Component({
   selector: 'app-password-recovery',
@@ -14,16 +17,35 @@ export class PasswordRecoveryComponent implements OnInit {
   email: string = "";
   user: RecoverDTO = { email: '', password: '' };
 
-  constructor(private route: ActivatedRoute, private emailServ: EmailService, private router: Router) { }
+  constructor(
+    private authServ: AuthService, 
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private emailServ: EmailService, 
+    private alertServ: AlertsService) { }
 
   ngOnInit(): void {
+    if (this.authServ.isAuthenticated()) {
+      this.alertServ.showAutoDestroyAlert(
+        Messages.ICO_INFO,
+        Messages.LOG_INFO,
+        Messages.EML_CANT_RECOVER,
+        4000
+      );
+      this.router.navigateByUrl(Messages.ROT_HOME);
+    }else{
+      this.getSendToken()
+    }
+  }
+
+  getSendToken(){
     const tokenFromRoute = this.route.snapshot.paramMap.get('token');
     const emailFromRoute = this.route.snapshot.paramMap.get('email');
     if (tokenFromRoute !== null && emailFromRoute !== null) {
       this.token = tokenFromRoute;
       this.email = emailFromRoute; 
     }else{
-      alert("Errore: Il link e' scaduto")
+      this.alertServ.showErrorAlert(Messages.LIN_EXPIRED);
     }
   }
 
@@ -33,11 +55,10 @@ export class PasswordRecoveryComponent implements OnInit {
       this.user.password = form.value.nuovaPassword;
       this.emailServ.recoverPassword(this.user, this.token).subscribe({
         next: (res) => {
-          console.log(res)
-          alert(res);
+          this.alertServ.showWarningAlert(res);
         },
         error: (error) => {
-          alert(error.error.text)
+          this.alertServ.showErrorAlert(error.error.text);
         }
       })
     }

@@ -7,6 +7,8 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Router } from '@angular/router';
 import { ScoreService } from 'src/services/score.service';
 import { ScoreDTO } from 'src/models/score';
+import { AlertsService } from 'src/mockup/alerts.service';
+import * as Messages from 'src/const-messages/messages'
 
 
 @Component({
@@ -15,7 +17,7 @@ import { ScoreDTO } from 'src/models/score';
   styleUrls: ['./game-page.component.scss'],
 })
 export class GamePageComponent implements OnInit {
-  attributes = ['revenue', 'release_date', 'popularity'];
+  attributes = [Messages.ORD_REVENUE_ENG, Messages.ORD_RELEASE_ENG, Messages.ORD_POPULARITY_ENG];
   stringCondPrint: string = "";
   currentUser: Partial<UserFull> = this.authServ.getCurrentUser();
   randomMovies: MovieRootObject[] = [];
@@ -26,14 +28,20 @@ export class GamePageComponent implements OnInit {
     protected movieServ: MovieAPIService, 
     private router: Router, 
     protected authServ: AuthService,
-    protected scoreServ: ScoreService) { }
+    protected scoreServ: ScoreService, 
+    private alertServ: AlertsService) { }
 
 
   ngOnInit(): void {
     //verifica se l'utente è loggato, nel caso reindirizza
     if (!this.authServ.isAuthenticated()) {
-      alert("Non puoi accedere a questa pagina senza permesso! Esegui l'accesso")
-      this.router.navigateByUrl("/sign");
+      this.alertServ.showAutoDestroyAlert(
+        Messages.ICO_INFO,
+        Messages.LOG_MUST,
+        Messages.LOG_WARNING_NO_ACC,
+        4000
+      );
+      this.router.navigateByUrl(Messages.ROT_SIGN);
     }else{
       //se l'utente è loggato randomizza un attributo di riordinamento casuale tra quelli dell'array attributes
       this.movieServ.rating;
@@ -93,18 +101,18 @@ export class GamePageComponent implements OnInit {
     }).subscribe();
 
     //cambia pagina per visualizare il punteggio
-    this.router.navigate(['/review']);
+    this.router.navigateByUrl(Messages.ROT_REVIEW);
   }
 
   printGameType(){
-    if(this.movieServ.attribute === "release_date"){
-      this.stringCondPrint = "piú vecchio";
-      return "data di rilascio"
-    } else if(this.movieServ.attribute === "revenue"){
-      this.stringCondPrint = "film con meno fatturato";
-      return "fatturato"
+    if(this.movieServ.attribute === Messages.ORD_RELEASE_ENG){
+      this.stringCondPrint = Messages.ORD_RELEASE_OLDER;
+      return Messages.ORD_RELEASE_ITA;
+    } else if(this.movieServ.attribute === Messages.ORD_REVENUE_ENG){
+      this.stringCondPrint = Messages.ORD_REVENUE_LESS;
+      return Messages.ORD_REVENUE_ITA
     }
-    this.stringCondPrint = "meno popolare";
-    return "popolaritá"
+    this.stringCondPrint = Messages.ORD_POPULARITY_LESS;
+    return Messages.ORD_POPULARITY_ITA;
   }
 }

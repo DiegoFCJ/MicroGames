@@ -29,7 +29,6 @@ import { ButtonComponent } from './components/button/button.component';
 import { EmailActivatedComponent } from './pages/email-activated/email-activated.component';
 import { PasswordRecoveryComponent } from './pages/forgot-password/password-recovery.component';
 import { CommonModule, DecimalPipe } from '@angular/common';
-import { NgbdSortableHeader } from './pages/ranking/ranking.component';
 
 @NgModule({
   declarations: [

@@ -8,12 +8,18 @@ import { EmailService } from 'src/services/email.service';
   styleUrls: ['./email-activated.component.scss']
 })
 export class EmailActivatedComponent implements OnInit {
-
   token: string = "";
 
-  constructor(private route: ActivatedRoute, private emailServ: EmailService, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private emailServ: EmailService, 
+    private router: Router) { }
 
   ngOnInit() {
+    this.subscribeAfterTimeout();
+  }
+  
+  subscribeAfterTimeout(){
     setTimeout(() => {
       this.router.navigateByUrl("/sign");
     }, 1600);
@@ -23,6 +29,5 @@ export class EmailActivatedComponent implements OnInit {
       this.emailServ.activation(this.token).subscribe();
     }
   }
-  
 
 }
