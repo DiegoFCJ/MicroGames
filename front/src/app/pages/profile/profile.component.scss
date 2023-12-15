@@ -1,0 +1,150 @@
+
+/** ** fonts ** **/
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 15px;
+}
+
+/** ** texts ** **/
+p{
+  padding-top: 30px;
+  font-size: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.txt-size{
+  font-size: 36px;
+}
+
+/** ** first text before each movie list ** **/
+.first-text{
+  color: white;
+  font-size: 36px;
+  position: relative;
+  left: 50%;
+  translate: -50%;
+  width: 89%;
+  text-shadow: -4px 4px 4px black;
+  padding-top: 20px;
+  margin-bottom: 70px;
+}
+
+.first-text p{
+  position: relative;
+  top: 10px;
+  bottom: 10px;
+}
+
+/** ** film cards ** **/
+.up-father{
+  margin-top: 60px;
+  }
+  
+  .card-father{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .card{
+    width: 280px;
+    max-height: 460px; 
+    box-shadow: -2px 1px 5px grey;
+  }
+
+  .card-img{
+    width: 280px;
+    height: 350px;
+  }
+  
+  .card-img-overlay{
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card-title{
+    text-shadow: -1px 1px 2px rgb(64, 62, 62);
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  /** ** review ** **/
+  .body h4{
+    padding-top: 20px;
+  }
+  
+  .body{
+    text-align: center; 
+    margin-bottom: 10px;
+  }
+  
+  
+  .rating{
+    pointer-events: none;
+    font-size: 30px; 
+    color: red;
+  }
+  
+  .review{
+    text-align: center;
+    box-shadow: inset
+    red 0 0 0.5em 0,
+    white 0 0 1em 0;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 56px;
+  }
+
+  .visually-hidden:hover{
+    display: block;
+  }
+  
+  /** ** buttons ** **/
+  
+  .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: none;
+    background: black;
+    transform: scale(1.2);
+    box-shadow: inset
+    red 0 0 0.5em 0,
+    white 0 0 1em 0;
+    border-radius: 5px;
+  }
+  
+  .close-btn:hover{
+    transform: scale(2);
+  }
+  
+  .show-fav{
+    position: absolute;
+    top: 78vh;
+    left: 50%;
+    translate: -50%;
+  }
+  
+  
+  .scale{
+    transform: scale(0.65);
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    bottom: 480px;
+  }
+  
+  .del-btn{ 
+    transform: scale(0.65);
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    bottom: 440px;
+  }
+  

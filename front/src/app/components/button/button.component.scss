@@ -1,0 +1,25 @@
+
+.tasto {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  scale: 2;
+  background-color: #c02936;
+  color: aliceblue;
+  box-shadow: -2px 2px 4px 1px rgb(30, 28, 28),
+              -1px 1px 4px 1px red;
+}
+
+.tasto-pos{
+  position: absolute;
+  top: 600px;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+  transition: all 1s;
+}
+
+.tasto:hover{
+  background-color: aliceblue;
+  color: #c02936;
+  animation: floor($number: 0);
+  box-shadow: none;
+}

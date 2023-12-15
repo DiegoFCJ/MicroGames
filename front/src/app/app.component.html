@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+<app-nav-after-log *ngIf="authService.isAuthenticated(); else notLoggedNavbar"></app-nav-after-log>
+<ng-template #notLoggedNavbar>
+    <app-nav-before-log></app-nav-before-log>
+</ng-template>
+
+<div class="bod">
+    <router-outlet></router-outlet>
+</div>
