@@ -1,0 +1,86 @@
+<div class="up-father row row-cols-md-3 g-4">
+  <div class="col card-father" *ngFor="let movieEl of movieServ.favourites;">
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w185{{movieEl.poster_path}}" class="card-img"/>
+        <div class="card-img-overlay">
+          <div class="show-card-btn">
+              <app-button-sign class="all-btn" type="button" btn_text="Review" (click)="movieServ.openOneFav(content, movieServ.getFavouriteMovieByMovieId(movieEl.id))"></app-button-sign>
+          </div>
+          
+        </div>
+        <div class="card-footer">
+          <small class="text-muted card-title">{{movieEl.title}}</small>
+        </div>
+      </div>
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <div class="body">
+    <h4>{{movieServ.singleFavourite.title}}</h4>
+    <button class="close-btn" type="button" (click)="d('Cross click')">❌</button>
+    <hr>
+    <p>Vote</p>
+    <ngb-rating class="rating" [(rate)]="movieServ.singleFavourite.rating"></ngb-rating>
+    <hr>
+    <p>Comment</p>
+    <p class="review">{{movieServ.singleFavourite.comment}}</p>
+    <app-button-sign class="all-btn" type="button" btn_text="Delete" (click)="movieServ.deleteFavourite()" (click)="d('Cross click')"></app-button-sign>
+    <!--
+    <app-button-sign type="button" (click)="c('Save click')" class="all-btn" btn_text="Delete"></app-button-sign>
+    <app-button-sign type="button" (click)="c('Save click')" class="all-btn" btn_text="Update"></app-button-sign>
+    -->
+  </div>
+  
+</ng-template>
+
+
+<!--
+<div class="profile-page" *ngIf="!movieServ.clickFavCheck else showFav">
+  <div class="user-details shad">
+    <span><h2>Profilo Utente</h2></span><hr>
+    <span class="left">Name: </span><span class="user-data">{{ currentUser.name }}</span>
+    <br><hr>
+    <span class="left">Surname: </span><span class="user-data">{{ currentUser.surname }}</span>
+    <br><hr>
+    <span class="left">Email: </span><span class="user-data">{{ currentUser.email }}</span>
+    <br><hr>
+    <span class="left">Username: </span><span class="user-data">{{ currentUser.username }}</span>
+    <br><hr>
+    <span class="left">Score: </span><span class="user-data">{{ currentUser.score }}</span>
+    <br><hr>
+    <span class="left">Role: </span><span class="user-data">{{ currentUser.roles }}</span>
+    <br><hr>
+    <span class="left">Registred On: </span><span class="user-data" sortable="true">{{ currentUser.registered_on | date: 'short'}}</span>
+    <br><hr>
+    <span class="left">Updated On: </span><span class="user-data">{{ currentUser.update_on | date: 'short'}}</span>
+    <br><hr>
+    <span class="left">Last Log: </span><span class="user-data">{{ currentUser.last_log | date: 'short'}}</span>
+    <br><hr>
+    <span class="left">Account Activated: </span><span class="user-data">{{ currentUser.enabled }}</span>
+  </div>
+  
+  <div class="row fav-tab shad">
+    <table>
+      <tr>
+        <th class="two">Id</th>
+        <th class="thr">movie Id</th>
+        <th class="fou">created At</th>
+        <th class="fiv">updated At</th>
+      </tr>
+      <tr *ngFor=" let favourite of favServ.favourites">
+        <td>{{favourite.id}}</td>
+        <td>{{favourite.movieId}}</td>
+        <td>{{favourite.userId | date: 'short'}}</td>
+        <td>{{favourite.comment | date: 'short'}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<ng-template #showFav>
+  <app-favourites-carousel></app-favourites-carousel>
+</ng-template>
+
+  -->

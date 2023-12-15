@@ -1,0 +1,48 @@
+
+<div class="d-flex align">
+  <div class="sign-card">
+    <div class="img d-md-flex" [ngSwitch]="choice">
+
+      <div id="visNone" class="center-class" *ngSwitchDefault>
+
+        <p>You wish to login or register?</p>
+
+        <div class="sign-change btn">
+          <app-button-sign btn_text="login" (click)="choice = 1"></app-button-sign>
+        </div>
+
+        <div class="sign-change btn">
+          <app-button-sign btn_text="register" (click)="choice = 2"></app-button-sign>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-6 p-4 p-md-5 sign-change" *ngSwitchCase="1">
+        <div class="sign-in center-class">
+          <tnv-login></tnv-login>
+        </div>
+      </div>
+      
+      <div class="col-12 col-md-6 p-4 p-md-5 sign-change" *ngSwitchCase="1">
+        <div class="register-btn center-class">
+          <p>You don't have an account?</p>
+          <app-button-sign type="submit" btn_text="register" (click)="choice = 2"></app-button-sign>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 p-4 p-md-5 sign-change" *ngSwitchCase="2">
+        <div class="login-btn center-class">
+          <p>You already have an account?</p>
+          <app-button-sign type="submit" btn_text="login" (click)="choice = 1"></app-button-sign>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 p-4 p-md-5 sign-change" *ngSwitchCase="2">
+        <div class="sign-up center-class">
+          <tnv-register></tnv-register>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

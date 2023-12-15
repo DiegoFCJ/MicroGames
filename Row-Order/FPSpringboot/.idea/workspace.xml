@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e804e8b8-f4a9-4ba7-8178-4f6ec9e724a0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/userManager/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userManager/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/userManager/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/_discovery/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/_discovery/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/_gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/emailService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/scoreService/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../row&amp;order/userService/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/.vs/ReviewApp/config/applicationhost.config" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/.vs/ReviewApp/config/applicationhost.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/Exceptions/ReviewNotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/Exceptions/ReviewNotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/ReviewApp.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/ReviewApp.Core.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/ReviewApplicationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/ReviewApplicationManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/bin/Debug/net6.0/ReviewApp.Core.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/bin/Debug/net6.0/ReviewApp.Core.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/Debug/net6.0/ReviewApp.Core.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/ReviewApp.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/ReviewApp.Core.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/ReviewApp.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/ReviewApp.Core.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.Core/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/20230103155139_create_table_review.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/20230103155139_create_table_review.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/20230103155139_create_table_review.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/20230103155139_create_table_review.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/ApplicationContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/Migrations/ApplicationContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/MySqlStorageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/MySqlStorageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/ReviewApp.DB.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/ReviewApp.DB.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.EntityFrameworkCore.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.EntityFrameworkCore.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/ReviewApp.DB.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.DB/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/Controllers/ReviewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/Controllers/ReviewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/ReviewApp.RestAPI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/bin/Debug/net6.0/ReviewApp.RestAPI.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/bin/Debug/net6.0/ReviewApp.RestAPI.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/bin/Debug/net6.0/ReviewApp.RestAPI.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/bin/Debug/net6.0/ReviewApp.RestAPI.runtimeconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/ReviewApp.RestAPI.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.build.ReviewApp.RestAPI.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.build.ReviewApp.RestAPI.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.ReviewApp.RestAPI.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.ReviewApp.RestAPI.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.ReviewApp.RestAPI.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.ReviewApp.RestAPI.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.EntityFrameworkCore.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.EntityFrameworkCore.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/ReviewApp.RestAPI.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.RestAPI/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.Net-main/ReviewApp.sln" beforeDir="false" afterPath="$PROJECT_DIR$/../.Net-main/ReviewApp.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.browserslistrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/button/button.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/button/button.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/logout/logout.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/logout/logout.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/navbars/nav-after-log/nav-after-log.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/navbars/nav-after-log/nav-after-log.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/components/navbars/navbar-before-log/nav-before-log.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/game-page/game-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/main-page/main-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/profile/profile.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/profile/profile.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/ranking/ranking.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/review-page/review-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/sign-page/sign-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/sign-page/sign-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/app/pages/sign-page/sign-page.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/app/pages/sign-page/sign-page.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/models/comment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/models/comment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/models/favourite.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/models/favourite.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/models/movie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/models/movie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/models/score.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/models/score.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/services/movie-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/services/movie-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Angular/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Angular/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/UserManagerApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/config/corsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/controller/PublicUsersController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/exceptions/UsernameOrEmailAlreadyExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/model/VerificationToken.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/repository/VerificationTokenRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/service/EmailActivationLinkService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tnv/userManager/service/JpaUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/tnv/userManager/UserManagerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/app/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/app/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/app/src/controllers/score-controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/app/src/controllers/score-controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/app/src/models/score.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/app/src/models/score.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/app/src/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/app/src/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Node/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Node/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2JGoqpGYddLCt2fAGVgXGrqBZi9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/diego/Documents/repositoryGitHub/MicroservicesJwt&quot;,
+    &quot;mysql-explain.agentPath&quot;: &quot;C:\\Users\\Sleepy69\\AppData\\Roaming\\JetBrains\\IdeaIC2022.2\\plugins\\mysql-explain-intellij-plugin\\lib\\mysql-explain-agent-1.0-jar-with-dependencies.jar&quot;,
+    &quot;mysql-explain.existMysqlJar&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MTConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="UserManagerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tnv.userManager.UserManagerApplication" />
+      <module name="userManager.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tnv.userManager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="FPSpringboot" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="FPSpringboot" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserManagerApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e804e8b8-f4a9-4ba7-8178-4f6ec9e724a0" name="Changes" comment="" />
+      <created>1671713977744</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671713977744</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

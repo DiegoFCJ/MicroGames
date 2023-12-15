@@ -1,0 +1,132 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj": {}
+  },
+  "projects": {
+    "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj",
+        "projectName": "ReviewApp.Core",
+        "projectPath": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj",
+        "packagesPath": "/Users/francesca/.nuget/packages/",
+        "outputPath": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/francesca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj",
+        "projectName": "ReviewApp.EF",
+        "projectPath": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.EF/ReviewApp.EF.csproj",
+        "packagesPath": "/Users/francesca/.nuget/packages/",
+        "outputPath": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.EF/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/francesca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj": {
+                "projectPath": "/Users/francesca/Desktop/Progetto/Progetto-finale/DotNet/ReviewApp/src/ReviewApp.Core/ReviewApp.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

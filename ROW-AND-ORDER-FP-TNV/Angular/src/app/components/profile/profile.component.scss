@@ -1,0 +1,63 @@
+.user-details{
+    width: 250px;
+    position: absolute;
+    top: 90px;
+    left: 50px;
+    text-align: center;
+}
+
+.profile-data {
+    font-weight: bold;
+}
+
+.details{
+    box-shadow: inset
+    1px -1px 5px 3px black,
+    0 1px 6px 2px red,
+    1px -1px 5px 3px white;
+}
+
+.fav-tab{
+    width: 560px;
+    position: absolute;
+    top: 90px;
+    right: 50px;
+    text-align: center;
+    bottom: 1px;
+}
+
+.mt-3{
+    margin-bottom: 10px;
+}
+
+.details table tr th, .details table tr td{
+    border: 1px solid;
+    border-color: black;
+}
+
+.details table tr th{
+    text-transform: uppercase;
+}
+
+.one{
+    width: 60px;
+}
+
+.two{
+    width: 30px;
+}
+
+.thr{
+    width: 70px;
+}
+
+.fou{
+    width: 200px;
+}
+
+.fiv{
+    width: 200px;
+}
+
+
+

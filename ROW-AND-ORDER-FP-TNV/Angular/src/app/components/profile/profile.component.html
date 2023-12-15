@@ -1,0 +1,51 @@
+
+
+<div class="row user-details details" >
+  <div class="">
+    <span><h2>Profilo Utente</h2></span>
+    <span>Name</span>: <span class="profile-data">{{ currentUser.name }}</span>
+    <br>
+    <span>Surname</span>:<span class="profile-data">{{ currentUser.surname }}</span>
+    <br>
+    <span>Email</span>:<span class="profile-data">{{ currentUser.email }}</span>
+    <br>
+    <span>Username</span>:<span class="profile-data">{{ currentUser.username }}</span>
+    <br>
+    <span>Score</span>:<span class="profile-data">{{ currentUser.score }}</span>
+    <br>
+    <span>Role</span>:<span class="profile-data">{{ currentUser.roles }}</span>
+    <br>
+    <span>Registred On</span>:<span class="profile-data" sortable="true">{{ currentUser.registered_on | date }}</span>
+    <br>
+    <span>Updated On</span>:<span class="profile-data">{{ currentUser.update_on | date }}</span>
+    <br>
+    <span>Last Log</span>:<span class="profile-data">{{ currentUser.last_log | date }}</span>
+    <br>
+    <span>Is Enabled</span>:<span class="profile-data">{{ currentUser.enabled }}</span>
+    <br>
+  </div>
+  <tnv-logout class="mt-3"></tnv-logout>
+</div>
+
+<div class="row fav-tab details">
+  <table>
+    <tr>
+      <th class="one">userId</th>
+      <th class="two">Id</th>
+      <th class="thr">movieId</th>
+      <th class="fou">createdAt</th>
+      <th class="fiv">updatedAt</th>
+    </tr>
+    <tr *ngFor=" let cosa of favServ.favourites">
+      <td>{{cosa.userId}}</td>
+      <td>{{cosa.id}}</td>
+      <td>{{cosa.movieId}}</td>
+      <td>{{cosa.createdAt}}</td>
+      <td>{{cosa.updatedAt}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="fav-carousel">
+  <app-favourites-carousel></app-favourites-carousel>
+</div>

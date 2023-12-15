@@ -1,0 +1,17 @@
+
+  <div class="first-text">
+    <p>Ordina i film per <span>{{printGameType()}}</span> considerando che:</p> 
+    <p>Il primo film a sinistra sará il {{stringCondPrint}}</p> 
+  </div>
+  
+  <!-- material che organizza orizzontalmente i dati per il drag and drop -->
+  <div cdkDropList cdkDropListOrientation="horizontal" class="list" (cdkDropListDropped)="drop($event)">
+    <!-- elenca i dati di randomMovies da riordinare -->
+    <div class="box" *ngFor="let movie of randomMovies" cdkDrag>
+      <img class="img-siz" src="https://image.tmdb.org/t/p/w185/{{movie.poster_path}}" [alt]="movie.title"> 
+    </div>
+  </div>
+
+  <div class="tasto-pos" >
+    <app-button btn_text="VAI AL PUNTEGGIO" (click)="checkResult()"></app-button>
+  </div>

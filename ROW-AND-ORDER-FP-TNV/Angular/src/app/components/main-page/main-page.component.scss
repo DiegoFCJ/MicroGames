@@ -1,0 +1,48 @@
+.wrapper {
+  font-family: "Raleway", sans-serif;
+  margin: 1.5rem 5rem;
+}
+
+section.hero {
+color: rgb(7, 7, 7);
+height: 70vh;
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+flex-direction: row;
+h1 {
+  font-size: 80px;
+  font-weight: 900;
+  line-height: 80px;
+  margin-bottom: 30px;
+}
+}
+
+section.leftherosec{
+border: 1px solid;
+width: 200px;
+}
+
+.subhead {
+font-size: 25px;
+font-weight: 10;
+margin-bottom: 30px;
+margin-top: 50px;
+}
+
+/*https://www.onestoespietato.com/wp-content/uploads/2021/02/libri-su-charlie-chaplin-2.jpg*/
+.heroimg {
+margin-top: 70px;
+width: 58%;
+background-image: url('https://www.onestoespietato.com/wp-content/uploads/2021/02/libri-su-charlie-chaplin-2.jpg');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+border-radius: 10px;
+}
+
+h1 {
+font-size: 3rem;
+margin-top: 2em;
+line-height: 3.3rem;
+}

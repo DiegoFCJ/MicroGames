@@ -1,0 +1,35 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-3">
+        <img
+        [src]="imageBaseUrl + movie.poster_path"
+        class="card-img-top"
+        />
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title | titlecase }}</h5>
+          <p class="card-text">
+            
+            <ng-template #content let-c="close" let-d="dismiss">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Inserisci una recensione e dai un voto a {{movie.title}}</h4>
+                <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+              </div>
+              <div class="modal-body">
+                <tnv-add-rating-review [movie]="movie"></tnv-add-rating-review>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Salva</button>
+              </div>
+            </ng-template>
+            <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{
+              successMessage }}
+            </ngb-alert>
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+              <button type="submit" *ngIf="onSubmit" class="form-label btn btn-primary rounded submit px-3 mt-2" (click)="open(content)" (click)="changeSuccessMessage()">Aggiungi ai preferiti</button>
+            </form>
+        </div>
+      </div>
+    </div>
+</div>

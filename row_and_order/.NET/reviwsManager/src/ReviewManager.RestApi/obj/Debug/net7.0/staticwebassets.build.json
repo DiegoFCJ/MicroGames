@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "DJ97gTLiSb/XQSLwTuIC4oaArw0DhDBMAn7Kiw1HSo0=",
+  "Source": "ReviewManager.RestApi",
+  "BasePath": "_content/ReviewManager.RestApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

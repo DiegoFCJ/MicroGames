@@ -1,0 +1,11 @@
+.bod {
+    background-image: url("../assets/images/background-grey.jpg") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top;
+    height: 95vh; /* Imposta l'altezza al 100% dell'altezza del viewport */
+    width: 100vw; /* Imposta la larghezza al 100% della larghezza del viewport */
+    margin: 0;
+    padding: 0;
+}

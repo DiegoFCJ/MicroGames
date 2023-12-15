@@ -1,0 +1,34 @@
+<div class="titoloGioco">
+    <h1> <span>Best games</span> </h1>
+  </div>
+  
+
+<div id="rank" class="mat-elevation-z8">
+
+
+    <table mat-table #table [dataSource]="usersOrdered">
+
+        <ng-container matColumnDef="count">
+            <th mat-header-cell *matHeaderCellDef> # </th>
+            <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+        </ng-container>
+        <ng-container matColumnDef="userName">
+            <th mat-header-cell *matHeaderCellDef> Player </th>
+            <td mat-cell *matCellDef="let element"> {{element.userName | titlecase}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="score">
+            <th mat-header-cell *matHeaderCellDef> Scores </th>
+            <td mat-cell *matCellDef="let element"> {{element.score}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Game Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.createdAt | date: 'medium' }}</td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>

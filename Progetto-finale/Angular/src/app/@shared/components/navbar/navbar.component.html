@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top px-3">
+  <a class="navbar-brand" routerLink="/">Raw&Order</a>
+  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+    data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/welcome" routerLinkActive="active">Welcome</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/game" routerLinkActive="active">Gioca</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/rankings" routerLinkActive="active">Classifica</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/profile" routerLinkActive="active">Preferiti</a>
+      </li>
+      <div class="icona">
+      <li ngbDropdown display="dynamic" placement="bottom-end" class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle><svg
+            xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-circle"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+            <path fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+          </svg></button>
+        <div class="finestra" ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+          <h2 class="profile-data1">Bentornato, {{currentUser.username }}!</h2>
+          <h3 class="profile-data2">Nome: {{currentUser.name }}</h3>
+          <h3 class="profile-data2">Cognome: {{currentUser.surname }}</h3>
+
+          <tnv-logout class="logout-button mt-3"></tnv-logout>
+        </div>
+      </li>
+    </div>
+    </ul>
+  </div>
+</nav>

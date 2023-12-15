@@ -1,0 +1,92 @@
+<div class="first-text">
+<p>You Totalized <span>{{movieServ.rating}}</span> Scores </p>
+</div>
+<div class="first-text">
+<p>Your Best Score Is: <span>{{userServ.saveNewBestScoreOnSpringDb(1)}}</span></p>
+</div>
+<div class="first-text">
+  <p>You can click on the rotating film cards to see the card of each film</p>
+</div>
+<div class="slider">
+  <span *ngFor="let movieEl of movieServ.ordMovies; let i = index" style="--i:{{i}};">
+    <button (click)="movieServ.open(filmCart, movieServ.ordMovies[movieServ.numChange(i)].id)">
+      <img src="https://image.tmdb.org/t/p/w185/{{ movieServ.ordMovies[i].poster_path }}"/>
+    </button>
+  </span>
+</div> 
+
+<div class="first-text">
+  <p>This is the list ordered correctly</p>
+</div>
+<div class="list">
+  <div class="box" *ngFor="let movieElement of movieServ.ordMovies; let j = index">
+    <p>{{j+1}}°</p>
+    <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
+  </div>
+</div>
+
+<div class="first-text"> 
+  <p>This is the list ordered by you</p>
+</div>
+<div class="list">
+  <div class="box" *ngFor="let movieElement of movieServ.randomMovies; let j = index">
+    <p>{{j+1}}°</p>
+    <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
+  </div>
+</div>
+
+<ng-template #filmCart let-c="close" let-d="dismiss">
+<div class="card">
+  <div class="row g-0">
+    <div class="card-img">
+      <button class="close-btn" (click)="d('close-click')">❌</button>
+      <img class="img-fluid rounded-start" src="https://image.tmdb.org/t/p/w185/{{movieServ.ordMovies[movieServ.num].poster_path}}">
+      
+      <div class="show-card-btn">
+        <app-button-sign class="all-btn btn-l" type="button" btn_text="Review" (click)="movieServ.open(content, movieServ.ordMovies[movieServ.num].id)"></app-button-sign>
+        <app-button-sign class="all-btn btn-cent" type="button" btn_text="Favourite" (click)="movieServ.saveFavourite()"></app-button-sign>
+        <app-button-sign class="all-btn btn-r" type="button" btn_text="Details" (click)="movieServ.justOpenTempl(details)"></app-button-sign>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</ng-template>
+
+<ng-template #details let-d="dismiss">
+
+<div style="position: relative;">
+  <button class="close-btn" (click)="d('close-click')">❌</button>
+  <div class="card-img card-body" style="width: 100%; max-height: 100%;">
+    <h5 class="card-title">{{movieServ.ordMovies[movieServ.num].original_title}}</h5>
+    <p class="card-text">{{movieServ.ordMovies[movieServ.num].overview}}</p>
+    <p class="card-text">Budget: {{movieServ.ordMovies[movieServ.num].budget}}</p>
+    <p class="card-text adult">{{movieServ.adultsFilm(movieServ.ordMovies[movieServ.num].adult)}}</p>
+  </div>
+</div>
+
+</ng-template>
+
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <div class="modal-header">
+    <h4 class="modal-title" >Good Choice!</h4>
+    <button class="close-btn" type="button" (click)="d('Cross click')">❌</button>
+  </div>
+  <div class="modal-body">
+    <form class="format" #data="ngForm" (ngSubmit)="movieServ.onSubmit(data)">
+      <ngb-rating class="rating" [(rate)]="movieServ.currentRate" ngModel name="rating"></ngb-rating>
+      <hr />
+      <pre>Rate: <b>{{movieServ.currentRate}}</b></pre>
+      <mat-form-field class="review" appearance="fill">
+        <input placeholder="This Film Is Wonderful! I love It!!" matInput type="text" ngModel name="comment" required />
+      </mat-form-field>
+      <button class="btn-bg-none" type="submit" (click)="c('Save click')">
+        <app-button-sign btn_text="Save"></app-button-sign>
+      </button>
+    </form>
+  </div>
+
+</ng-template>

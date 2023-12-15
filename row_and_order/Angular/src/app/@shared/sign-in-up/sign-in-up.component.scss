@@ -1,0 +1,63 @@
+.align{
+  align-items: center;
+  justify-content: center;
+  height: 100vh
+}
+
+.sign-card {
+  width: 88%;
+}
+
+.img {
+  display: flex;
+  background-image: url('../../../assets/images/main_page.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  top: 0;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+}
+
+.sign-change{
+  position: relative;
+}
+
+.center-class{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: 0.1px solid red;
+  background-color: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+
+}
+
+
+@media only screen and (max-width: 768px){
+
+.sign-card {
+  width: 44%;
+}
+  .img {
+    height: 300px;
+  }
+}
+
+.btn{
+  border: none; 
+  background: none;
+}
+
+#visNone{
+  width:28%;
+}
+

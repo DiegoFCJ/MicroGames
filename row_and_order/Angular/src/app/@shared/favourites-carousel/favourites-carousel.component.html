@@ -1,0 +1,48 @@
+<div class="up-father row row-cols-md-3 g-4">
+  <div class="col card-father" *ngFor="let movieEl of movieServ.favouriteMovies; let i = index">
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w185/{{movieServ.favouriteMovies[movieServ.numChange(i)].poster_path}}" class="card-img" alt="..."/>
+        <div class="card-img-overlay">
+          <div class="show-card-btn">
+              <app-button-sign class="all-btn" type="button" btn_text="Review" (click)="currentRateTest()" (click)="movieServ.open(content, movieServ.favouriteMovies[movieServ.num].id)"></app-button-sign>
+              <app-button-sign class="all-btn" type="button" btn_text="Delete Favourite" (click)="movieServ.saveFavourite()"></app-button-sign>
+          </div>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted card-title">{{movieServ.favouriteMovies[movieServ.numChange(i)].title}}</small>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!--
+<ng-template #details let-d="dismiss">
+
+  <div style="position: relative;">
+    <button class="close-btn" (click)="d('close-click')" (click)="movieServ.clickFavCheck = false;" (click)="movieServ.profileInfoClickCheck()">❌</button>
+    <div class="card-img card-body" style="width: 100%; max-height: 100%;">
+      <h5 class="card-title">{{movieServ.favouriteMovies[movieServ.num].original_title}}</h5>
+      <p class="card-text">{{movieServ.favouriteMovies[movieServ.num].overview}}</p>
+      <p class="card-text">Budget: {{movieServ.favouriteMovies[movieServ.num].budget}}</p>
+      <p class="card-text adult">{{movieServ.adultsFilm(movieServ.favouriteMovies[movieServ.num].adult)}}</p>
+    </div>
+  </div>
+
+</ng-template>
+-->
+
+<ng-template #content let-c="close" let-d="dismiss">
+
+  <div class="body">
+    <h4>{{movieServ.favouriteMovies[movieServ.num].title}}</h4>
+    <button class="close-btn" type="button" (click)="d('Cross click')">❌</button>
+    <hr>
+    <pre>Rate: <b>{{favServ.favourites[movieServ.num].rating}}</b></pre>
+    <ngb-rating class="rating" [(rate)]="favServ.favourites[movieServ.num].rating" name="rating"></ngb-rating>
+    <hr>
+    <p class="review">{{favServ.favourites[movieServ.num].comment}}</p>
+    <app-button-sign type="button" (click)="c('Save click')" class="all-btn" btn_text="Delete"></app-button-sign>
+    <app-button-sign type="button" (click)="c('Save click')" class="all-btn" btn_text="Update"></app-button-sign>
+  </div>
+  
+</ng-template>

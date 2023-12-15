@@ -1,0 +1,53 @@
+table{
+    justify-content: center;
+    width: 80%;
+    height: 80%;
+    margin: 60px;
+}
+
+table th, td {
+    text-align: center;
+  }
+
+  button {
+    margin: 16px 8px;
+  }
+
+  .titoloGioco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: "Raleway", sans-serif;
+    margin-bottom: 70px;
+  }
+
+  .titoloGioco span{
+    color: #c02936;
+  }
+
+  .gameRules {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 50px;
+  }
+
+  .gameRules a{
+    color: black;
+  }
+
+  .gameRules a:hover{
+    color: #c02936;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 100px;
+    letter-spacing: 4px;
+  }
+
+  #rank{
+    margin: 100px;
+  }

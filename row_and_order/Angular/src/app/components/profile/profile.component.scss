@@ -1,0 +1,104 @@
+/** ** film cards ** **/
+.up-father{
+    position: relative;
+    top: 60px;
+    left: 9%;
+    translate: -3%;
+  }
+  
+  .card-father{
+    padding-bottom: 40px;
+  }
+  
+  .card{
+    width: 300px;
+    max-height: 400px; 
+  }
+  .card-img{
+    height: 400px;
+  }
+  
+  .card-img-overlay{
+    align-items: center;
+    text-align: center;
+  }
+  
+  .card-title{
+    text-shadow: -2px 1px 3px white;
+    font-size: 22px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  /** ** review ** **/
+  .body h4{
+    padding-top: 20px;
+  }
+  
+  .body{
+    text-align: center;
+  }
+  
+  
+  .rating{
+    font-size: 30px; 
+    color: red;
+  }
+  
+  .review{
+    text-align: center;
+    box-shadow: inset
+    red 0 0 0.5em 0,
+    white 0 0 1em 0;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  /** ** buttons ** **/
+  
+  .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    border: none;
+    background: black;
+    transform: scale(1.2);
+    box-shadow: inset
+    red 0 0 0.5em 0,
+    white 0 0 1em 0;
+    border-radius: 5px;
+  }
+  
+  .close-btn:hover{
+    transform: scale(2);
+  }
+  
+  .show-fav{
+    position: absolute;
+    top: 78vh;
+    left: 50%;
+    translate: -50%;
+  }
+  
+  .show-card-btn{
+    position: absolute;
+    left: 50%;
+    translate: -50%;
+    bottom: 10px;
+  }
+  
+  .all-btn{
+    border-radius: 50px;
+    box-shadow:
+    red 0 0 0.5em 0,
+    white 0 0 2em 0;
+    scale: 0.8;
+  }
+  
+  .all-btn:hover{
+    box-shadow:none;
+  }
+  

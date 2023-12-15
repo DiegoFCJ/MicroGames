@@ -1,0 +1,20 @@
+<div class="navbar-cont mat-elevation-z8">
+    <a class="nav-link active logo" aria-current="page" href="#">Row<span>And</span>Order</a>
+    <nav>
+
+        <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-center">
+            <li [ngbNavItem]="2" class="nav-item">
+                <a class="nav-link" href="/sign">login/register</a>
+            </li>
+            
+            <li ngbDropdown class="nav-item">
+                <a href (click)="false" class="nav-link" ngbDropdownToggle id="net-status">rankings</a>
+                <div ngbDropdownMenu>
+                    <a ngbDropdownItem class="nav-link" href="/ranking-bestPlayers">Best Players</a>
+                    <div class="dropdown-divider"></div>
+                    <a ngbDropdownItem class="nav-link" href="/ranking-bestGames">Best Games</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</div>

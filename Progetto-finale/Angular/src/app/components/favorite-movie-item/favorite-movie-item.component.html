@@ -1,0 +1,17 @@
+<div class="card shadow col-12 " style="width: 13rem;"> 
+    <img
+    [src]="'https://image.tmdb.org/t/p/w440_and_h660_face' + movie.poster_path"
+        class="card-img-top"
+      />
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ movie.title | titlecase }}
+        </h5>
+        <p class="card-text">
+          <form #deleteMovieFavorite="ngForm" (ngSubmit)="onSubmit(deleteMovieFavorite)">
+            <button type="submit" *ngIf="onSubmit"class="form-label btn btn-primary rounded submit px-3 mt-2">
+              Elimina
+            </button>
+          </form>
+      </div>
+    </div>

@@ -1,0 +1,122 @@
+<div class="register-component">
+  <div
+    class="d-flex align-items-center justify-content-center"
+    style="height: 100vh"
+  >
+    <div class="register-card">
+      <div class="wrap d-md-flex">
+        <div class="img col-12 col-md-6"></div>
+        <div class="col-12 col-md-6 p-4 p-md-5">
+          <div class="d-flex">
+            <div class="w-100">
+              <h3 class="mb-4">Registrati</h3>
+            </div>
+          </div>
+          <form #f="ngForm" (ngSubmit)="register(f)">
+            <div class="form-group">
+              <label class="label" for="name">Nome</label>
+              <input
+                [ngModel]
+                name="name"
+                type="text"
+                class="form-control"
+                placeholder="Nome"
+                required
+                id="name"
+                #name="ngModel"
+              />
+              <small
+                [style.visibility]="
+                  name.invalid && (name.dirty || name.touched)
+                    ? 'visible'
+                    : 'hidden'
+                "
+                class="form-text text-danger"
+                >Campo obbligatorio</small
+              >
+            </div>
+            <div class="form-group">
+              <label class="label" for="surname">Cognome</label>
+              <input
+                [ngModel]
+                name="surname"
+                type="text"
+                class="form-control"
+                placeholder="Cognome"
+                required
+                id="surname"
+                #surname="ngModel"
+              />
+              <small
+                [style.visibility]="
+                  surname.invalid && (surname.dirty || surname.touched)
+                    ? 'visible'
+                    : 'hidden'
+                "
+                class="form-text text-danger"
+                >Campo obbligatorio</small
+              >
+            </div>
+            <div class="form-group">
+              <label class="label" for="username">Username</label>
+              <input
+                [ngModel]
+                name="username"
+                type="text"
+                class="form-control"
+                placeholder="Username"
+                required
+                id="username"
+                #username="ngModel"
+              />
+              <small
+                [style.visibility]="
+                  username.invalid && (username.dirty || username.touched)
+                    ? 'visible'
+                    : 'hidden'
+                "
+                class="form-text text-danger"
+                >Campo obbligatorio</small
+              >
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="password">Password</label>
+              <input
+                [ngModel]
+                required
+                name="password"
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                #password="ngModel"
+              />
+              <small
+                [style.visibility]="
+                  password.invalid && (password.dirty || password.touched)
+                    ? 'visible'
+                    : 'hidden'
+                "
+                class="form-text text-danger"
+                >Campo obbligatorio</small
+              >
+            </div>
+            <div class="form-group">
+              <button
+                type="submit"
+                class="form-control btn btn-primary rounded submit px-3 mt-2"
+              >
+                Registrati
+              </button>
+            </div>
+          </form>
+          <p class="text-center mt-3">
+            Sei già iscritto?
+            <a data-toggle="tab" routerLink="/login">Accedi</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

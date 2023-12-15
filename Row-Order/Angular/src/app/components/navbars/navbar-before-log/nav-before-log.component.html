@@ -1,0 +1,14 @@
+<div class="navbar-cont mat-elevation-z8">
+  <a class="nav-link active logo" aria-current="page" href="/home">Row<span>And</span>Order</a>
+  <nav>
+
+      <ul ngbNav #nav="ngbNav" [activeId]="2" class="nav-tabs justify-content-center">
+          <li [ngbNavItem]="2" class="nav-item">
+            <a class="nav-link" href="/sign">login e registrazione </a>
+          </li>
+          <li [ngbNavItem]="2" class="nav-item">
+            <a ngbDropdownItem class="nav-link" href="/ranking">Classifica</a>
+          </li>
+      </ul>
+  </nav>
+</div>

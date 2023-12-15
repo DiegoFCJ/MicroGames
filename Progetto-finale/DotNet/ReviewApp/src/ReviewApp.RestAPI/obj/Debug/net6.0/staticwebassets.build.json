@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rn38m30MxoOQ5bC1pvK+SpyzGTBwJQD8Iys1vozwFMw=",
+  "Source": "ReviewApp.RestAPI",
+  "BasePath": "_content/ReviewApp.RestAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,69 @@
+<div class="first-text">
+  <p>HAI TOTALIZZATO <span>{{movieServ.rating}}</span> PUNTI</p>
+</div>
+<div class="first-text">
+  <p>Questo é l'ordine corretto dei film</p>
+  <p style="font-size: 20px;">Clicca sulla locandina del film che ti interessa e scegli tra le opzioni preposte</p>
+</div>
+
+<div class="list">
+  <div class="box" *ngFor="let movieElement of movieServ.ordMovies; let i = index">
+    <button (click)="movieServ.openTemplAndSetMovieId(filmCart, movieServ.ordMovies[movieServ.indexSaveToFindFilm(i)].id)">
+      <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
+    </button>
+  </div>
+</div>
+
+<div class="tasto-pos">
+  <app-button btn_text="GIOCA ANCORA" (click)="playAgain()"></app-button>
+</div>
+
+<ng-template #filmCart let-c="close" let-d="dismiss">
+  <div class="card">
+    <div class="row g-0">
+      <div class="card-img">
+        <button class="close-btn" (click)="d('close-click')">❌</button>
+        <img class="img-fluid rounded-start" src="https://image.tmdb.org/t/p/w185/{{movieServ.ordMovies[movieServ.num].poster_path}}">
+        <div class="scale"><app-button class="btn-l" btn_text="Commenta" (click)="movieServ.openTemplAndSetMovieId(content, movieServ.ordMovies[movieServ.num].id)"></app-button></div>
+        <div class="scale"><app-button class="btn-r" btn_text="Dettagli" (click)="movieServ.openTempl(details)"></app-button></div>
+      </div>
+    </div>
+  </div>
+  </ng-template>
+
+  <ng-template #details let-d="dismiss">
+
+    <div style="position: relative;">
+      <button class="close-btn" (click)="d('close-click')">❌</button>
+      <div class="card-img card-body" style="width: 100%; max-height: 100%;">
+        <h5 class="card-title">{{movieServ.ordMovies[movieServ.num].original_title}}</h5>
+        <p class="card-text">{{movieServ.ordMovies[movieServ.num].overview}}</p>
+        <p class="card-text">Budget: {{movieServ.ordMovies[movieServ.num].budget}}</p>
+        <p class="card-text">Entrate: {{movieServ.ordMovies[movieServ.num].revenue}}</p>
+        <p class="card-text">Data di Rilascio: {{movieServ.ordMovies[movieServ.num].release_date}}</p>
+        <p class="card-text">Popolaritá: {{movieServ.ordMovies[movieServ.num].popularity}}</p>
+        <p class="card-text adult">{{adultsFilm(movieServ.ordMovies[movieServ.num].adult)}}</p>
+      </div>
+    </div>
+    
+    </ng-template>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+
+      <div class="modal-header">
+        <h4 class="modal-title" >{{movieServ.ordMovies[movieServ.num].original_title}}</h4>
+        <button class="close-btn" type="button" (click)="d('Cross click')">❌</button>
+      </div>
+      <div class="modal-body">
+        <form class="format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)">
+          <ngb-rating class="rating" [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+          <hr />
+          <pre>Voto: <b>{{currentRate}}</b></pre>
+          <mat-form-field class="review" appearance="fill">
+            <input placeholder="Lascia qui il tuo commento" matInput type="text" ngModel name="comment" required />
+          </mat-form-field>
+            <app-button class="btn-cent" btn_text="Salva Come Preferito" type="submit" (click)="c('Save click')"></app-button>
+        </form>
+      </div>
+    
+    </ng-template>

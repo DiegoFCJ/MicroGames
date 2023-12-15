@@ -1,0 +1,14 @@
+.logout{
+    text-shadow: -1px 1px 2px rgb(64, 62, 62);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+}
+
+.logout:hover {
+    text-shadow: none;
+    color: rgb(194, 24, 24);
+}

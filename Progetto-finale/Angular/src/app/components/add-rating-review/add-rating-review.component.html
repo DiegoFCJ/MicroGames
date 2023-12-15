@@ -1,0 +1,19 @@
+<div class="mb-3">
+    <form #add="ngForm" (ngSubmit)="onSubmit(add)">
+        <label for="recensione" class="form-label">Inserisci recensione</label>
+        <textarea [ngModel] name="recensione" type="text" class="form-control" placeholder="Inserisci recensione"
+            id="recensione" [(ngModel)]="currentRecensione" #recensione="ngModel" rows="3"></textarea>
+        <label for="rating" class="form-label">Voto</label><br>
+        <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&star;</span>&star;
+            </span>
+          </ng-template>
+            <ngb-rating [(rate)]="currentRate" id="rating" [starTemplate]="t" [max]="5"></ngb-rating>
+        <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">{{
+            successMessage }}</ngb-alert>
+        <br>
+        <button type="submit" *ngIf="onSubmit" class="form-label btn btn-primary rounded submit px-3 mt-2 .mx-auto"
+            (click)="changeSuccessMessage()">Aggiungi</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+$primary: #032CA6;
+$secondary: #ffffff;
+$third: #F28705;
+$text: #0D0D0D;
+
+.card-title{
+    font-size: small;
+    font: bold;
+    color: $text;
+}
+
+.card-body{
+    width: fit-content;
+    color: $primary;
+    }
+
+.card-shadow{
+    color: $primary;
+    border: 1px rgb(0, 0, 0);
+    border-style: solid;
+}
+
+.movie-card{
+    border: 1px $secondary;
+    border-style: solid;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 25px black (0, 0, 0, 0.25);
+}
+

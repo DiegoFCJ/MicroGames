@@ -1,0 +1,15 @@
+<div class="row">
+    <h1>Il tuo punteggio è {{rankingService.latestGamePoints}}</h1>
+    <br>
+    <tnv-end-game-item 
+        *ngFor="let movie of movies"
+        [movie]="movie"
+        class="col-12 col-sm-6"
+    ></tnv-end-game-item>
+</div>
+<div class="finish-button d-grid gap-2 col-4 mx-auto">
+<br>
+<button type="submit" class="btn btn-primary btn-lg" 
+    routerLink="/profile" routerLinkActive="active">Salva
+</button>
+<br>

@@ -1,0 +1,17 @@
+
+  <div class="gameRules">
+   <p>The Objective is to order the films going from <span> the oldest </span> to <span> the youngest </span></p> 
+  </div>
+
+  <div cdkDropList cdkDropListOrientation="horizontal" class="list" (cdkDropListDropped)="drop($event)">
+    <div class="box" *ngFor="let movieElement of movieServ.randomMovies" cdkDrag>
+      <img  src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> 
+    </div>
+  </div>
+
+  <div class="btnn">
+      <app-button-sign (click)="movieServ.checkResult()" btn_text="Send"></app-button-sign>
+  </div>
+
+  
+

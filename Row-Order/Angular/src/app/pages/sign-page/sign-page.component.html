@@ -1,0 +1,160 @@
+<body>
+    <div class="section">
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class=""><span class="lf">Entra</span><span class="rt">Registrati</span></h6>
+              <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+              <label for="reg-log"></label>
+              
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+  
+                  <div class="card-front">
+                      <div class="center-wrap">
+                          <div class="section text-center">
+                              <h4 class="mb-4 pb-3 tit">Login</h4>
+                              <form #formLogin="ngForm" (ngSubmit)="login(formLogin)">
+                                  <div class="form-group">
+                                      <input 
+                                      [ngModel] required
+                                      name="username" 
+                                      type="text" 
+                                      class="form-style form-control" 
+                                      placeholder="Inserisci Email/Username" 
+                                      #usernam="ngModel" 
+                                      autocomplete="off"/>
+                                      <i class="input-icon uil uil-at">➥</i>
+                                  </div>	
+                                  <div [style.display]="usernam.invalid && (usernam.dirty || usernam.touched) ? 'block' : 'none'"
+                                    class="text-danger">☢ Manca Lo Username
+                                  </div>
+                                  <div class="form-group mt-2">
+                                      <input 
+                                      [ngModel] required 
+                                      name="password" 
+                                      type="password" 
+                                      class="form-style form-control" 
+                                      placeholder="Inserisci Password" 
+                                      #passwor="ngModel" 
+                                      autocomplete="off"/>
+                                      <i class="input-icon uil uil-lock-alt">➥</i>
+                                  </div>
+                                  <div [style.display]="passwor.invalid && (passwor.dirty || passwor.touched) ? 'block' : 'none'"
+                                    class="text-danger">☢ Manca La Password
+                                  </div>
+                                  <div style="padding: 0;" class="form-group">
+                                      <button type="submit" class="form-control btn mt-4">Entra</button>
+                                  </div>
+                              </form>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="card-back">
+                    <div class="center-wrap">
+  
+                        <div class="section text-center">
+                          <h4 class="mb-4 pb-3 tit">Registrazione</h4>
+                          <form #formRegister="ngForm" (ngSubmit)="register(formRegister)">
+                            <div class="form-group mt-2">
+                              <i class="input-icon uil uil-user">➥</i>
+                              <input 
+                              [ngModel] 
+                              required
+                              name="name" 
+                              type="text" 
+                              class="form-style" 
+                              placeholder="Il Tuo Nome" 
+                              id="name" 
+                              #name="ngModel" 
+                              autocomplete="off" >
+                            </div>	
+                            <div [style.display]="name.invalid && (name.dirty || name.touched) ? 'block' : 'none'"
+                              class="text-danger">☢ Manca Il Nome
+                            </div>
+                            
+                            <div class="form-group mt-2">
+                              <i class="input-icon uil uil-user">➥</i>
+                              <input 
+                              [ngModel] 
+                              required
+                              name="surname" 
+                              type="text" 
+                              class="form-style" 
+                              placeholder="Il Tuo Cognome" 
+                              id="surname" 
+                              #surname="ngModel" 
+                              autocomplete="off" >
+                            </div>	
+                            <div [style.display]="surname.invalid && (surname.dirty || surname.touched) ? 'block' : 'none'"
+                              class="text-danger">☢ Manca Il Cognome
+                            </div>
+
+                            <div class="form-group mt-2">
+                              <i class="input-icon uil uil-user">➥</i>
+                              <input 
+                              [ngModel] 
+                              required
+                              name="username" 
+                              type="text" 
+                              class="form-style" 
+                              placeholder="Il Tuo Username" 
+                              id="username" 
+                              #username="ngModel" 
+                              autocomplete="off" >
+                            </div>	
+                            <div [style.display]="username.invalid && (username.dirty || username.touched) ? 'block' : 'none'"
+                              class="text-danger">☢ Manca Lo Username
+                            </div>
+
+                            <div class="form-group mt-2">
+                              <i class="input-icon uil uil-user">➥</i>
+                              <input 
+                              [ngModel] 
+                              required
+                              name="email" 
+                              type="text" 
+                              class="form-style" 
+                              placeholder="La Tua Email" 
+                              id="email" 
+                              #email="ngModel" 
+                              autocomplete="off" >
+                            </div>	
+                            <div [style.display]="email.invalid && (email.dirty || email.touched) ? 'block' : 'none'"
+                              class="text-danger">☢ Manca L'Email
+                            </div>
+                            
+                            <div class="form-group mt-2">
+                              <i class="input-icon uil uil-user">➥</i>
+                              <input 
+                              [ngModel] 
+                              name="password" 
+                              type="text" 
+                              class="form-style" 
+                              placeholder="La Tua Password" 
+                              required id="password" 
+                              #password="ngModel" 
+                              autocomplete="off" >
+                            </div>	
+                            <div [style.display]="password.invalid && (password.dirty || password.touched) ? 'block' : 'none'"
+                              class="text-danger">☢ Manca La Password
+                            </div>
+
+                            <div class="form-group">
+                              <button type="submit" class="form-control btn mt-4">Registrati</button>
+                            </div>
+                          </form>
+                        </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

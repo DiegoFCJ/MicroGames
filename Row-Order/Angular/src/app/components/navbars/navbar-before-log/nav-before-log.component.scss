@@ -1,0 +1,64 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+.navbar-cont {
+    position: relative;
+}
+
+ a {
+    text-decoration: none;
+}
+
+#net-status{
+    text-decoration: none;
+    }
+
+.logo {
+    text-shadow: -1px 1px 2px rgb(64, 62, 62);
+    height: 50px;
+    color: rgb(7, 7, 7);
+    font-weight: bold;
+    font-size: 2.3rem;
+    position: absolute;
+    left: 5px;
+    top: 30%;
+}
+
+.logo span{
+    color: #c02936;
+}
+
+.navbar-cont :hover{
+    text-shadow: -1px 1px 2px rgb(102, 23, 23);
+    color: #a23c43;
+}
+
+nav {
+    height: 50px;
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+    width: 60%;
+
+}
+nav ul {
+    right: 5px;
+    top: 15%;
+    position: absolute;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+nav ul a {
+    color: black;
+    font-size: 18px;
+}
+nav ul a:hover {
+    color: red;
+}
+
+.nav-link{
+    text-shadow: -1px 1px 2px rgb(64, 62, 62);
+    border: none;
+}

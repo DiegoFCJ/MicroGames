@@ -1,0 +1,48 @@
+.navbar-cont {
+    position: relative;
+}
+
+ a {
+    text-decoration: none;
+}
+
+#net-status{
+    text-decoration: none;
+    }
+
+.logo {
+    height: 50px;
+    color: rgb(7, 7, 7);
+    font-weight: bold;
+    font-size: 2.3rem;
+    position: absolute;
+    left: 5px;
+    top: 30%;
+}
+.logo span{
+    color: #c02936;
+}
+
+nav {
+    height: 50px;
+    font-weight: bold;
+    background: rgb(255, 255, 255);
+    width: 60%;
+
+}
+nav ul {
+    right: 5px;
+    top: 15%;
+    position: absolute;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+}
+nav ul a {
+    color: black;
+    font-size: 18px;
+}
+nav ul a:hover {
+    color: red;
+}

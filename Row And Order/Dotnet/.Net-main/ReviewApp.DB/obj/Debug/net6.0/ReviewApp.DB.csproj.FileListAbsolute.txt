@@ -1,0 +1,68 @@
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.deps.json
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.runtimeconfig.json
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.pdb
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.Core.dll
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.Core.pdb
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.AssemblyReference.cache
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfoInputs.cache
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfo.cs
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CoreCompileInputs.cache
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CopyComplete
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/refint/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.pdb
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.genruntimeconfig.cache
+/Users/mz/Desktop/TNV/Modulo V - .Net/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ref/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.deps.json
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.runtimeconfig.json
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.DB.pdb
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.Core.dll
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/bin/Debug/net6.0/ReviewApp.Core.pdb
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.AssemblyReference.cache
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfoInputs.cache
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.AssemblyInfo.cs
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CoreCompileInputs.cache
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.csproj.CopyComplete
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/refint/ReviewApp.DB.dll
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.pdb
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ReviewApp.DB.genruntimeconfig.cache
+/Users/mz/Desktop/TNV/progetto finale/ReviewApp/ReviewApp.DB/obj/Debug/net6.0/ref/ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.deps.json
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.runtimeconfig.json
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.Core.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.Core.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.AssemblyReference.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.AssemblyInfoInputs.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.AssemblyInfo.cs
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.CoreCompileInputs.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.CopyComplete
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\refint\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.genruntimeconfig.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\row_and_order\.NET\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ref\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.deps.json
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.runtimeconfig.json
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.DB.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.Core.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\bin\Debug\net6.0\ReviewApp.Core.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.AssemblyReference.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.AssemblyInfoInputs.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.AssemblyInfo.cs
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.CoreCompileInputs.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.csproj.CopyComplete
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\refint\ReviewApp.DB.dll
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.pdb
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ReviewApp.DB.genruntimeconfig.cache
+C:\PROGRAMMAZIONE\repositoryGitHub\Row And Order\Dotnet\.Net-main\ReviewApp.DB\obj\Debug\net6.0\ref\ReviewApp.DB.dll

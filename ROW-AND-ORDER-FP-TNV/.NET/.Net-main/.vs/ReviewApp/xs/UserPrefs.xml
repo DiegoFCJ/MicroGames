@@ -1,0 +1,67 @@
+﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{70DF1ECC-4E35-451F-BE9F-E38D6F03BEDA}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ReviewApp.Core/ReviewApplicationManager.cs">
+    <Files>
+      <File FileName="ReviewApp.Core/Model/Review.cs" Line="12" Column="59" />
+      <File FileName="ReviewApp.Core/Service/StorageService.cs" Line="9" Column="70" />
+      <File FileName="ReviewApp.Core/ReviewApplicationManager.cs" Line="43" Column="47" />
+      <File FileName="ReviewApp.Core/Exceptions/ReviewNotFoundException.cs" Line="6" Column="118" />
+      <File FileName="ReviewApp.Core/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" Line="4" Column="12" />
+      <File FileName="../../../../../../usr/local/share/dotnet/sdk/6.0.401/Microsoft.Common.CurrentVersion.targets" Line="2302" Column="5" />
+      <File FileName="ReviewApp.RestAPI/Controllers/ReviewController.cs" Line="110" Column="64" />
+      <File FileName="ReviewApp.RestAPI/Program.cs" Line="43" Column="1" />
+      <File FileName="ReviewApp.DB/Model/ReviewEntity.cs" Line="7" Column="20" />
+      <File FileName="ReviewApp.DB/ApplicationContext.cs" Line="14" Column="94" />
+      <File FileName="ReviewApp.RestAPI/Model/ReviewDto.cs" Line="12" Column="50" />
+      <File FileName="ReviewApp.RestAPI/Model/ReviewRequest.cs" Line="15" Column="41" />
+      <File FileName="ReviewApp.DB/MySqlStorageService.cs" Line="72" Column="9" />
+      <File FileName="ReviewApp.RestAPI/Model/ErrorResponse.cs" Line="1" Column="1" />
+      <File FileName=".vs/ReviewApp/xs/UserPrefs.xml" Line="1" Column="1" />
+      <File FileName="ReviewApp.DB/Mapper/ReviewEntityMapper.cs" Line="11" Column="89" />
+      <File FileName="ReviewApp.RestAPI/Mapper/ReviewDtoMapper.cs" Line="13" Column="33" />
+      <File FileName="ReviewApp.DB/Migrations/20221116180256_CreateCommentTable.cs" Line="1" Column="1" />
+      <File FileName="ReviewApp.DB/Migrations/20221116180256_CreateCommentTable.Designer.cs" Line="1" Column="1" />
+      <File FileName="ReviewApp.DB/Migrations/ApplicationContextModelSnapshot.cs" Line="1" Column="1" />
+      <File FileName="ReviewApp.RestAPI/Properties/launchSettings.json" Line="1" Column="1" />
+      <File FileName="ReviewApp.RestAPI/appsettings.json" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ReviewApp" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="ReviewApp.Core" expanded="True">
+                <Node name="Exceptions" expanded="True" />
+                <Node name="Model" expanded="True" />
+                <Node name="Service" expanded="True" />
+                <Node name="ReviewApplicationManager.cs" selected="True" />
+              </Node>
+              <Node name="ReviewApp.DB" expanded="True">
+                <Node name="Mapper" expanded="True" />
+                <Node name="Model" expanded="True" />
+              </Node>
+              <Node name="ReviewApp.RestAPI" expanded="True">
+                <Node name="Dependencies" expanded="True">
+                  <Node name="PackageDependencies" expanded="True" />
+                </Node>
+                <Node name="Controllers" expanded="True" />
+                <Node name="Mapper" expanded="True" />
+                <Node name="Model" expanded="True" />
+                <Node name="Properties" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.src.ReviewApp.RestAPI PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
