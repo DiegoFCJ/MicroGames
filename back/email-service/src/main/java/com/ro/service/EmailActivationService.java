@@ -182,11 +182,7 @@ public class EmailActivationService {
 
     public boolean doesEnabledTokenExists(String email){
         List<VerificationToken> tokens = vTRepo.findByEmail(email);
-        if (!tokens.isEmpty()) {
-            return tokens.stream().anyMatch(VerificationToken::isEnabled);
-        } else {
-            return false; // Se ci sono più di 1 token, restituisce false
-        }
+        return tokens.stream().anyMatch(token -> !token.isEnabled());
     }
 
     public VerificationToken getToken(Long userId){

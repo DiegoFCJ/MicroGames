@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoginDTO, RegisterDTO, RegistrationResponse, SpringResponse, User, UserForEmailService } from 'src/models/user';
+import { LoginDTO, PassChoiceUpdateDTO, RegisterDTO, RegistrationResponse, SpringResponse, User, UserForEmailService } from 'src/models/user';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
@@ -50,9 +50,10 @@ export class AuthService {
     return this.http.get(`${this.springBootUrl}/getUserByEmail/${user}`);
   }
   
-  changePassword(user: UserForEmailService): Observable<any> {
-    return this.http.post(`${this.springBootUrl}/getUserByEmail`, user);
+  updateUserChoice(user: any, choice: string): Observable<any> {
+    return this.http.put(`${this.springBootUrl}/updateChoice?choice=${choice}`, user);
   }
+  
 
   
 }

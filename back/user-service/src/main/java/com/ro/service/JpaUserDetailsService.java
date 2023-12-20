@@ -185,9 +185,9 @@ public class JpaUserDetailsService implements UserDetailsService {
             userRepo.save(resultUser);
 
             if(choice.equals("password")){
-                return resultUser.getUsername() + "'s " + choice + " has been Changed";
+                return choice + " has been Changed";
             }
-            return resultUser.getUsername() + "'s " + choice + " Changed From: " + oldValue + " To: " + newValue + " with Success";
+            return choice + " Changed From: " + oldValue + " To: " + newValue + " with Success";
         }
         return "some user's input data is wrong" + choice;
     }
@@ -284,22 +284,4 @@ public class JpaUserDetailsService implements UserDetailsService {
     }
 
 
-/*
-    public String recoverPassword(User user) {
-        User resultUser = userRepo
-                .findByEmail(user.getEmail())
-                .orElseThrow(() -> new IndexOutOfBoundsException("User not found with the email: " + user.getEmail()));
-
-        resultUser.setId(resultUser.getId());
-        resultUser.setPassword(encoder.encode(user.getPassword()));
-        resultUser.setRoles(resultUser.getRoles());
-        resultUser.setEmail(resultUser.getEmail());
-
-        if (resultUser != null) {
-            userRepo.save(user);
-            return "User Updated Correctly";
-        } else {
-            return "An Error Occurred Updating The User";
-        }
-    }*/
 }

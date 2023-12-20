@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertsService } from 'src/mockup/alerts.service';
-import { RecoverDTO } from 'src/models/user';
+import { PassChoiceUpdateDTO, RecoverDTO, RegistrationResponse } from 'src/models/user';
 import { AuthService } from 'src/services/auth.service';
 import { EmailService } from 'src/services/email.service';
 import * as Messages from 'src/const-messages/messages'
@@ -49,10 +49,7 @@ export class PasswordRecoveryComponent implements OnInit {
         email: emailFromRoute,
         password: "",
       };
-      this.tokenFromRoute = tokenFromRoute;
-
-      console.log(this.user);
-      
+      this.tokenFromRoute = tokenFromRoute;      
     }else{
       this.alertServ.showErrorAlert(Messages.LIN_EXPIRED);
     }
@@ -64,8 +61,23 @@ export class PasswordRecoveryComponent implements OnInit {
       this.emailServ.confirmRecoverPassword(this.tokenFromRoute).subscribe({
 
         next: (res) => {
+          console.log("1");
           if(res === "Confermato!"){
-            this.alertServ.showSuccessAlert(res);
+            console.log("2");
+            this.authServ.updateUserChoice(this.user, "password").subscribe({
+              next: (response) => {
+                console.log("3");
+                if(response === "password has been Changed"){
+                  this.alertServ.showSuccessAlert(response);
+                }
+                this.alertServ.showInfoAlert(response);
+              },
+
+              error: (error) => {
+                console.log("4");
+                this.alertServ.showErrorAlert(error.error.text);
+              }
+            })
           }
           this.alertServ.showErrorAlert(res);
         },

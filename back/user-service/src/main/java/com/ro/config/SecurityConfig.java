@@ -31,6 +31,7 @@ public class SecurityConfig {
                         .antMatchers("/api/user/**").permitAll()
                         .antMatchers("/api/user/signIn").permitAll()
                         .antMatchers("/api/user/signUp").permitAll()
+                        .antMatchers("/api/user/updateChoice/**").permitAll()
                         .anyRequest().permitAll()
                 )
                 .userDetailsService(service)

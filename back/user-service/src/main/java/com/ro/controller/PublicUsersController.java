@@ -63,8 +63,8 @@ public class PublicUsersController{
         return userService.updateUser(id, user);
     }
 
-    @PutMapping("/updateChoice")
-    public String updateUserChoice(@RequestBody User user, String choice) {
+    @PutMapping("/updateChoice/{choice}")
+    public String updateUserChoice(@RequestBody User user, @PathVariable("choice") String choice) {
         return userService.updateUserChoice(user, choice);
     }
 

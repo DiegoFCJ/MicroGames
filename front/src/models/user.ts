@@ -47,3 +47,10 @@ export interface UserForEmailService {
   email: string;
 }
 
+export interface PassChoiceUpdateDTO {
+  user: RecoverDTO;
+  choice: string;
+}
+
+
+
