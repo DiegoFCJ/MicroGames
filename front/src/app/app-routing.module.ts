@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'sign', component: SignPageComponent },
   { path: 'activation/:token', component: EmailActivatedComponent},
-  { path: 'forgotPassword/:email/:token', component: PasswordRecoveryComponent }
+  { path: 'forgotPassword/:id/:email/:token', component: PasswordRecoveryComponent }
 ];
 
 @NgModule({

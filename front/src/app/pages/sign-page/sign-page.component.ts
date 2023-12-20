@@ -20,6 +20,7 @@ export class SignPageComponent implements OnInit {
   isPassToRecover: boolean = false;
   regLogChecked: boolean = false;
   userForEmailService!: UserForEmailService;
+  userPlusMessage!: RegistrationResponse;
 
   constructor(
     private authServ: AuthService, 
@@ -97,16 +98,13 @@ export class SignPageComponent implements OnInit {
         },
         error: (error) => {
           // Gestisci gli errori della richiesta HTTP
-          this.alertServ.showErrorAlert('Errore durante la registrazione.');
+          this.alertServ.showErrorAlert('Username gia in uso');
           // Puoi anche gestire l'errore in modo più specifico a seconda delle tue esigenze
         }
       });
     }
   }
   
-  
-  
-
   login(form: NgForm) {
     this.movieSer.userNameLogged = form.value.username;
     form.control.markAllAsTouched();
@@ -142,17 +140,33 @@ export class SignPageComponent implements OnInit {
       this.isPassToRecover = false;
     }, 500);
   }
-
-  recoverPass(form: NgForm) {
+  
+  sendRecoveryMail(form: NgForm) {
     if (form.valid) {
-      this.emailServ.passRecovery(form.value.email).subscribe({
-        next: (res) => {
-          console.log(res);
-          this.alertServ.showInfoAlert(res)
+      this.authServ.getUserByEmail(form.value.email).subscribe({
+
+        next: (respFromEmailServ) => {
+          if (respFromEmailServ.user) {
+            this.emailServ.sendRecoveryMail(respFromEmailServ.user).subscribe({
+
+              next: (res) => {
+                this.alertServ.showInfoAlert(res);
+              },
+
+              error: (error) => {
+                this.alertServ.showErrorAlert(error.error.text);
+              }
+
+            });
+          } else {
+            this.alertServ.showInfoAlert(Messages.ERR_GENERIC); 
+          }
         },
+
         error: (error) => {
           this.alertServ.showErrorAlert(error.error.text);
         }
+
       });
     }
   }

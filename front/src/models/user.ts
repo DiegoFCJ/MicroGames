@@ -10,6 +10,7 @@ export interface LoginDTO {
 }
 
 export interface RecoverDTO {
+  id: number;
   email: string;
   password: string;
 }

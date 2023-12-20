@@ -1,0 +1,1 @@
+sudo kill $(sudo lsof -t -i:8090 -i:8091 -i:8092 -i:8093 -i:8094)

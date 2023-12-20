@@ -80,3 +80,7 @@ export const SCORE_SUCCESS = "Punteggio salvato con successo!";
 export const SCORE_SUCCESS_INFO = "Ora seleziona i film che ti piacciono e lasciaci sopra la tua review!";
 export const SCORE_ERR = "Errore durante il salvataggio del punteggio:\n";
 export const SCORE_INFO = "Chiamata completata";
+
+
+/** GENERIC */
+export const ERR_GENERIC = "Qualcosa è andato storto!";

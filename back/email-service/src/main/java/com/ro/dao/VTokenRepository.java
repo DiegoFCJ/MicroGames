@@ -4,6 +4,7 @@ import com.ro.model.VerificationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -11,5 +12,5 @@ import java.util.Optional;
 public interface VTokenRepository extends JpaRepository<VerificationToken, Long> {
     Optional<VerificationToken> findByToken(String token);
     Optional<VerificationToken> findByUserId(Long userId);
-    Optional<VerificationToken> findByEmail(String email);
+    List<VerificationToken> findByEmail(String email);
 }

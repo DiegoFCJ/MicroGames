@@ -13,9 +13,8 @@ import * as Messages from 'src/const-messages/messages'
   styleUrls: ['./password-recovery.component.scss']
 })
 export class PasswordRecoveryComponent implements OnInit {
-  token: string = "";
-  email: string = "";
-  user: RecoverDTO = { email: '', password: '' };
+  user!: RecoverDTO;
+  tokenFromRoute!: string;
 
   constructor(
     private authServ: AuthService, 
@@ -34,32 +33,47 @@ export class PasswordRecoveryComponent implements OnInit {
       );
       this.router.navigateByUrl(Messages.ROT_HOME);
     }else{
-      this.getSendToken()
+      this.isDataNotNull()
     }
   }
 
-  getSendToken(){
+  isDataNotNull(){
+    const idFromRoute = this.route.snapshot.paramMap.get('id');
     const tokenFromRoute = this.route.snapshot.paramMap.get('token');
     const emailFromRoute = this.route.snapshot.paramMap.get('email');
-    if (tokenFromRoute !== null && emailFromRoute !== null) {
-      this.token = tokenFromRoute;
-      this.email = emailFromRoute; 
+    console.log(idFromRoute)
+
+    if (tokenFromRoute !== null && emailFromRoute !== null && idFromRoute !== null) {
+      this.user = {
+        id: Number(idFromRoute),
+        email: emailFromRoute,
+        password: "",
+      };
+      this.tokenFromRoute = tokenFromRoute;
+
+      console.log(this.user);
+      
     }else{
       this.alertServ.showErrorAlert(Messages.LIN_EXPIRED);
     }
   }
 
-  recoverPassword(form: NgForm) {
+  changePassword(form: NgForm) {
     if (form.valid) {
-      this.user.email = this.email;
       this.user.password = form.value.nuovaPassword;
-      this.emailServ.recoverPassword(this.user, this.token).subscribe({
+      this.emailServ.confirmRecoverPassword(this.tokenFromRoute).subscribe({
+
         next: (res) => {
-          this.alertServ.showWarningAlert(res);
+          if(res === "Confermato!"){
+            this.alertServ.showSuccessAlert(res);
+          }
+          this.alertServ.showErrorAlert(res);
         },
+
         error: (error) => {
           this.alertServ.showErrorAlert(error.error.text);
         }
+
       })
     }
   }

@@ -19,14 +19,12 @@ public class EmailController {
 
     @PostMapping("/sendEmail")
     public String sendEmail(@RequestBody UserForEmailService user) {
-        System.out.println("controller: " + user);
         return service.sendMail(user);
     }
 
     @PostMapping("/activation")
     public ResponseEntity<UserIdPlusResponseDTO> activation(@RequestParam String token){
         UserIdPlusResponseDTO response = service.confirmEmail(token);
-
         if (response.getUserId() != null) {
             return ResponseEntity.ok(response);
         } else {
@@ -34,13 +32,13 @@ public class EmailController {
         }
     }
 
-    @PostMapping("/passRecovery")
-    public String passRecovery(@RequestParam UserForEmailService email){// questa chiedeva solo la mail
-        return service.sendRecoveryMail(email);
+    @PostMapping("/sendRecoveryMail")
+    public String sendRecoveryMail(@RequestBody UserForEmailService userForEmailService){
+        return service.sendRecoveryMail(userForEmailService);
     }
 
-    @PostMapping("/recoverPassword")
-    public ResponseEntity<String> recoverPassword(@RequestBody UserForEmailService user, @RequestParam String token) {
-        return service.updateUserPass(user, token);
+    @PostMapping("/confirmRecoverPassword")
+    public String confirmRecoverPassword(@RequestBody String token) {
+        return service.confirmRecoverPassword(token);
     }
 }

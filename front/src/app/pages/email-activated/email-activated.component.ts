@@ -11,6 +11,7 @@ import { AuthService } from 'src/services/auth.service';
 })
 export class EmailActivatedComponent implements OnInit {
   token: string = "";
+  userId!: number;
 
   constructor(
     private route: ActivatedRoute, 
@@ -32,10 +33,12 @@ export class EmailActivatedComponent implements OnInit {
       this.token = tokenFromRoute; // Assegna il valore solo se non è null
       this.emailServ.activation(this.token).subscribe(RES => {
         this.alertServ.showInfoAlert(RES.response);
+        console.log(RES)
 
         // Aggiungiamo la chiamata al metodo setUserEnabledByUserId dopo l'alert
-        const userId = RES.userId; // Sostituisci con il modo corretto di ottenere l'ID dell'utente
-        this.authServ.setUserEnabledByUserId(userId).subscribe(response => {
+        this.userId = RES.userId; // Sostituisci con il modo corretto di ottenere l'ID dell'utente
+        this.authServ.setUserEnabledByUserId(this.userId).subscribe(response => {
+          console.log("dentro setUserEnabledByUserId");
           console.log(response);
         });
       });

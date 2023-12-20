@@ -1,5 +1,6 @@
 package com.ro.controller;
 
+import com.ro.dto.PasswordRecoveryResponseDTO;
 import com.ro.dto.RegistrationResponseDTO;
 import com.ro.model.User;
 import com.ro.service.JpaUserDetailsService;
@@ -30,6 +31,16 @@ public class PublicUsersController{
     @PostMapping("/signIn")
     public ResponseEntity<?> signIn(@RequestBody User user){
         return userService.signIn(user);
+    }
+
+    @GetMapping("/getUserByEmail/{email}")
+    public ResponseEntity<PasswordRecoveryResponseDTO> getUserByEmail(@PathVariable("email") String email) {
+        PasswordRecoveryResponseDTO response = userService.getUserByEmail(email);
+        if (response != null) {
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.badRequest().body(response);
+        }
     }
 
     @GetMapping("/{id}")
@@ -63,13 +74,14 @@ public class PublicUsersController{
     }
 
     @PostMapping("/setUserEnabledByUserId")
-    public ResponseEntity<String> setUserEnabledByUserId(@RequestParam Long userId){
+    public ResponseEntity<String> setUserEnabledByUserId(@RequestBody Long userId) {
         String response = userService.setUserEnabledByUserId(userId);
-
-        if (!Objects.equals(response, "Qualcosa e' andato storto")) {
+        if (!response.equals("Qualcosa e' andato storto")) {
             return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.badRequest().body(response);
         }
     }
-    }
+
+
+}

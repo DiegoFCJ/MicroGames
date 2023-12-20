@@ -11,10 +11,13 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 import java.util.Properties;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Service
 public class EmailActivationService {
@@ -25,7 +28,6 @@ public class EmailActivationService {
     VTokenRepository vTRepo;
 
     public String sendMail(UserForEmailService userFromFront) {
-        System.out.println("service: " + userFromFront);
         Properties prop = propertiesPreparation();
         Session session = sessionCreation(prop, myAccountEmail);
         VerificationToken vToken = tokenCreation(userFromFront);
@@ -60,9 +62,7 @@ public class EmailActivationService {
     }
 
     public VerificationToken tokenCreation(UserForEmailService userFromFrontDTO){
-        System.out.println("tokenCreation: " + userFromFrontDTO);
         String token = UUID.randomUUID().toString();
-
         VerificationToken vT = new VerificationToken(
                 token,
                 userFromFrontDTO.getEmail(),
@@ -71,8 +71,6 @@ public class EmailActivationService {
                 false,
                 userFromFrontDTO.getId()
         );
-
-        System.out.println("tokenCreation 2: " + vT);
         return vT;
     }
 
@@ -98,7 +96,7 @@ public class EmailActivationService {
                 msg.setText("Ciao " + user.getUsername() + ", Cliccando sul link qui sotto, " +
                         "\nPotrai cambiare la tua password e accedere nuovamente al tuo account!" +
                         "\n" +
-                        "\nhttp://localhost:4200/forgotPassword/" + user.getEmail() + "/" + vToken.getToken());
+                        "\nhttp://localhost:4200/forgotPassword/" + user.getId() + "/" + user.getEmail() + "/" + vToken.getToken());
             }
 
             return msg;
@@ -109,30 +107,33 @@ public class EmailActivationService {
     }
 
     public String sendRecoveryMail(UserForEmailService userFromFrontDTO) {
-
-        if(doesEmailExists(userFromFrontDTO.getEmail())){
-
+        try {
             Properties prop = propertiesPreparation();
             Session session = sessionCreation(prop, myAccountEmail);
-            VerificationToken vToken = tokenCreation(userFromFrontDTO);
-            save(vToken);
-            MimeMessage msg = prepareMessage("recovery", session, myAccountEmail, userFromFrontDTO, vToken);
 
-            try{
+            if (doesEnabledTokenExists(userFromFrontDTO.getEmail())) {
+                return "Procedura già avviata controlla la mail anche nella cartella spam!";
+            } else {
+                // La lista è vuota, quindi nessun token abilitato per quell'email
+                VerificationToken vToken = tokenCreation(userFromFrontDTO);
+
+                save(vToken);
+                MimeMessage msg = prepareMessage("recovery", session, myAccountEmail, userFromFrontDTO, vToken);
                 Transport.send(msg);
-            }catch(MessagingException ex){
-                return "C'e' stato un errore nell'invio della mail";
             }
-            return "Email inviata correttamente, controlla la tua mail! (se non la trovi guarda in spam)";
+        } catch (MessagingException ex) {
+            return "C'è stato un errore nell'invio della mail";
         }
-        return "La mail che hai inserito non e' collegata a nessun account";
+        return "Email inviata correttamente, controlla la tua mail! (se non la trovi guarda in spam)";
     }
+
+
 
     public UserIdPlusResponseDTO confirmEmail(String token){
         VerificationToken vTokenFromDb = vTRepo.findByToken(token).orElseThrow(() -> new IllegalStateException("token not found"));
         UserIdPlusResponseDTO responseDTO = new UserIdPlusResponseDTO();
 
-        responseDTO.setUserId(vTokenFromDb.getId());
+        responseDTO.setUserId(vTokenFromDb.getUserId());
 
         if (vTokenFromDb.getConfirmedAt() != null) {
             responseDTO.setResponse("Email gia confermata!");
@@ -145,9 +146,10 @@ public class EmailActivationService {
         }
 
         vTokenFromDb.setConfirmedAt(LocalDateTime.now());
+        vTokenFromDb.setEnabled(true);
 
-        Long userIdToUpdate = vTokenFromDb.getUserId();
-        enbaleUser(userIdToUpdate);
+        Long userToUpdate = vTokenFromDb.getUserId();
+        enbaleUser(userToUpdate);
         responseDTO.setResponse("Stato validazione " + vTokenFromDb.getUserId() + ": " + vTokenFromDb.isEnabled());
         return responseDTO;
     }
@@ -158,24 +160,33 @@ public class EmailActivationService {
         save(vToken);
     }
 
-    public ResponseEntity<String> updateUserPass(UserForEmailService user, String token){
+    public String confirmRecoverPassword(String token){
         VerificationToken vTokenFromDb = vTRepo.findByToken(token).orElseThrow(() -> new IllegalStateException("token not found"));
 
         if (vTokenFromDb.getConfirmedAt() != null) {
-            return ResponseEntity.ok("Token gia confermato! Ripetere la procedura da capo se si desidera cambiare nuovamente la password!");
+            return "Token gia confermato! Ripetere la procedura da capo se si desidera cambiare nuovamente la password!";
         }
 
         if (vTokenFromDb.getExpiredAt().isBefore(LocalDateTime.now())) {
-            return ResponseEntity.ok("Token scaduto! Ripetere la procedura da capo se si desidera cambiare nuovamente la password!");
+            return "Token scaduto! Ripetere la procedura da capo se si desidera cambiare nuovamente la password!";
         }
 
         vTokenFromDb.setConfirmedAt(LocalDateTime.now());
+        vTokenFromDb.setEnabled(true);
 
-        return ResponseEntity.ok("Confermato!");
+        // Salva l'entità modificata nel database
+        vTRepo.save(vTokenFromDb);
+
+        return "Confermato!";
     }
 
-    public boolean doesEmailExists(String email){
-        return vTRepo.findByEmail(email).isPresent();
+    public boolean doesEnabledTokenExists(String email){
+        List<VerificationToken> tokens = vTRepo.findByEmail(email);
+        if (!tokens.isEmpty()) {
+            return tokens.stream().anyMatch(VerificationToken::isEnabled);
+        } else {
+            return false; // Se ci sono più di 1 token, restituisce false
+        }
     }
 
     public VerificationToken getToken(Long userId){

@@ -1,5 +1,7 @@
 package com.ro.service;
 
+import com.ro.Mapper.UserMapper;
+import com.ro.dto.PasswordRecoveryResponseDTO;
 import com.ro.dto.RegistrationResponseDTO;
 import com.ro.model.User;
 import com.ro.dao.UserRepository;
@@ -13,11 +15,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.*;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
+
+    UserMapper scoreMapper = UserMapper.INSTANCE;
 
     @Autowired
     private UserRepository userRepo;
@@ -114,7 +117,6 @@ public class JpaUserDetailsService implements UserDetailsService {
         return response;
     }
 
-
     private boolean isValidEmail(String email) {
         // Utilizza un'espressione regolare per controllare se l'email è valida
         // Ecco un esempio di espressione regolare per controllare un formato comune di email
@@ -202,10 +204,21 @@ public class JpaUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new IndexOutOfBoundsException("User not found with username: "+ username));
     }
 
-    public User getUserByEmail(String email) {
-        return userRepo
-                .findByEmail(email)
-                .orElseThrow(() -> new IndexOutOfBoundsException("User not found with email: "+ email));
+    public PasswordRecoveryResponseDTO getUserByEmail(String email) {
+        PasswordRecoveryResponseDTO response = new PasswordRecoveryResponseDTO();
+        User user = userRepo.findByEmail(email)
+                .orElse(null);
+
+        if(user != null){
+            response.setUser(scoreMapper.mapToPassRecResDTO(user));
+            response.setMessage("Utente trovato!");
+        } else {
+            response.setMessage("Utente non trovato con l'email: " + email);
+            // Puoi scegliere di lanciare un'eccezione specifica o gestire diversamente questo caso
+            // throw new UserNotFoundException("Utente non trovato con l'email: " + email);
+        }
+
+        return response;
     }
 
     public Iterable<User> allUsers() {
@@ -250,16 +263,27 @@ public class JpaUserDetailsService implements UserDetailsService {
         return userRepo.findByUsernameContains(username);
     }
 
-    public String setUserEnabledByUserId(Long userId){
-        User userFromDb = getUser(userId);
-        System.out.println(userFromDb);
-        if(!userFromDb.isEnabled()){
-            System.out.println(userFromDb);
-            userFromDb.setEnabled(true);
-            System.out.println(userFromDb);
+    public String setUserEnabledByUserId(Long userId) {
+        try {
+            User userFromDb = getUser(userId);
+            if (userFromDb != null) {
+                if (!userFromDb.isEnabled()) {
+                    userFromDb.setEnabled(true);
+                    // Aggiorna lo stato dell'utente nel repository
+                    save(userFromDb);
+                    return "Utente abilitato correttamente";
+                } else {
+                    return "L'utente è già abilitato";
+                }
+            } else {
+                return "Utente non trovato con l'ID specificato";
+            }
+        } catch (Exception e) {
+            return "Qualcosa è andato storto";
         }
-        return "Qualcosa e' andato storto";
     }
+
+
 /*
     public String recoverPassword(User user) {
         User resultUser = userRepo

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RecoverDTO } from 'src/models/user';
+import { RecoverDTO, UserForEmailService } from 'src/models/user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
@@ -22,12 +22,16 @@ export class EmailService{
     return this.http.post(`${this.springBootUrl}/activation?token=${token}`, { responseType: 'text' });
   }
 
-  passRecovery(email: string): Observable<any> {
-    return this.http.post(`${this.springBootUrl}/passRecovery?email=${email}`, { responseType: 'text' });
+  sendRecoveryMail(userForEmailService: UserForEmailService): Observable<any> {
+    return this.http.post(`${this.springBootUrl}/sendRecoveryMail`, userForEmailService, { responseType: 'text' });
   }
-
-  recoverPassword(mailPass: RecoverDTO, token: string): Observable<any> {
-    return this.http.post(`${this.springBootUrl}/recoverPassword?token=${token}`, mailPass, { responseType: 'text' });
+  
+  changePassword(user: UserForEmailService): Observable<any> {
+    return this.http.get(`${this.springBootUrl}/getUserByEmail/${user}`);
+  }
+  
+  confirmRecoverPassword(token: string): Observable<any> {
+    return this.http.post(`${this.springBootUrl}/confirmRecoverPassword`, token, { responseType: 'text' });
   }
   
 }
