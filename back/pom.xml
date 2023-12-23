@@ -20,10 +20,11 @@
 		<module>gateway</module>
 		<module>user-service</module>
 		<module>email-service</module>
-		<module>score-service</module>
+		<module>comment-service</module>
 		<module>comment-service</module>
 		<module>favourite-service</module>
-	</modules>
+        <module>rating-service</module>
+    </modules>
 
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { FavMovie } from 'src/models/favourite';
-import { MovieData } from 'src/models/movie';
+import { Comment } from 'src/models/comment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,6 @@ export class FavouriteService {
   }
 
   deleteFavourite(commentId: number){
-    return this.http.delete<MovieData>(`${this.springBootUrl}favourites/${commentId}`);
+    return this.http.delete<Comment>(`${this.springBootUrl}favourites/${commentId}`);
   }
 }

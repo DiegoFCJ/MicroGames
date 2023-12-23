@@ -1,7 +1,15 @@
-
-export interface DatoToComment {
+export interface CommentFull {
+    id: number;
+    username: string;
     comment: string;
-    rating: number;
-    user_id: number;
-    movie_id: number
+    userId: number;
+    movieId: number
+  }
+
+  export interface Comment {
+    username: string;
+    createdAt: Date;
+    comment: string;
+    movieId: number
+    userId: number
   }

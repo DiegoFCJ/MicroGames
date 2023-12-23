@@ -7,6 +7,7 @@ import { AuthService } from 'src/services/auth.service';
 import { CommentService } from 'src/services/comment.service';
 import { AlertsService } from 'src/mockup/alerts.service';
 import * as Messages from 'src/const-messages/messages'
+import { Comment } from 'src/models/comment';
 
 @Component({
   selector: 'app-review-page',
@@ -18,6 +19,7 @@ export class ReviewPageComponent implements OnInit {
   currentRate = 2;
   defaultText = 'bookmark';
   buttonText = this.defaultText;
+  commentForDB!: Comment;
 
   constructor(
     config: NgbModalConfig, 
@@ -43,7 +45,18 @@ export class ReviewPageComponent implements OnInit {
   }
 
   saveCommentFromForm(el: NgForm) {
-    this.commentServ.saveComment(el).subscribe(); 
+    if(el.valid){
+
+      this.commentForDB = {
+        username: this.authServ.getCurrentUser().username,
+        createdAt: new Date(), // Utilizza direttamente new Date() per ottenere la data corrente come oggetto Date
+        comment: el.form.value.comment,
+        movieId: this.movieServ.movieID,
+        userId: this.authServ.getCurrentUser().id
+      }
+  
+      this.commentServ.saveComment(this.commentForDB).subscribe(); 
+    }
   }
 
   adultsFilm(isAdultFilm: boolean){
