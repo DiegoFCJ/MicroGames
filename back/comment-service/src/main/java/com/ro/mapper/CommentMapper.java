@@ -16,6 +16,6 @@ public interface CommentMapper {
 
     Comment mapToEntity(CommentDTO commentDTO);
 
-    List<CommentDTO> mapToDTOList(Iterable<Comment> scores);
+    List<CommentDTO> mapToDTOList(Iterable<Comment> comments);
 }
 

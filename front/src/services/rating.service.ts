@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MovieAPIService } from './movie-api.service';
 import { environment } from 'src/environments/environment';
-import { Comment } from 'src/models/comment';
+import { Rating } from 'src/models/rating';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommentService {
-  port: string = "8095";
-  type: string = "/api/comment";
+export class RatingService {
+  port: string = "8097";
+  type: string = "/api/rating";
   springBootUrl: string = environment.APIEndpoint + this.port + this.type;
 
   constructor(private http: HttpClient) { }
 
-  saveComment(comment: Comment) {
-    return this.http.post<Comment>(`${this.springBootUrl}/create`, comment);
+  saveRate(rate: Rating) {
+    return this.http.post<Rating>(`${this.springBootUrl}/create`, rate);
   }
 }

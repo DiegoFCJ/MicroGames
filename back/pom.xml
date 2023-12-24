@@ -22,7 +22,7 @@
 		<module>email-service</module>
 		<module>comment-service</module>
 		<module>comment-service</module>
-		<module>favourite-service</module>
+		<module>favouriteAndLike-service</module>
         <module>rating-service</module>
     </modules>
 

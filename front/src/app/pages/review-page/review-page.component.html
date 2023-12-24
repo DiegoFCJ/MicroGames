@@ -53,6 +53,9 @@
             <button class="all-btn" (click)="saveFavourite()" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
               <span class="material-symbols-outlined">{{this.buttonText}}</span>
             </button>
+            <button class="all-btn" (click)="like()">
+              <span class="material-symbols-outlined" [ngClass]="{ 'like-touched': this.changeLike }">{{!this.changeLike ? "favorite" : "heart_check"}}</span>
+            </button>
             <button class="all-btn" (click)="movieServ.openTemplAndSetMovieId(reviews, movieServ.ordMovies[movieServ.num].id)">
               <span class="material-symbols-outlined">reviews</span>
             </button>
@@ -114,10 +117,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form class="format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)" (click)="d('Cross click')">
+        <form class="format" #data="ngForm" (ngSubmit)="saveRating(data)">
           <ngb-rating class="rating" [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
           <hr />
-          <pre>Voto: <b>{{currentRate}}</b></pre>
+          <pre><b>{{currentRate}}</b></pre>
+          <app-button class="btn-cent" btn_text="Rate" type="submit" (click)="c('Save click')"></app-button>
         </form>
       </div>
     

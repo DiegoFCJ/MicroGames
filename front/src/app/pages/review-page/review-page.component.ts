@@ -8,6 +8,8 @@ import { CommentService } from 'src/services/comment.service';
 import { AlertsService } from 'src/mockup/alerts.service';
 import * as Messages from 'src/const-messages/messages'
 import { Comment } from 'src/models/comment';
+import { RatingService } from 'src/services/rating.service';
+import { Rating } from 'src/models/rating';
 
 @Component({
   selector: 'app-review-page',
@@ -16,10 +18,12 @@ import { Comment } from 'src/models/comment';
   providers: [NgbModalConfig, NgbModal],
 })
 export class ReviewPageComponent implements OnInit {
-  currentRate = 2;
+  currentRate = 0;
   defaultText = 'bookmark';
   buttonText = this.defaultText;
   commentForDB!: Comment;
+  changeLike: boolean = false;
+  rateForDB!: Rating;
 
   constructor(
     config: NgbModalConfig, 
@@ -27,7 +31,8 @@ export class ReviewPageComponent implements OnInit {
     protected movieServ: MovieAPIService, 
     protected commentServ: CommentService, 
     private router: Router,
-    private alertServ: AlertsService) { 
+    private alertServ: AlertsService,
+    private rateServ: RatingService) { 
       config.backdrop = 'static';
       config.keyboard = false;
   }
@@ -49,7 +54,7 @@ export class ReviewPageComponent implements OnInit {
 
       this.commentForDB = {
         username: this.authServ.getCurrentUser().username,
-        createdAt: new Date(), // Utilizza direttamente new Date() per ottenere la data corrente come oggetto Date
+        createdAt: new Date(), 
         comment: el.form.value.comment,
         movieId: this.movieServ.movieID,
         userId: this.authServ.getCurrentUser().id
@@ -78,5 +83,26 @@ export class ReviewPageComponent implements OnInit {
     setTimeout(() => {
       this.buttonText = this.defaultText; // Ripristino del testo predefinito
     }, 1000);
+  }
+
+  like(){
+    if(this.changeLike){
+      this.changeLike = false;
+    }else{
+      this.changeLike = true;
+    }
+  }
+
+  saveRating(f: NgForm){
+    if(f.valid){
+      this.rateForDB = {
+        createdAt: new Date(),
+        rate: f.form.value.rating,
+        movieId: this.movieServ.movieID,
+        userId: this.authServ.getCurrentUser().id
+      }
+
+      this.rateServ.saveRate(this.rateForDB).subscribe();
+    }
   }
 }
