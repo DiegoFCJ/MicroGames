@@ -31,6 +31,6 @@ export class FavoriteService {
   }
 
   deleteFavorite(id: number){
-    return this.http.delete(`${this.springBootUrl}/delete${id}`);
+    return this.http.delete(`${this.springBootUrl}/delete?id=${id}`);
   }
 }

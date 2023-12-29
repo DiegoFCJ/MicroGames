@@ -52,7 +52,7 @@ public class FavoriteAndLikeService {
         return favoriteAndLikeMapper.mapToDTO(favoriteAndLikeRepository.save(favoriteAndLikeMapper.mapToEntity(dto)));
     }
 
-    public void delete(FavoriteAndLikeDTO dto) {
-        favoriteAndLikeRepository.deleteById(dto.getId());
+    public void delete(Long id) {
+        favoriteAndLikeRepository.deleteById(id);
     }
 }

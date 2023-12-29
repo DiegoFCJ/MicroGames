@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MovieAPIService } from 'src/services/movie-api.service';
@@ -6,7 +6,7 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/services/auth.service';
 import { CommentService } from 'src/services/comment.service';
 import { AlertsService } from 'src/mockup/alerts.service';
-import * as Messages from 'src/const-messages/messages'
+import * as Messages from 'src/const-messages/messages';
 import { Comment } from 'src/models/comment';
 import { RatingService } from 'src/services/rating.service';
 import { Rating } from 'src/models/rating';
@@ -29,16 +29,17 @@ export class ReviewPageComponent implements OnInit {
   favMovieForDB!: FavMovieForDB;
 
   constructor(
-    config: NgbModalConfig, 
-    protected authServ: AuthService, 
-    protected movieServ: MovieAPIService, 
-    protected commentServ: CommentService, 
+    config: NgbModalConfig,
+    protected authServ: AuthService,
+    protected movieServ: MovieAPIService,
+    protected commentServ: CommentService,
     private router: Router,
     private alertServ: AlertsService,
     private rateServ: RatingService,
-    private favLikeServ: FavoriteService) { 
-      config.backdrop = 'static';
-      config.keyboard = false;
+    private favLikeServ: FavoriteService
+  ) {
+    config.backdrop = 'static';
+    config.keyboard = false;
   }
 
   ngOnInit(): void {
@@ -47,66 +48,57 @@ export class ReviewPageComponent implements OnInit {
     }
   }
 
-  adultsFilm(isAdultFilm: boolean){
-    if(isAdultFilm){
-      return Messages.ADULLT_YES;
-    }else{
-      return Messages.ADULT_NO;
-    }
+  adultsFilm(isAdultFilm: boolean) {
+    return isAdultFilm ? Messages.ADULLT_YES : Messages.ADULT_NO;
   }
 
-  playAgain(){
+  playAgain() {
     this.movieServ.ordMovies.length = 0;
     this.movieServ.rating = 0;
     this.router.navigateByUrl(Messages.ROT_GAME);
   }
 
-  saveRating(f: NgForm){
-    if(f.valid){
+  saveRating(f: NgForm) {
+    if (f.valid) {
       this.rateForDB = {
         createdAt: new Date(),
         rate: f.form.value.rating,
         movieId: this.movieServ.movieID,
-        userId: this.authServ.getCurrentUser().id
-      }
+        userId: this.authServ.getCurrentUser().id,
+      };
 
       this.rateServ.saveRate(this.rateForDB).subscribe();
     }
   }
 
-  openTemplAndSetMovieId(content: any, movieId:number){
+  openTemplAndSetMovieId(content: any, movieId: number) {
     this.favMovieForDB = {
       id: 0,
       createdAt: new Date(),
       favorite: false,
       like: false,
       userId: this.authServ.getCurrentUser().id,
-      movieId: movieId
+      movieId: movieId,
     };
-    
-    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe(res => {
-    
+
+    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe((res) => {
       if (res !== null) {
-        console.log(res);
         this.favMovieForDB = res;
-    
         if (res.favorite || res.like) {
           if (res.favorite) {
             this.buttonText = 'bookmark_added';
+            this.favMovieForDB.favorite = true;
           }
-    
           if (res.like) {
             this.favMovieForDB.like = true;
           }
         }
       } else {
         this.buttonText = this.defaultText;
-        // Il DTO è vuoto
-        this.favMovieForDB.userId = this.authServ.getCurrentUser().id;
-        this.favMovieForDB.movieId = movieId;
+        this.prepareForNewFavoriteCreation(movieId);
       }
-    }); 
-    
+    });
+
     this.movieServ.openTemplAndSetMovieId(content, movieId);
   }
 
@@ -117,29 +109,127 @@ export class ReviewPageComponent implements OnInit {
     }
   }
 
-  saveFavourite(movieId: number): void {
-    if (!this.favMovieForDB.favorite) {
-      this.handleFavoriteSaving(movieId);
+  like(movieId: number): void {
+    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe({
+      next: (res) => {
+        if (res) {
+          if (res.like) {
+            this.handleUnlike(res);
+          } else {
+            this.handleLike(res);
+          }
+        } else {
+          this.handleNewLike(movieId);
+        }
+      },
+      error: (error) => {
+        this.prepareForNewFavoriteCreation(movieId);
+      },
+    });
+  }
+
+  favorite(movieId: number): void {
+    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe({
+      next: (res) => {
+        if (res) {
+          if (res.favorite) {
+            this.handleUnFavorite(res);
+          } else {
+            this.handleFavorite(res);
+          }
+        } else {
+          this.handleNewFavorite(movieId);
+        }
+      },
+      error: (res) => {
+        this.prepareForNewFavoriteCreation(movieId);
+      },
+    });
+  }
+
+  private handleUnlike(res: FavMovieForDB): void {
+    this.favMovieForDB = res;
+    this.favMovieForDB.like = false;
+
+    if (res.favorite) {
+      this.updateExistingLike(res);
     } else {
-      this.handleAlreadyFavorited();
+      this.favLikeServ.deleteFavorite(res.id).subscribe((response) => console.log(response));
     }
   }
 
-  like(movieId: number){
-    if(this.favMovieForDB.like){
-      this.favMovieForDB.like = false;
-    }else{
-      this.favMovieForDB.like = true;
+  private handleUnFavorite(res: FavMovieForDB): void {
+    this.buttonText = this.defaultText;
+    this.favMovieForDB = res;
+    this.favMovieForDB.favorite = false;
+
+    if (res.like) {
+      this.updateExistingFavorite(res);
+    } else {
+      this.favLikeServ.deleteFavorite(res.id).subscribe((response) => console.log(response));
     }
+  }
+
+  private handleLike(res: FavMovieForDB): void {
+    this.favMovieForDB = res;
+    this.favMovieForDB.like = true;
+    this.updateExistingLike(res);
+  }
+
+  private handleFavorite(res: FavMovieForDB): void {
+    this.buttonText = 'bookmark_added';
+    this.favMovieForDB = res;
+    this.favMovieForDB.favorite = true;
+    this.updateExistingFavorite(res);
+  }
+
+  private updateExistingLike(updatedFavMovie: FavMovieForDB): void {
+    this.favLikeServ.updateFavorite(updatedFavMovie).subscribe((response) => console.log(response));
+  }
+
+  private updateExistingFavorite(res: FavMovieForDB): void {
+    this.favLikeServ.updateFavorite(this.favMovieForDB).subscribe((response) => console.log(response));
+  }
+
+  private handleNewLike(movieId: number): void {
+    this.favMovieForDB.favorite = false;
+    this.favMovieForDB.like = true;
+    this.createNewLike(movieId);
+  }
+
+  private handleNewFavorite(movieId: number): void {
+    this.buttonText = 'bookmark_added';
+    this.favMovieForDB.favorite = true;
+    this.favMovieForDB.like = false;
+    this.createNewFavorite(movieId);
+  }
+
+  private createNewLike(movieId: number): void {
+    this.favMovieForDB = {
+      id: 0,
+      createdAt: new Date(),
+      favorite: false,
+      like: true,
+      userId: this.authServ.getCurrentUser().id,
+      movieId: movieId,
+    };
+    this.favLikeServ.createFavorite(this.favMovieForDB).subscribe((response) => console.log(response));
+  }
+
+  private createNewFavorite(movieId: number): void {
+    this.favMovieForDB = {
+      id: 0,
+      createdAt: new Date(),
+      favorite: true,
+      like: false,
+      userId: this.authServ.getCurrentUser().id,
+      movieId: movieId,
+    };
+    this.favLikeServ.createFavorite(this.favMovieForDB).subscribe((response) => console.log(response));
   }
 
   private showMustLogAlertAndRedirect(): void {
-    this.alertServ.showAutoDestroyAlert(
-      Messages.ICO_INFO,
-      Messages.LOG_MUST,
-      Messages.LOG_WARNING_NO_ACC,
-      4000
-    );
+    this.alertServ.showAutoDestroyAlert(Messages.ICO_INFO, Messages.LOG_MUST, Messages.LOG_WARNING_NO_ACC, 4000);
     this.router.navigateByUrl(Messages.ROT_SIGN);
   }
 
@@ -153,99 +243,8 @@ export class ReviewPageComponent implements OnInit {
     };
   }
 
-  private handleFavoriteSaving(movieId: number): void {
-    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe({
-      next: (res) => {
-        this.buttonText = 'bookmark_added';
-        if (res) {
-          this.updateExistingFavorite(res);
-        } else {
-          this.createNewFavorite(movieId);
-        }
-      },
-      error: (res) => {
-        this.prepareForNewFavoriteCreation(movieId);
-      },
-    });
-  }
-
-  private updateExistingFavorite(res: FavMovieForDB): void {
-    this.favMovieForDB = res;
-    this.favMovieForDB.favorite = true;
-    this.favLikeServ.updateFavorite(this.favMovieForDB).subscribe({
-      next: (res) => console.log(res),
-      error: (error) => console.log(error),
-    });
-  }
-
-  private createNewFavorite(movieId: number): void {
-    this.favMovieForDB = {
-      id: 0,
-      createdAt: new Date(),
-      favorite: true,
-      like: false,
-      userId: this.authServ.getCurrentUser().id,
-      movieId: movieId,
-    };
-    this.favLikeServ.createFavorite(this.favMovieForDB).subscribe({
-      next: (res) => console.log(res),
-      error: (error) => console.log(error),
-    });
-  }
-
   private prepareForNewFavoriteCreation(movieId: number): void {
     this.favMovieForDB.userId = this.authServ.getCurrentUser().id;
     this.favMovieForDB.movieId = movieId;
   }
-
-  private handleAlreadyFavorited(): void {
-    this.buttonText = 'bookmark_added';
-  }
 }
-
-
-/*
-
-
-  private updateExistingFL(res: FavMovieForDB): void {
-    this.favLikeServ.updateFavorite(this.favMovieForDB).subscribe({
-      next: (res) => console.log(res),
-      error: (error) => console.log(error),
-    });
-  }
-
-  private createNewFL(movieId: number): void {
-    this.favMovieForDB.id = 0;
-    this.favMovieForDB.createdAt = new Date();
-    this.favMovieForDB.userId = this.authServ.getCurrentUser().id;
-    this.favMovieForDB.movieId = movieId;
-
-    this.favLikeServ.createFavorite(this.favMovieForDB).subscribe({
-      next: (res) => console.log(res),
-      error: (error) => console.log(error),
-    });
-  }
-  
-  private handleAlreadyLiked(): void {
-    this.buttonText = 'bookmark_added';
-  }
-
-  private handleLikeSaving(movieId: number): void {
-    this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe({
-      next: (res) => {
-        this.buttonText = 'bookmark_added';
-        if (res) {
-          this.favMovieForDB = res;
-          this.favMovieForDB.favorite = true;
-          this.updateExistingFL(res);
-        } else {
-          this.favMovieForDB.favorite = true;
-          this.favMovieForDB.like = false;
-          this.createNewFL(movieId);
-        }
-      },
-      error: (res) => {
-        this.prepareForNewFavoriteCreation(movieId);
-      },
-    });
-  }*/

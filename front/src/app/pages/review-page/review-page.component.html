@@ -49,7 +49,7 @@
             <button class="all-btn" (click)="d('close-click')">
               <span class="material-symbols-outlined">arrow_back</span>
             </button>
-            <button class="all-btn" (click)="saveFavourite(movieServ.ordMovies[movieServ.num].id)" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
+            <button class="all-btn" (click)="favorite(movieServ.ordMovies[movieServ.num].id)" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
               <span class="material-symbols-outlined">{{this.buttonText}}</span>
             </button>
             <button class="all-btn" (click)="like(movieServ.ordMovies[movieServ.num].id)">

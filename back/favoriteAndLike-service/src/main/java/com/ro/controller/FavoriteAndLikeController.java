@@ -51,8 +51,8 @@ public class FavoriteAndLikeController {
     }
 
     @DeleteMapping("/delete")
-    public void delete (@RequestBody FavoriteAndLikeDTO dto) {
-        favoriteAndLikeService.delete(dto);
+    public void delete (@RequestParam("id")  Long id) {
+        favoriteAndLikeService.delete(id);
     }
 
 }
