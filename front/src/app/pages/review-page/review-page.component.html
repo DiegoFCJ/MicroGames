@@ -1,28 +1,26 @@
 <div class="first-text">
   <p>HAI TOTALIZZATO <span>{{movieServ.rating}}</span> PUNTI</p>
 </div>
+
 <div class="first-text" style="line-height: 1.5;">
-  <p>Questo é l'ordine corretto dei film</p>
+  <p>Questo è l'ordine corretto dei film</p>
   <p style="font-size: 20px;">Clicca sulla locandina del film che ti interessa e scegli tra le opzioni preposte</p>
 </div>
 
 <div class="list">
   <div *ngFor="let movieElement of movieServ.ordMovies; let i = index">
-        <div >
-          <button class="box"
-            (click)="movieServ.openTemplAndSetMovieId(filmCart, movieServ.ordMovies[movieServ.indexSaveToFindFilm(i)].id)"
-            style="background-image: url(https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}});">
-          <!-- <img class="fix-img-pos" src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}" [alt]="movieElement.title"> -->
-    
-          <div class="pos-correct-top">
-            <div class="pos-isCorrect">
-              <span class="pos-index">{{i + 1}}</span>
-              <span class="pos-icon" *ngIf="movieServ.ordMovies[i].isCorrect else notCorrect">✅</span>
-              <ng-template #notCorrect><span class="pos-icon">⛔</span></ng-template>
-            </div>
+    <div>
+      <button class="box" (click)="openTemplAndSetMovieId(filmCart, movieServ.ordMovies[movieServ.indexSaveToFindFilm(i)].id)"
+        style="background-image: url(https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}});">
+        <div class="pos-correct-top">
+          <div class="pos-isCorrect">
+            <span class="pos-index">{{i + 1}}</span>
+            <span class="pos-icon" *ngIf="movieServ.ordMovies[i].isCorrect; else notCorrect">✅</span>
+            <ng-template #notCorrect><span class="pos-icon">⛔</span></ng-template>
           </div>
-        </button>
-       </div>
+        </div>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -31,6 +29,7 @@
 </div>
 
 <ng-template #filmCart let-c="close" let-d="dismiss">
+  <!-- ... Il resto del tuo codice rimane invariato ... -->
   <div class="card">
     <div class="row g-0">
       <div class="card-img">
@@ -50,11 +49,11 @@
             <button class="all-btn" (click)="d('close-click')">
               <span class="material-symbols-outlined">arrow_back</span>
             </button>
-            <button class="all-btn" (click)="saveFavourite()" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
+            <button class="all-btn" (click)="saveFavourite(movieServ.ordMovies[movieServ.num].id)" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
               <span class="material-symbols-outlined">{{this.buttonText}}</span>
             </button>
-            <button class="all-btn" (click)="like()">
-              <span class="material-symbols-outlined" [ngClass]="{ 'like-touched': this.changeLike }">{{!this.changeLike ? "favorite" : "heart_check"}}</span>
+            <button class="all-btn" (click)="like(movieServ.ordMovies[movieServ.num].id)">
+              <span class="material-symbols-outlined" [ngClass]="{ 'like-touched': this.favMovieForDB.like }">{{!this.favMovieForDB.like ? "favorite" : "heart_check"}}</span>
             </button>
             <button class="all-btn" (click)="movieServ.openTemplAndSetMovieId(reviews, movieServ.ordMovies[movieServ.num].id)">
               <span class="material-symbols-outlined">reviews</span>
@@ -70,59 +69,57 @@
       </div>
     </div>
   </div>
-  </ng-template>
+</ng-template>
 
-  <ng-template #details let-d="dismiss">
+<ng-template #details let-d="dismiss">
+  <!-- ... Il resto del tuo codice rimane invariato ... -->
+  <button class="all-btn close-btn" (click)="d('close-click')">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="card-img card-body" style="width: 100%; max-height: 100%;">
+    <h5 class="card-title">{{movieServ.ordMovies[movieServ.num].original_title}}</h5>
+    <p class="card-text">{{movieServ.ordMovies[movieServ.num].overview}}</p>
+    <p class="card-text">Budget: {{movieServ.ordMovies[movieServ.num].budget}}</p>
+    <p class="card-text">Entrate: {{movieServ.ordMovies[movieServ.num].revenue}}</p>
+    <p class="card-text">Data di Rilascio: {{movieServ.ordMovies[movieServ.num].release_date}}</p>
+    <p class="card-text">Popolaritá: {{movieServ.ordMovies[movieServ.num].popularity}}</p>
+    <p class="card-text adult">{{adultsFilm(movieServ.ordMovies[movieServ.num].adult)}}</p>
+  </div>
+</ng-template>
 
-    <button class="all-btn close-btn" (click)="d('close-click')">
+<ng-template #reviews let-c="close" let-d="dismiss">
+  <!-- ... Il resto del tuo codice rimane invariato ... -->
+  <div class="modal-header">
+    <h4 class="modal-title" >{{movieServ.ordMovies[movieServ.num].original_title}}</h4>
+    <button class="all-btn close-btn" type="button" (click)="d('Cross click')">
       <span class="material-symbols-outlined">close</span>
     </button>
-    <div class="card-img card-body" style="width: 100%; max-height: 100%;">
-      <h5 class="card-title">{{movieServ.ordMovies[movieServ.num].original_title}}</h5>
-      <p class="card-text">{{movieServ.ordMovies[movieServ.num].overview}}</p>
-      <p class="card-text">Budget: {{movieServ.ordMovies[movieServ.num].budget}}</p>
-      <p class="card-text">Entrate: {{movieServ.ordMovies[movieServ.num].revenue}}</p>
-      <p class="card-text">Data di Rilascio: {{movieServ.ordMovies[movieServ.num].release_date}}</p>
-      <p class="card-text">Popolaritá: {{movieServ.ordMovies[movieServ.num].popularity}}</p>
-      <p class="card-text adult">{{adultsFilm(movieServ.ordMovies[movieServ.num].adult)}}</p>
-    </div>
+  </div>
+  <div class="modal-body">
+    <form class="format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)">
+      <mat-form-field class="review" appearance="fill">
+        <input placeholder="Lascia qui il tuo commento" matInput type="text" ngModel name="comment" required />
+      </mat-form-field>
+        <app-button class="btn-cent" btn_text="Commenta" type="submit" (click)="c('Save click')"></app-button>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #stars let-c="close" let-d="dismiss">
+  <!-- ... Il resto del tuo codice rimane invariato ... -->
+  <div class="modal-header">
+    <h4 class="modal-title" >{{movieServ.ordMovies[movieServ.num].original_title}}</h4>
+    <button class="all-btn close-btn" type="button" (click)="d('Cross click')">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="format" #data="ngForm" (ngSubmit)="saveRating(data)">
+      <ngb-rating class="rating" [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+      <hr />
+      <pre><b>{{currentRate}}</b></pre>
+      <app-button class="btn-cent" btn_text="Rate" type="submit" (click)="c('Save click')"></app-button>
+    </form>
+  </div>
+</ng-template>
     
-    </ng-template>
-
-    <ng-template #reviews let-c="close" let-d="dismiss">
-
-      <div class="modal-header">
-        <h4 class="modal-title" >{{movieServ.ordMovies[movieServ.num].original_title}}</h4>
-        <button class="all-btn close-btn" type="button" (click)="d('Cross click')">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)">
-          <mat-form-field class="review" appearance="fill">
-            <input placeholder="Lascia qui il tuo commento" matInput type="text" ngModel name="comment" required />
-          </mat-form-field>
-            <app-button class="btn-cent" btn_text="Commenta" type="submit" (click)="c('Save click')"></app-button>
-        </form>
-      </div>
-    
-    </ng-template>
-
-    <ng-template #stars let-c="close" let-d="dismiss">
-
-      <div class="modal-header">
-        <h4 class="modal-title" >{{movieServ.ordMovies[movieServ.num].original_title}}</h4>
-        <button class="all-btn close-btn" type="button" (click)="d('Cross click')">
-          <span class="material-symbols-outlined">close</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="format" #data="ngForm" (ngSubmit)="saveRating(data)">
-          <ngb-rating class="rating" [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
-          <hr />
-          <pre><b>{{currentRate}}</b></pre>
-          <app-button class="btn-cent" btn_text="Rate" type="submit" (click)="c('Save click')"></app-button>
-        </form>
-      </div>
-    
-    </ng-template>

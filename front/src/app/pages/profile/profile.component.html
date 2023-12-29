@@ -5,10 +5,10 @@
 <div class="row row-cols-md-4">
   <div class="col card-father" *ngFor="let movieEl of movieServ.favourites;">
       <div class="card">
-        <img src="{{movieServ.getMoviePosterPath(movieEl.poster_path)}}" class="card-img"/>
+        <img src="{{movieServ.getMoviePosterPath(movieEl.posterPath)}}" class="card-img"/>
         <div class="card-img-overlay">
           <div class="scale">
-            <app-button btn_text="Dettagli" (click)="movieServ.openOneFav(content, movieServ.getFavMovieByMovieId(movieEl.id))"></app-button>
+            <app-button btn_text="Dettagli" (click)="movieServ.openOneFav(content, movieServ.getFavMovieByMovieId(movieEl.movieId))"></app-button>
           </div>
         </div>
         <div class="card-footer">

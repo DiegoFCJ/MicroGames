@@ -83,3 +83,5 @@ services:
 networks:
   microgames_network:
     driver: bridge
+
+    #TODO aggiungi i cazzo di micro nuovi

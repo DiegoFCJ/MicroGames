@@ -21,9 +21,9 @@
 		<module>user-service</module>
 		<module>email-service</module>
 		<module>comment-service</module>
-		<module>comment-service</module>
-		<module>favouriteAndLike-service</module>
-        <module>rating-service</module>
+		<module>score-service</module>
+		<module>rating-service</module>
+		<module>favoriteAndLike-service</module>
     </modules>
 
 	<properties>

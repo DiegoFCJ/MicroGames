@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/services/auth.service';
 import { MovieAPIService } from 'src/services/movie-api.service';
-import { FavouriteService } from './../../../services/favourite.service';
+import { FavoriteService } from '../../../services/favorite-like.service';
 import { AlertsService } from 'src/mockup/alerts.service';
 import * as Messages from 'src/const-messages/messages';
 
@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     protected authServ: AuthService,
     protected movieServ: MovieAPIService,
-    protected favServ: FavouriteService,
+    protected favServ: FavoriteService,
     private router: Router,
     private alertServ: AlertsService
   ) {}
@@ -62,7 +62,7 @@ export class ProfileComponent implements OnInit {
 
   // Ottiene tutti i film preferiti dell'utente dall'API
   getAllFavouriteMovies(id: number) {
-    this.favServ.getAllFavouriteMovies(id).subscribe((data) => {
+    this.favServ.getAllFavoriteMovies(id).subscribe((data) => {
       // Assegna i film preferiti alla variabile nel servizio MovieAPI
       this.movieServ.favourites = data;
       // Per ogni film preferito, ottiene ulteriori dettagli tramite l'API dei film
@@ -76,7 +76,7 @@ export class ProfileComponent implements OnInit {
             movieId: this.movieServ.favourites[i].movieId,
             rating: this.movieServ.favourites[i].rating,
             title: res.title,
-            poster_path: res.poster_path
+            posterPath: res.poster_path
           };
         });
       }
@@ -85,7 +85,7 @@ export class ProfileComponent implements OnInit {
 
   // Elimina un film dalla lista dei preferiti
   deleteFavourite() {
-    this.favServ.deleteFavourite(this.movieServ.singleFavourite.id).subscribe();
+    this.favServ.deleteFavorite(this.movieServ.singleFavourite.id).subscribe();
     // Ricarica la pagina dopo l'eliminazione del film preferito
     window.location.reload();
   }

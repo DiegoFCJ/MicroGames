@@ -1,8 +1,3 @@
-export interface Favourite {
-    userId?: number,
-    movieId?: number,
-  }
-
   export interface FavMovie{
     id: number,
     comment: string,
@@ -10,5 +5,14 @@ export interface Favourite {
     movieId: number,
     rating: number,
     title: string,
-    poster_path: string
+    posterPath: string
+  }
+
+  export interface FavMovieForDB{
+    id: number,
+    createdAt: Date,
+    movieId: number,
+    userId: number,
+    favorite: boolean,
+    like: boolean
   }

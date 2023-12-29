@@ -22,7 +22,7 @@ export class MovieAPIService {
     movieId: 0,
     rating: 0,
     title: '',
-    poster_path: ''
+    posterPath: ''
   }
 
   constructor(private http: HttpClient, private modal: NgbModal) {}
@@ -47,7 +47,7 @@ export class MovieAPIService {
       movieId: data.movieId,
       rating: data.rating,
       title: data.title,
-      poster_path: data.poster_path
+      posterPath: data.poster_path
     };
 
 		this.modal.open(content);
