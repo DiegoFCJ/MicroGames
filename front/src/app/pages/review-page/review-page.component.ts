@@ -6,7 +6,6 @@ import { AuthService } from 'src/services/auth.service';
 import { CommentService } from 'src/services/comment.service';
 import { AlertsService } from 'src/mockup/alerts.service';
 import * as Messages from 'src/const-messages/messages';
-import { Location } from '@angular/common';
 
 
 @Component({
@@ -18,7 +17,6 @@ import { Location } from '@angular/common';
 export class ReviewPageComponent implements OnInit {
 
   constructor(
-    private location: Location,
     protected authServ: AuthService,
     protected movieServ: MovieAPIService,
     protected commentServ: CommentService,
@@ -28,6 +26,9 @@ export class ReviewPageComponent implements OnInit {
   }
   
 ngOnInit(): void {
+  if(this.movieServ.ordMovies.length === 0){
+    this.playAgain();
+  }
   this.checkBrowserBack();
   if (!this.authServ.isAuthenticated()) {
     this.showMustLogAlertAndRedirect();
