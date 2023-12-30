@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MovieAPIService } from './movie-api.service';
 import { environment } from 'src/environments/environment';
 import { Comment } from 'src/models/comment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,10 @@ export class CommentService {
   springBootUrl: string = environment.APIEndpoint + this.port + this.type;
 
   constructor(private http: HttpClient) { }
+
+  readByUserIdAndMovieId(userId: number, movieId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.springBootUrl}/readByUserIdAndMovieId?userId=${userId}&movieId=${movieId}`);
+  }
 
   saveComment(comment: Comment) {
     return this.http.post<Comment>(`${this.springBootUrl}/create`, comment);

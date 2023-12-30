@@ -22,6 +22,13 @@ public class CommentController {
         return commentService.getAll();
     }
 
+    @GetMapping("/readByUserIdAndMovieId")
+    public List<CommentDTO> getAllByUserIdAndMovieId(
+            @RequestParam("userId") Long userId,
+            @RequestParam("movieId") Long movieId) {
+        return commentService.getAllByUserIdAndMovieId(userId, movieId);
+    }
+
     @PostMapping ("/create")
     public CommentDTO create(@RequestBody CommentDTO dto) {
         return commentService.create(dto);

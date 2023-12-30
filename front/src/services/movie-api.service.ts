@@ -13,11 +13,11 @@ export class MovieAPIService {
   rating: number = 0;
   userNameLogged: string = '';
   attribute: any;
-  favourites: FavMovie[] = [];
+  favorites: FavMovie[] = [];
   ordMovies: MovieRootObject[] = [];
   singleFavourite: FavMovie = {
     id: 0,
-    comment: '',
+    comment: [''],
     userId: 0,
     movieId: 0,
     rating: 0,
@@ -36,7 +36,7 @@ export class MovieAPIService {
   }
 
   getFavMovieByMovieId(movieId: number){
-    return this.favourites.find(x => x.id === movieId);
+    return this.favorites.find(x => x.id === movieId);
   }
 
   openOneFav(content: any, data:any){

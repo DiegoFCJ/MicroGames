@@ -14,8 +14,8 @@ export class FavoriteService {
 
   constructor(private http: HttpClient) { }
 
-  getAllFavoriteMovies(id : number){
-    return this.http.get<FavMovie[]>(`${this.springBootUrl}/getAllByUserId/${id}`);
+  getAllFavoriteMovies(userId : number){
+    return this.http.get<FavMovie[]>(`${this.springBootUrl}/findByUserId?userId=${userId}`);
   }
 
   createFavorite(fav: FavMovieForDB){

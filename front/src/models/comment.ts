@@ -1,7 +1,7 @@
 export interface CommentFull {
     id: number;
     username: string;
-    comment: string;
+    comment: string[];
     userId: number;
     movieId: number
   }
@@ -9,7 +9,7 @@ export interface CommentFull {
   export interface Comment {
     username: string;
     createdAt: Date;
-    comment: string;
+    comment: string[];
     movieId: number
     userId: number
   }

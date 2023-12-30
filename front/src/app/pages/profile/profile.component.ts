@@ -43,7 +43,7 @@ export class ProfileComponent implements OnInit {
 
   // Mostra un messaggio se non ci sono film preferiti
   printStringIfNoFav() {
-    if (this.movieServ.favourites.length <= 0) {
+    if (this.movieServ.favorites.length <= 0) {
       return this.alertServ.showAutoDestroyAlert(
         Messages.ICO_WARNING,
         Messages.TIT_WARNING,
@@ -64,17 +64,17 @@ export class ProfileComponent implements OnInit {
   getAllFavouriteMovies(id: number) {
     this.favServ.getAllFavoriteMovies(id).subscribe((data) => {
       // Assegna i film preferiti alla variabile nel servizio MovieAPI
-      this.movieServ.favourites = data;
+      this.movieServ.favorites = data;
       // Per ogni film preferito, ottiene ulteriori dettagli tramite l'API dei film
       for (let i = 0; i < data.length; i++) {
         this.movieServ.getMovie(data[i].movieId).subscribe((res) => {
           // Aggiorna i dettagli dei film preferiti con i nuovi dati ottenuti dall'API
-          this.movieServ.favourites[i] = {
-            id: this.movieServ.favourites[i].id,
-            comment: this.movieServ.favourites[i].comment,
-            userId: this.movieServ.favourites[i].userId,
-            movieId: this.movieServ.favourites[i].movieId,
-            rating: this.movieServ.favourites[i].rating,
+          this.movieServ.favorites[i] = {
+            id: this.movieServ.favorites[i].id,
+            comment: this.movieServ.favorites[i].comment,
+            userId: this.movieServ.favorites[i].userId,
+            movieId: this.movieServ.favorites[i].movieId,
+            rating: this.movieServ.favorites[i].rating,
             title: res.title,
             posterPath: res.poster_path
           };
@@ -84,7 +84,7 @@ export class ProfileComponent implements OnInit {
   }
 
   // Elimina un film dalla lista dei preferiti
-  deleteFavourite() {
+  deleteFavorite() {
     this.favServ.deleteFavorite(this.movieServ.singleFavourite.id).subscribe();
     // Ricarica la pagina dopo l'eliminazione del film preferito
     window.location.reload();

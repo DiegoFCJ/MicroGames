@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -20,6 +22,11 @@ public class RatingService {
     @Autowired
     RatingRepository ratingRepository;
 
+    public RatingDTO getAllByUserIdAndMovieId(Long userId, Long movieId) {
+        Optional<Rating> commentOptional = ratingRepository.findAllByUserIdAndMovieId(userId, movieId);
+        return commentOptional.map(ratingMapper::mapToDTO).orElse(null);
+    }
+
     public List<RatingDTO> getAll() {
         return ratingRepository.findAll().stream()
                 .map(ratingMapper::mapToDTO)
@@ -27,8 +34,11 @@ public class RatingService {
     }
 
     public RatingDTO create(RatingDTO ratingDTO) {
-        System.out.println(ratingDTO);
-        return ratingMapper.mapToDTO(ratingRepository.save(ratingMapper.mapToEntity(ratingDTO)));
+        Optional<Rating> result = ratingRepository.findAllByUserIdAndMovieId(ratingDTO.getUserId(), ratingDTO.getMovieId());
+        if(result.isEmpty()){
+            return ratingMapper.mapToDTO(ratingRepository.save(ratingMapper.mapToEntity(ratingDTO)));
+        }
+        return null;
     }
 
     public RatingDTO read(long id) {

@@ -16,6 +16,13 @@ public class RatingController {
 
     @Autowired
     private RatingService ratingService;
+
+    @GetMapping("/readByUserIdAndMovieId")
+    public RatingDTO getAllByUserIdAndMovieId(
+            @RequestParam("userId") Long userId,
+            @RequestParam("movieId") Long movieId) {
+        return ratingService.getAllByUserIdAndMovieId(userId, movieId);
+    }
     @GetMapping("/getAll")
     public List<RatingDTO> getAll() {
         return ratingService.getAll();

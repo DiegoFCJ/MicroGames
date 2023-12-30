@@ -1,6 +1,6 @@
   export interface FavMovie{
     id: number,
-    comment: string,
+    comment: string[],
     userId: number,
     movieId: number,
     rating: number,

@@ -30,6 +30,8 @@ import { EmailActivatedComponent } from './pages/email-activated/email-activated
 import { PasswordRecoveryComponent } from './pages/forgot-password/password-recovery.component';
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { ProfileFavoriteComponent } from './components/profile-favorite/profile-favorite.component';
+import { FavCardComponent } from './components/fav-card/fav-card.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { MatIconModule } from '@angular/material/icon';
     ButtonComponent,
     SignPageComponent,
     EmailActivatedComponent,
-    PasswordRecoveryComponent
+    PasswordRecoveryComponent,
+    ProfileFavoriteComponent,
+    FavCardComponent
     
   ],
   imports: [

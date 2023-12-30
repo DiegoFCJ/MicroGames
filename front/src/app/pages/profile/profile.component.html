@@ -1,9 +1,9 @@
 <div class="first-text">
-  <p class="txt-size">{{this.movieServ.favourites.length > 0 ? "Preferiti" : ""}}</p>
+  <p class="txt-size">{{this.movieServ.favorites.length > 0 ? "Preferiti" : ""}}</p>
 </div>
 
 <div class="row row-cols-md-4">
-  <div class="col card-father" *ngFor="let movieEl of movieServ.favourites;">
+  <div class="col card-father" *ngFor="let movieEl of movieServ.favorites;">
       <div class="card">
         <img src="{{movieServ.getMoviePosterPath(movieEl.posterPath)}}" class="card-img"/>
         <div class="card-img-overlay">
@@ -30,7 +30,7 @@
       <p>Commento</p>
       <p class="review">{{movieServ.singleFavourite.comment}}</p>
       <div class="del-btn">
-        <app-button btn_text="Elimina" (click)="deleteFavourite()" (click)="d('Cross click')"></app-button>
+        <app-button btn_text="Elimina" (click)="deleteFavorite()" (click)="d('Cross click')"></app-button>
       </div>
     </div>
     
