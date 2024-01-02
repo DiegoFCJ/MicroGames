@@ -1,0 +1,34 @@
+<button class="box" (click)="openTemplAndSetMovieId(filmCart, movieElement.id)"
+        style="background-image: url(https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}});">
+
+        <div style="width: 100%;">
+          <app-fav-card-iscorrect
+            [movieElement]="movieElement" 
+            [i]="i" 
+          >
+          </app-fav-card-iscorrect>
+        </div>
+
+</button>
+
+<ng-template #filmCart let-c="close" let-d="dismiss">
+    <div class="card">
+      <div class="row g-0">
+        <div class="card-img">
+  
+          <app-fav-single-card 
+            [movieElement]="movieElement" 
+            [favMovieForDB]="favMovieForDB" 
+            [buttonText]="buttonText" 
+            [defaultText]="defaultText"
+            [i]="i" 
+            [c]="c" 
+            [d]="d"
+            >
+          </app-fav-single-card>
+
+        </div>
+      </div>
+    </div>
+</ng-template>
+  

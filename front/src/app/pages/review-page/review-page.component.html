@@ -1,5 +1,5 @@
 <div class="first-text">
-  <p>HAI TOTALIZZATO <span>{{movieServ.rating}}</span> PUNTI</p>
+  <p>HAI TOTALIZZATO <span>{{rating}}</span> PUNTI</p>
 </div>
 
 <div class="first-text" style="line-height: 1.5;">
@@ -8,8 +8,8 @@
 </div>
 
 <div class="list">
-  <div *ngFor="let movieElement of movieServ.ordMovies; let i = index">
-    <app-fav-card [movieElement]="movieElement" [i]="i"></app-fav-card>
+  <div *ngFor="let movieElement of ordMovies; let i = index">
+    <app-fav-card-list [movieElement]="movieElement" [i]="i"></app-fav-card-list>
   </div>
 </div>
 

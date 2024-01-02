@@ -1,0 +1,8 @@
+<div class="modal-body">
+  <form class="format" #data="ngForm" (ngSubmit)="saveRating(data)">
+    <ngb-rating class="rating" [(rate)]="currentRate" ngModel name="rating"></ngb-rating>
+    <hr />
+    <pre><b>{{currentRate}}</b></pre>
+    <app-button class="btn-cent" btn_text="Rate" type="submit" (click)="c('Save click')"></app-button>
+  </form>
+</div>

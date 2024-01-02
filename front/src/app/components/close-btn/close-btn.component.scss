@@ -1,0 +1,30 @@
+.close-btn{
+    color: white;
+    border: none;
+    background: none;
+    transform: scale(2);
+    text-shadow: 1px 0px 2px black, -1px 2px 2px #c02936;
+    position: absolute;
+    top: 2vh;
+    right: 0.5vw;
+  }
+    
+  .close-btn:hover{
+    transform: scale(2.6);
+  }
+
+  ::ng-deep .modal{
+    width: 402px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20vh;
+  }
+
+  .modal-title{
+    position: relative;
+    left: 50%;
+    translate: -50%;
+    font-size: 30px;
+    top: 5px;
+  }

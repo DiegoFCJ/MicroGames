@@ -31,7 +31,14 @@ import { PasswordRecoveryComponent } from './pages/forgot-password/password-reco
 import { CommonModule, DecimalPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileFavoriteComponent } from './components/profile-favorite/profile-favorite.component';
-import { FavCardComponent } from './components/fav-card/fav-card.component';
+import { FavCardListComponent } from './components/fav-card-list/fav-card-list.component';
+import { DataTransferService } from 'src/transfer-services/data-transfer.service';
+import { FavSingleCardComponent } from './components/fav-single-card/fav-single-card.component';
+import { FavCardReviewsComponent } from './components/fav-card-reviews/fav-card-reviews.component';
+import { FavCardStarsComponent } from './components/fav-card-stars/fav-card-stars.component';
+import { FavCardDetailsComponent } from './components/fav-card-details/fav-card-details.component';
+import { CloseBtnComponent } from './components/close-btn/close-btn.component';
+import { FavCardIscorrectComponent } from './components/fav-card-iscorrect/fav-card-iscorrect.component';
 
 
 @NgModule({
@@ -50,7 +57,13 @@ import { FavCardComponent } from './components/fav-card/fav-card.component';
     EmailActivatedComponent,
     PasswordRecoveryComponent,
     ProfileFavoriteComponent,
-    FavCardComponent
+    FavCardListComponent,
+    FavSingleCardComponent,
+    FavCardReviewsComponent,
+    FavCardStarsComponent,
+    FavCardDetailsComponent,
+    CloseBtnComponent,
+    FavCardIscorrectComponent
     
   ],
   imports: [
@@ -74,7 +87,8 @@ import { FavCardComponent } from './components/fav-card/fav-card.component';
   ],
   providers: [
     DecimalPipe,
-    NgbHighlight
+    NgbHighlight,
+    DataTransferService
   ],
   bootstrap: [
     AppComponent

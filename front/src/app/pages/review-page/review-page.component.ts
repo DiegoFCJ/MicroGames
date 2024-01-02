@@ -6,6 +6,8 @@ import { AuthService } from 'src/services/auth.service';
 import { CommentService } from 'src/services/comment.service';
 import { AlertsService } from 'src/mockup/alerts.service';
 import * as Messages from 'src/const-messages/messages';
+import { MovieRootObject } from 'src/models/movie';
+import { DataTransferService } from 'src/transfer-services/data-transfer.service';
 
 
 @Component({
@@ -15,18 +17,22 @@ import * as Messages from 'src/const-messages/messages';
   providers: [NgbModalConfig, NgbModal],
 })
 export class ReviewPageComponent implements OnInit {
+  rating: number = 0;
+  ordMovies: MovieRootObject[] = [];
 
   constructor(
     protected authServ: AuthService,
     protected movieServ: MovieAPIService,
     protected commentServ: CommentService,
     private router: Router,
-    private alertServ: AlertsService
-  ) {
+    private alertServ: AlertsService,
+    private dataTransferService: DataTransferService) {
   }
   
 ngOnInit(): void {
-  if(this.movieServ.ordMovies.length === 0){
+  this.rating = this.dataTransferService.getRating();
+  this.ordMovies = this.dataTransferService.getOrdMovies();
+  if(this.ordMovies.length === 0){
     this.playAgain();
   }
   this.checkBrowserBack();
@@ -37,7 +43,7 @@ ngOnInit(): void {
 
   @HostListener('window:popstate', ['$event'])
   onPopState(event: Event): void {
-    this.movieServ.ordMovies.length = 0;
+    this.ordMovies.length = 0;
   }
 
   private checkBrowserBack(): void {
@@ -47,7 +53,7 @@ ngOnInit(): void {
       const currentUrl = window.history.state.navigationId > 1 ? window.history.state.url : '';
   
       if (event && previousUrl !== currentUrl) {
-        this.movieServ.ordMovies.length = 0;
+        this.ordMovies.length = 0;
         window.location.reload();
       }
     };
@@ -59,8 +65,8 @@ ngOnInit(): void {
   }
 
   playAgain() {
-    this.movieServ.ordMovies.length = 0;
-    this.movieServ.rating = 0;
+    this.ordMovies.length = 0;
+    this.rating = 0;
     this.router.navigateByUrl(Messages.ROT_GAME);
   }
 }

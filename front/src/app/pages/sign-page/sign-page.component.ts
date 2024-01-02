@@ -106,7 +106,6 @@ export class SignPageComponent implements OnInit {
   }
   
   login(form: NgForm) {
-    this.movieSer.userNameLogged = form.value.username;
     form.control.markAllAsTouched();
     if (form.valid) {
       this.authServ.login(form.value).subscribe({

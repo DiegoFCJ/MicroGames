@@ -1,0 +1,50 @@
+/* ************ is correct ********* */
+.pos-correct-top{
+    width: 92%;
+    position: relative;
+    top: 0.4vh;
+    left: 0.4vw;
+    z-index: 2;
+  }
+  
+  .pos-isCorrect{
+    display: flex;
+    justify-content: space-around;
+    scale: 1.8;
+  }
+  
+  .pos-icon-cor{
+    margin-top: 0.2vh;
+    color: green;
+    /* ***** shadow for the icon ***** */
+    text-shadow:
+    -2px 2px 2px black,
+    -3px 3px 3px white;
+  }
+  
+  .pos-icon-not-cor{
+    color: red;
+    margin-top: 0.2vh;
+    /* ***** shadow for the icon ***** */
+    text-shadow:
+    -2px 2px 2px black,
+    -3px 3px 3px white;
+  }
+  
+  .pos-index{
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 11px;
+    font-weight: bold;
+  
+    /* ***** shadow for the number ***** */
+    text-shadow: none !important;
+    box-shadow:
+    -3px 3px 3px black,
+    -1px 2px 2px white;
+    
+    border: solid black 1px;
+    border-end-end-radius: 12%;
+    border-end-start-radius: 12%;
+  }

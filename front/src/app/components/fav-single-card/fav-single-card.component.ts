@@ -1,78 +1,39 @@
-import { Component, OnInit , Input, Output, EventEmitter } from '@angular/core';
-
-import { Router } from '@angular/router';
-import { NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { AlertsService } from 'src/mockup/alerts.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { FavMovieForDB } from 'src/models/favourite';
-import { Rating } from 'src/models/rating';
+import { MovieRootObject } from 'src/models/movie';
 import { AuthService } from 'src/services/auth.service';
-import { CommentService } from 'src/services/comment.service';
+import { DataTransferService } from 'src/transfer-services/data-transfer.service';
 import { FavoriteService } from 'src/services/favorite-like.service';
-import { MovieAPIService } from 'src/services/movie-api.service';
-import { RatingService } from 'src/services/rating.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import * as Messages from 'src/const-messages/messages';
-import { Comment } from 'src/models/comment';
-import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-fav-card',
-  templateUrl: './fav-card.component.html',
-  styleUrls: ['./fav-card.component.scss']
+  selector: 'app-fav-single-card',
+  templateUrl: './fav-single-card.component.html',
+  styleUrls: ['./fav-single-card.component.scss']
 })
-export class FavCardComponent implements OnInit {
-  @Input() movieElement: any; // Input per passare dati dal componente padre al componente figlio
-  @Input() i: any; // Input per passare dati dal componente padre al componente figlio
+export class FavSingleCardComponent implements OnInit {
+  @Input() buttonText: any;
+  @Input() defaultText: any;
+  @Input() movieElement: any;
+  @Input() c!: Function;
+  @Input() d!: Function;
+  @Input() i: any;
+  @Input() favMovieForDB!: FavMovieForDB;
+  ordMovies: MovieRootObject[] = [];
   currentRate = 0;
-  defaultText = 'bookmark';
-  buttonText = this.defaultText;
-  commentForDB!: Comment;
-  changeLike: boolean = false;
-  rateForDB!: Rating;
-  favMovieForDB!: FavMovieForDB;
-
 
   constructor(
-    config: NgbModalConfig,
-    protected authServ: AuthService,
-    protected movieServ: MovieAPIService,
-    protected commentServ: CommentService,
-    private router: Router,
-    private alertServ: AlertsService,
-    private rateServ: RatingService,
-    private favLikeServ: FavoriteService) {
-      config.backdrop = 'static';
-      config.keyboard = false;
-    }
+    private dataTransferService: DataTransferService,
+    private favLikeServ: FavoriteService, 
+    private modal: NgbModal,
+    protected authServ: AuthService) { }
 
   ngOnInit(): void {
-  }
-  
-  adultsFilm(isAdultFilm: boolean) {
-    return isAdultFilm ? Messages.ADULLT_YES : Messages.ADULT_NO;
-  }
-
-  saveRating(f: NgForm) {
-    if (f.valid) {
-      this.rateForDB = {
-        createdAt: new Date(),
-        rate: f.form.value.rating,
-        movieId: this.movieServ.movieID,
-        userId: this.authServ.getCurrentUser().id,
-      };
-
-      this.rateServ.saveRate(this.rateForDB).subscribe();
-    }
+    this.ordMovies = this.dataTransferService.getOrdMovies();
   }
 
   openTemplAndSetMovieId(content: any, movieId: number) {
-    this.favMovieForDB = {
-      id: 0,
-      createdAt: new Date(),
-      favorite: false,
-      like: false,
-      userId: this.authServ.getCurrentUser().id,
-      movieId: movieId,
-    };
 
     this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe((res) => {
       if (res !== null) {
@@ -92,14 +53,7 @@ export class FavCardComponent implements OnInit {
       }
     });
 
-    this.movieServ.openTemplAndSetMovieId(content, movieId);
-  }
-
-  saveCommentFromForm(el: NgForm) {
-    if (el.valid) {
-      this.prepareCommentForSaving(el);
-      this.commentServ.saveComment(this.commentForDB).subscribe();
-    }
+    this.modal.open(content);
   }
 
   like(movieId: number): void {
@@ -221,20 +175,8 @@ export class FavCardComponent implements OnInit {
     this.favLikeServ.createFavorite(this.favMovieForDB).subscribe((response) => console.log(response));
   }
 
-  private prepareCommentForSaving(el: NgForm): void {
-    this.commentForDB = {
-      username: this.authServ.getCurrentUser().username,
-      createdAt: new Date(),
-      comment: el.form.value.comment,
-      movieId: this.movieServ.movieID,
-      userId: this.authServ.getCurrentUser().id,
-    };
-  }
-
   private prepareForNewFavoriteCreation(movieId: number): void {
     this.favMovieForDB.userId = this.authServ.getCurrentUser().id;
     this.favMovieForDB.movieId = movieId;
   }
-
 }
-
