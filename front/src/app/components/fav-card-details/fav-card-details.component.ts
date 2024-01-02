@@ -8,8 +8,6 @@ import * as Messages from 'src/const-messages/messages';
 })
 export class FavCardDetailsComponent implements OnInit {
   @Input() movieElement: any;
-  @Input() c!: Function;
-  @Input() d!: Function;
 
   constructor() { }
 

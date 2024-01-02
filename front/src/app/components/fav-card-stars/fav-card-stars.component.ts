@@ -12,20 +12,15 @@ import { Rating } from 'src/models/rating';
 })
 export class FavCardStarsComponent implements OnInit {
   @Input() movieElement: any;
-  @Input() i: any;
   @Input() c!: Function;
-  @Input() d!: Function;
-  ordMovies: MovieRootObject[] = [];
   currentRate = 0;
   rateForDB!: Rating;
 
   constructor(
-    private dataTransferService: DataTransferService,
     protected authServ: AuthService,
     private rateServ: RatingService) { }
 
   ngOnInit(): void {
-    this.ordMovies = this.dataTransferService.getOrdMovies();
   }
 
   saveRating(f: NgForm) {
