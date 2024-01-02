@@ -1,5 +1,5 @@
 <div class="modal-header">
-    <h4 class="modal-title" >{{movieElement.original_title}}</h4>
+    <h4 class="modal-title" (click)="onClick()" [ngClass]="{'full-text': isFullText}">{{movieElement.original_title}}</h4>
     <button class="close-btn" type="button" (click)="d('Cross click')">
         <span class="material-symbols-outlined">close</span>
     </button>

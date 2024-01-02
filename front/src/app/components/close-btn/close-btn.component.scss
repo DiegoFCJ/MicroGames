@@ -13,10 +13,22 @@
     transform: scale(2.6);
   }
 
-  .modal-title{
+  .modal-title {
     position: relative;
     left: 50%;
-    translate: -50%;
-    font-size: 30px;
+    transform: translateX(-50%);
+    font-size: 26px;
     top: 5px;
+    white-space: nowrap; /* Assicura che il testo rimanga su una riga */
+    overflow: hidden; /* Nasconde il testo oltre il limite */
+    text-overflow: ellipsis; /* Mostra i punti di sospensione se il testo supera lo spazio disponibile */
+    cursor: pointer; /* Cambia il cursore quando passi sopra il testo */
+  
+    /* Aggiungi animazione al testo completo */
+    &.full-text {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: initial;
+    }
   }
+  

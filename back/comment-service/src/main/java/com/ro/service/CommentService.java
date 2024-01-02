@@ -31,6 +31,17 @@ public class CommentService {
                 .orElse(Collections.emptyList());
     }
 
+    public List<CommentDTO> getAllByMovieId(Long movieId) {
+        List<Comment> comments = commentRepository.findAllByMovieIdOrderByCreatedAtAsc(movieId);
+
+        // Mappatura dei commenti in CommentDTO
+        List<CommentDTO> commentDTOs = comments.stream()
+                .map(commentMapper::mapToDTO)
+                .collect(Collectors.toList());
+
+        return commentDTOs;
+    }
+
 
 
     public List<CommentDTO> getAll() {

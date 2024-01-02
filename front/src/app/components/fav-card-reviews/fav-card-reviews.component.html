@@ -1,8 +1,31 @@
 <div class="modal-body">
-  <form class="format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)">
-    <mat-form-field class="review" appearance="fill">
-      <input placeholder="Lascia qui il tuo commento" matInput type="text" ngModel name="comment" required />
-    </mat-form-field>
-      <app-button class="btn-cent" btn_text="Commenta" type="submit" (click)="c('Save click')"></app-button>
-  </form>
+
+  <div class="chat" #chatContainer>
+    <div 
+        class="message"
+        *ngFor="let message of comments" 
+        [ngClass]="{ 'outgoing': message.userId === userIdLogged, 'incoming': message.userId !== userIdLogged }">
+      <div class="message-header">
+        <span class="username">{{ message.username }}</span>
+      </div>
+      <div class="message-content">{{ message.comment }}</div>
+      <div class="message-time">
+        <span class="timestamp">{{ message.createdAt | date: 'short' }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-line"></div>  
+
+  <div class="new-comment col-12">
+    <form class="row format" #data="ngForm" (ngSubmit)="saveCommentFromForm(data)">
+      <mat-form-field class="col-10 review" appearance="fill">
+        <input placeholder="Lascia qui il tuo commento" matInput type="text" ngModel name="comment" required />
+      </mat-form-field>
+      <button type="submit" class="col-2 all-btn comment-btn">
+        <span class="material-symbols-outlined">send</span>
+      </button>
+    </form>
+  </div>
+  
 </div>

@@ -18,6 +18,10 @@ export class CommentService {
     return this.http.get<Comment[]>(`${this.springBootUrl}/readByUserIdAndMovieId?userId=${userId}&movieId=${movieId}`);
   }
 
+  readByMovieId(movieId: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.springBootUrl}/readByMovieId?movieId=${movieId}`);
+  }
+
   saveComment(comment: Comment) {
     return this.http.post<Comment>(`${this.springBootUrl}/create`, comment);
   }

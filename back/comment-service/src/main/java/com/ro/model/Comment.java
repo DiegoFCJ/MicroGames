@@ -16,6 +16,8 @@ public class Comment {
     private Long id;
     private LocalDateTime createdAt;
     private String username;
+
+    @Column(length = 1000)
     private String comment;
     private Long movieId;
     private Long userId;
