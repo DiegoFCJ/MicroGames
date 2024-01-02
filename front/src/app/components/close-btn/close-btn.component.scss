@@ -13,14 +13,6 @@
     transform: scale(2.6);
   }
 
-  ::ng-deep .modal{
-    width: 402px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20vh;
-  }
-
   .modal-title{
     position: relative;
     left: 50%;

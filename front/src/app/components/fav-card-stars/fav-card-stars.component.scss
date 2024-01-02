@@ -1,13 +1,5 @@
-  ::ng-deep .modal{
-    width: 402px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 20vh;
-  }
-  
-  .modal-body{
-    max-height: 600px;
+.modal-body{
+    max-height: 597px;
     align-items: center; 
     text-align: center;
   }
@@ -17,7 +9,7 @@
     left: 50%;
     translate: -50%;
     top: 20px;
-    max-height: 600px;
+    max-height: 597px;
   }
 
   .all-btn{

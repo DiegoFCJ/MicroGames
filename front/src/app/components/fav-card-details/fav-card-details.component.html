@@ -1,8 +1,9 @@
-<div class="card-img card-body">
-  <p class="card-text">{{movieElement.overview}}</p>
-  <p class="card-text">Budget: {{movieElement.budget}}</p>
-  <p class="card-text">Entrate: {{movieElement.revenue}}</p>
-  <p class="card-text">Data di Rilascio: {{movieElement.release_date}}</p>
-  <p class="card-text">Popolaritá: {{movieElement.popularity}}</p>
-  <p class="card-text adult">{{adultsFilm(movieElement.adult)}}</p>
+<div class="card-body">
+  <p class="card-data top">Budget: {{movieElement.budget}}</p>
+  <p class="card-data">Entrate: {{movieElement.revenue}}</p>
+  <p class="card-data">Data di Rilascio: {{movieElement.release_date}}</p>
+  <p class="card-data">Popolaritá: {{movieElement.popularity}}</p>
+  <p class="card-data adult">{{adultsFilm(movieElement.adult)}}</p>
+  <div class="custom-line"></div>  
+  <p class="card-details">{{movieElement.overview}}</p>
 </div>

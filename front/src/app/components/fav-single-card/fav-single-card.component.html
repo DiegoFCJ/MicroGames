@@ -1,33 +1,35 @@
-<div class="pos-correct-top-film-cart">
-    <app-fav-card-iscorrect
-      [movieElement]="movieElement" 
-      [i]="i" 
-    >
-    </app-fav-card-iscorrect>
-</div>
-
-<img class="img-fluid" src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}">
-
-<div class="navbar-position">
-  <div class="navbar-details">
-    <button class="all-btn" (click)="d('close-click')">
-      <span class="material-symbols-outlined">arrow_back</span>
-    </button>
-    <button class="all-btn fav-btn" (click)="favorite(movieElement.id)" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
-      <span class="material-symbols-outlined">{{buttonText}}</span>
-    </button>
-    <button class="all-btn" (click)="like(movieElement.id)">
-      <span class="material-symbols-outlined" [ngClass]="{ 'like-touched': favMovieForDB.like }">{{!favMovieForDB.like ? "favorite" : "heart_check"}}</span>
-    </button>
-    <button class="all-btn" (click)="openTemplAndSetMovieId(reviews, movieElement.id)">
-      <span class="material-symbols-outlined">reviews</span>
-    </button>
-    <button class="all-btn" (click)="openTemplAndSetMovieId(stars, movieElement.id)">
-      <span class="material-symbols-outlined">stars</span>
-    </button>
-    <button class="all-btn" (click)="openTemplAndSetMovieId(details, movieElement.id)">
-      <span class="material-symbols-outlined">info</span>
-    </button>
+<div class="cont-single-card">
+  <div class="pos-correct-top-film-cart">
+      <app-fav-card-iscorrect
+        [movieElement]="movieElement" 
+        [i]="i" 
+      >
+      </app-fav-card-iscorrect>
+  </div>
+  
+  <img class="img-fluid" src="https://image.tmdb.org/t/p/w185/{{movieElement.poster_path}}">
+  
+  <div class="navbar-position">
+    <div class="navbar-details">
+      <button class="all-btn" (click)="d('close-click')">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </button>
+      <button class="all-btn fav-btn" (click)="favorite(movieElement.id)" [ngClass]="{ 'added': buttonText === 'bookmark_added' }">
+        <span class="material-symbols-outlined">{{buttonText}}</span>
+      </button>
+      <button class="all-btn" (click)="like(movieElement.id)">
+        <span class="material-symbols-outlined" [ngClass]="{ 'like-touched': favMovieForDB.like }">{{!favMovieForDB.like ? "favorite" : "heart_check"}}</span>
+      </button>
+      <button class="all-btn" (click)="openTemplAndSetMovieId(reviews, movieElement.id)">
+        <span class="material-symbols-outlined">reviews</span>
+      </button>
+      <button class="all-btn" (click)="openTemplAndSetMovieId(stars, movieElement.id)">
+        <span class="material-symbols-outlined">stars</span>
+      </button>
+      <button class="all-btn" (click)="openTemplAndSetMovieId(details, movieElement.id)">
+        <span class="material-symbols-outlined">info</span>
+      </button>
+    </div>
   </div>
 </div>
 

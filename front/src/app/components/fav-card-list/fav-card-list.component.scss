@@ -48,21 +48,28 @@
 }
 
 .card{
-  width: 399px;
-  max-height: 600px; 
+  width: 398px;
+  max-height: 597px; 
 }
 
 .card-img {
   background: none;
-  max-width: 399px;
+  max-width: 398px;
   position: relative;
-  box-shadow: inset
+  max-height: 597px;
 }
 
 ::ng-deep .modal{
-  width: 402px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 20vh;
+  max-height: 597px; 
+  overflow: hidden; 
+  width: 400px;
+}
+
+::ng-deep .modal-dialog{
+  max-width: 400px;
+  margin: 0;
 }

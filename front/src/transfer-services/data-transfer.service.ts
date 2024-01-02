@@ -9,7 +9,6 @@ export class DataTransferService {
   private ordMovies: MovieRootObject[] = [];
 
   constructor() {}
-
   setRating(rating: number): void {
     this.rating = rating;
   }

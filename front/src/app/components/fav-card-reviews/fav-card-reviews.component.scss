@@ -1,5 +1,5 @@
 .modal-body{
-  max-height: 600px;
+  max-height: 597px;
   align-items: center;
   text-align: center;
 }
@@ -9,22 +9,13 @@
   left: 50%;
   translate: -50%;
   top: 20px;
-  max-height: 600px;
+  max-height: 597px;
 }
 
 .review{
   width: 360px; 
   text-align: center;
   margin-bottom: 30px;
-}
-
-/** ** all cards ** **/
-::ng-deep .modal{
-  width: 402px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 20vh;
 }
 
 .all-btn{

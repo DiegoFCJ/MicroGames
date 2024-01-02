@@ -8,9 +8,9 @@
 .img-fluid{
   position: relative;
   top: -2vh;
-  max-width: 399px;
+  max-width: 398px;
   border-radius: 5px;
-  height: 598px;
+  height: 597px;
 }
 
 /** ** buttons ** **/
@@ -42,4 +42,9 @@
 
 .like-touched{
   color: green;
+}
+
+.cont-single-card{
+  max-height: 597px;
+  overflow: hidden; 
 }

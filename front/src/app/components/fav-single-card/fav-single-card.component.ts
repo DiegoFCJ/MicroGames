@@ -34,7 +34,6 @@ export class FavSingleCardComponent implements OnInit {
   }
 
   openTemplAndSetMovieId(content: any, movieId: number) {
-
     this.favLikeServ.readByUserIdAndMovieId(this.authServ.getCurrentUser().id, movieId).subscribe((res) => {
       if (res !== null) {
         this.favMovieForDB = res;
