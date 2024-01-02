@@ -40,33 +40,12 @@ export class SignPageComponent implements OnInit {
       this.router.navigateByUrl(Messages.ROT_HOME);
     }
   }
- 
-  /*register(form: NgForm) {
-    if (form.valid) {
-      this.authServ.register(form.value).pipe(
-        switchMap(regResponse => {
-          const regMessage = regResponse.message as string;
-  
-          if (regResponse.message !== Messages.REG_SUCCESS) {
-            this.alertServ.showErrorAlert(regResponse.message);
-            return EMPTY;
-          } else {
-            return this.alertServ.showInfoAlert(Messages.EML_CONFIRM);
-          }
-        }),
-        filter((result: any) => result.isConfirmed), // Filtra solo se confermato
-        tap(() => window.open(Messages.LIN_GMAIL, '_blank')), // Apri link dopo la conferma
-        switchMap(() => this.emailServ.sendEmail(form.value)) // Invio dell'email
-      ).subscribe();
-    }
-  }*/
   
   register(form: NgForm) {
     if (form.valid) {
       this.authServ.register(form.value).subscribe({
         next: (regResponse: RegistrationResponse) => {
           if (regResponse.user) {
-            // Registrazione avvenuta con successo, gestisci i dettagli dell'utente
             this.alertServ.showInfoAlert(Messages.EML_CONFIRM).then((result) => {
               if (result.isConfirmed && form.value.email.includes("gmail")) {
                 window.open(Messages.LIN_GMAIL, '_blank');
@@ -81,25 +60,19 @@ export class SignPageComponent implements OnInit {
   
               console.log(this.userForEmailService);
   
-              // Invio dell'email con i dettagli dell'utente usando un Observer
               this.emailServ.sendEmail(this.userForEmailService).subscribe({
                 next: (response) => {
-                  // Gestisci la risposta dell'invio dell'email se necessario
                 },
                 error: (error) => {
-                  // Gestisci gli errori dell'invio dell'email, se necessario
                 }
               });
             });
           } else {
-            // Errore durante la registrazione, mostra il messaggio di errore
             this.alertServ.showErrorAlert(regResponse.message);
           }
         },
         error: (error) => {
-          // Gestisci gli errori della richiesta HTTP
           this.alertServ.showErrorAlert('Username gia in uso');
-          // Puoi anche gestire l'errore in modo più specifico a seconda delle tue esigenze
         }
       });
     }

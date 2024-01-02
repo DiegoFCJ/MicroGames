@@ -35,10 +35,10 @@ p span{
 /** ** film lists ** **/
 .list {
   max-width: 1300px;
-  margin: 20vh auto; /* Imposta il margine superiore e inferiore su 20vh e il margine laterale su auto per centrare l'elenco */
+  margin: 20vh auto;
   display: flex;
-  flex-wrap: wrap; /* Permette il wrapping degli elementi sulla nuova riga */
-  justify-content: space-between; /* Distribuisce uniformemente gli elementi lungo l'asse principale (orizzontale) */
+  flex-wrap: wrap;
+  justify-content: space-between;
   background: transparent;
 }
 
