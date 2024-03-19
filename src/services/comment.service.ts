@@ -10,9 +10,15 @@ import { Observable } from 'rxjs';
 export class CommentService {
   port: string = "8095";
   type: string = "/api/comment";
-  springBootUrl: string = environment.APIEndpoint + this.port + this.type;
+  springBootUrl: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   readByUserIdAndMovieId(userId: number, movieId: number): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${this.springBootUrl}/readByUserIdAndMovieId?userId=${userId}&movieId=${movieId}`);

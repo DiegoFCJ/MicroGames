@@ -10,9 +10,15 @@ import { Observable } from 'rxjs';
 export class EmailService{
   port: string = "8093";
   type: string = "/api/email";
-  springBootUrl: string = environment.APIEndpoint + this.port + this.type;
+  springBootUrl: string = "";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   sendEmail(userForEmailService: any): Observable<any> {
     return this.http.post(`${this.springBootUrl}/sendEmail`, userForEmailService, { responseType: 'text' });

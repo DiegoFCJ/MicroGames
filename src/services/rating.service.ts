@@ -9,9 +9,15 @@ import { Rating } from 'src/models/rating';
 export class RatingService {
   port: string = "8097";
   type: string = "/api/rating";
-  springBootUrl: string = environment.APIEndpoint + this.port + this.type;
+  springBootUrl: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   saveRate(rate: Rating) {
     return this.http.post<Rating>(`${this.springBootUrl}/create`, rate);

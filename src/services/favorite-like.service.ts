@@ -10,9 +10,15 @@ import { Observable } from 'rxjs/internal/Observable';
 export class FavoriteService {
   port: string = "8096";
   type: string = "/api/favouriteAndLike";
-  springBootUrl: string = environment.APIEndpoint + this.port + this.type;
+  springBootUrl: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   getAllFavoriteMovies(userId : number){
     return this.http.get<FavMovie[]>(`${this.springBootUrl}/findByUserId?userId=${userId}`);

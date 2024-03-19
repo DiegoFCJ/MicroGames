@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
-import { LoginDTO, PassChoiceUpdateDTO, RegisterDTO, RegistrationResponse, SpringResponse, User, UserForEmailService } from 'src/models/user';
+import { LoginDTO, RegisterDTO, RegistrationResponse, SpringResponse, UserForEmailService } from 'src/models/user';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  springBootUrl: string = 'http://localhost:8092/api/user';
+  port: string = "8092";
+  type: string = "/api/user";
+  springBootUrl: string = "";
   map!: SpringResponse;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   login(loginData: LoginDTO): Observable<any> {
     return this.http.post(`${this.springBootUrl}/signIn`, loginData);

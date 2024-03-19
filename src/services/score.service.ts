@@ -10,9 +10,15 @@ import { ScoresForRankDTO, ScoreDTO } from 'src/models/score';
 export class ScoreService {
   port: string = "8094";
   type: string = "/api/score";
-  springBootUrl: string = environment.APIEndpoint + this.port + this.type;
+  springBootUrl: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    if(!environment.production){
+      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+    }else{
+      this.springBootUrl = environment.APIEndpoint;
+    }
+  }
 
   getScForRunkings(): Observable<any>{
     return this.http.get<ScoresForRankDTO[]>(`${this.springBootUrl}/getScForRunkings`);
