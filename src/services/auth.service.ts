@@ -8,16 +8,16 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class AuthService {
-  port: string = "8092";
-  type: string = "/api/user";
+  portAndVers: string = "8092/api/";
+  type: string = "user";
   springBootUrl: string = "";
   map!: SpringResponse;
 
   constructor(private http: HttpClient) {
     if(!environment.production){
-      this.springBootUrl = environment.APIEndpoint + this.port + this.type;
+      this.springBootUrl = environment.APIEndpoint + this.portAndVers + this.type;
     }else{
-      this.springBootUrl = environment.APIEndpoint;
+      this.springBootUrl = environment.APIEndpoint + this.type;
     }
   }
 
