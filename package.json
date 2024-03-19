@@ -1,6 +1,6 @@
 {
-  "name": "tnvlezioni",
-  "version": "0.0.0",
+  "name": "microgames",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
