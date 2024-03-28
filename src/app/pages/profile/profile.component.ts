@@ -1,11 +1,12 @@
 // Import dei moduli Angular e dei servizi necessari
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/services/auth.service';
 import { MovieAPIService } from 'src/services/movie-api.service';
 import { FavoriteService } from '../../../services/favorite-like.service';
-import { AlertsService } from 'src/mockup/alerts.service';
-import * as Messages from 'src/const-messages/messages';
+import { FavMovie, FavMovieForDB } from 'src/models/favourite';
+import { MovieRootObject } from 'src/models/movie';
+import { CommentService } from 'src/services/comment.service';
+import { DataTransferService } from 'src/transfer-services/data-transfer.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,9 +14,33 @@ import * as Messages from 'src/const-messages/messages';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  @Input() movieElement: any;
+  @Input() i: any;
+  defaultText = 'bookmark';
+  buttonText = this.defaultText;
+  favMovies: any[] = [];
 
-  constructor() {}
+  constructor(
+    protected authServ: AuthService,
+    protected movieServ: MovieAPIService,
+    protected commentServ: CommentService,
+    private favLikeServ: FavoriteService) {
+    }
 
   ngOnInit() {
+    this.retrieveFavorites(1);
   }
+  
+  retrieveFavorites(userId: number) {
+    this.favLikeServ.getAllFavoriteMovies(userId).subscribe({
+      next: (res) => {
+        if(res){
+          this.favMovies = res;
+        }
+      },
+      error(err) {
+      },
+    });
+  }
+
 }

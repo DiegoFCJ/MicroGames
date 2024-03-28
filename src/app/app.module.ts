@@ -39,6 +39,13 @@ import { FavCardStarsComponent } from './components/fav-card-stars/fav-card-star
 import { FavCardDetailsComponent } from './components/fav-card-details/fav-card-details.component';
 import { CloseBtnComponent } from './components/close-btn/close-btn.component';
 import { FavCardIscorrectComponent } from './components/fav-card-iscorrect/fav-card-iscorrect.component';
+import { TopCardsComponent } from './components/top-cards/top-cards.component';
+import { RatioComponent } from './components/ratio/ratio.component';
+import { FeedsComponent } from './components/feeds/feeds.component';
+import { FavProfileCardsComponent } from './components/fav-profile-cards/fav-profile-cards.component';
+import { GlobalScoresComponent } from './components/global-scores/global-scores.component';
+import { ApxChartComponent } from './components/apx-chart/apx-chart.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 
 @NgModule({
@@ -63,7 +70,13 @@ import { FavCardIscorrectComponent } from './components/fav-card-iscorrect/fav-c
     FavCardStarsComponent,
     FavCardDetailsComponent,
     CloseBtnComponent,
-    FavCardIscorrectComponent
+    FavCardIscorrectComponent,
+    TopCardsComponent,
+    RatioComponent,
+    FeedsComponent,
+    FavProfileCardsComponent,
+    GlobalScoresComponent,
+    ApxChartComponent
     
   ],
   imports: [
@@ -83,7 +96,8 @@ import { FavCardIscorrectComponent } from './components/fav-card-iscorrect/fav-c
     MatTableModule,
     ReactiveFormsModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    NgApexchartsModule,
   ],
   providers: [
     DecimalPipe,
