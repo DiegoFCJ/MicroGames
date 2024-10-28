@@ -18,19 +18,20 @@ export class FavProfileCardsComponent implements OnInit {
     
   }
 
+  //TODO Fix this glitched method for profile section
   getMovie(movieId: number){
-    this.movieServ.getMovie(movieId).subscribe({
-      next: (res) => {
-        console.log('res: ', res)
-        if(res){
-          return res.poster_path;
-        }
-        return "";
-      },
-      error(err) {
-          return "";
-      },
-    })
+    // this.movieServ.getMovie(movieId).subscribe({
+    //   next: (res) => {
+    //     console.log('res: ', res)
+    //     if(res){
+    //       return res.poster_path;
+    //     }
+    //     return "";
+    //   },
+    //   error(err) {
+    //       return "";
+    //   },
+    // })
   }
 
 }
