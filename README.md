@@ -34,5 +34,4 @@
 ### 🎮 Game Page
 ![alt text](gamePage.gif)
   - Work in Progress - This page will showcase a simple game where you have to arrange films using a drag-and-drop system in the correct order, following the instructions provided by the top message in-game.
-
-In the future, I will add a loser and a winner page once the rewards system is implemented. Additionally, a timer will be introduced to make the game more challenging. To increase the difficulty, the film cards will move away from the user if they are grabbed and not released within one second.
+    In the future, I will add a loser and a winner page once the rewards system is implemented. Additionally, a timer will be introduced to make the game more challenging. To increase the difficulty, the film cards will move away from the user if they are grabbed and not released within one second.
