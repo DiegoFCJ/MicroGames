@@ -1,0 +1,86 @@
+.pos-correct-top-film-cart{
+  position: relative;
+  top: 0.4vh;
+  z-index: 2;
+  width: 100%;
+}
+
+.img-fluid{
+  position: relative;
+  top: -2vh;
+  max-width: 398px;
+  border-radius: 5px;
+  height: 597px;
+}
+
+/** ** buttons ** **/
+.navbar-position{    
+  position: relative;
+  bottom: 6vh;
+}
+
+.navbar-details{
+  display: flex;
+  justify-content: space-evenly
+}
+
+.all-btn{
+  color: white;
+  border: none;
+  background: none;
+  transform: scale(2);
+  text-shadow: 1px 0px 2px black, -1px 2px 2px #c02936;
+}
+
+.all-btn:hover{
+  transform: scale(2.6);
+}
+
+.added {
+  color: green; 
+}
+
+.like-touched{
+  color: green;
+}
+
+.cont-single-card{
+  max-height: 597px;
+  overflow: hidden; 
+}
+  
+.pos-correct-top-film-cart{
+  position: relative;
+  top: 2.4vh;
+  z-index: 2;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* larghezza della barra */
+}
+
+/* Pulsanti freccia su e giù */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Tracciato della barra di scorrimento */
+::-webkit-scrollbar-track {
+  background: white; /* colore del tracciato */
+}
+
+/* Parte scorrevole della barra */
+::-webkit-scrollbar-thumb {
+  background: #c02936; /* colore della parte scorrevole */
+  border-radius: 20px;
+}
+
+/* Pulsante iniziale/fine della barra */
+::-webkit-scrollbar-track-piece:start {
+  background: white; /* colore del pulsante iniziale */
+}
+
+/* Pulsante finale della barra */
+::-webkit-scrollbar-track-piece:end {
+  background: white; /* colore del pulsante finale */
+}

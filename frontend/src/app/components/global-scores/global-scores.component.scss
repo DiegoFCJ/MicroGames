@@ -1,0 +1,49 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+    table{
+      background-color: white;
+      line-height: 1.5;
+      border-color: black;
+      border-radius: 10px;
+      width: 98%;
+      height: 80%;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  
+    table th, td {
+      text-align: center;
+    }
+  
+    td{
+      font-size: 22px;
+    }
+  
+    th{
+      font-size: 30px;
+      border: #c02936;
+      color: black;
+      font-weight: bold;
+    }
+  
+    .golden{
+      background-color: gold;
+      opacity: 90%;
+    }
+  
+    .silver{
+      background-color: rgb(223, 210, 210);
+      opacity: 90%;
+    }
+  
+    .bronze{
+      background-color: rgb(241, 138, 35);
+      opacity: 90%;
+    }
+
+    .table-responsive{
+        overflow-x: hidden;
+    }

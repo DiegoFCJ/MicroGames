@@ -1,0 +1,66 @@
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  width: 100%; 
+  max-height: 597px;
+}
+
+.top{
+  margin-top: 15px;
+}
+
+.adult{
+  margin-bottom: 5px;
+}
+
+.card-data{
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 15px;
+}
+
+.card-details{
+  padding-left: 1vw;
+  padding-right: 1vw;
+  font-size: 18px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.custom-line {
+  width: 100%;
+  border-bottom: 1px solid #dee2e6;
+  margin: 10px 0;
+}
+
+::-webkit-scrollbar {
+  width: 12px; /* larghezza della barra */
+}
+
+/* Pulsanti freccia su e giù */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Tracciato della barra di scorrimento */
+::-webkit-scrollbar-track {
+  background: white; /* colore del tracciato */
+}
+
+/* Parte scorrevole della barra */
+::-webkit-scrollbar-thumb {
+  background: #c02936; /* colore della parte scorrevole */
+  border-radius: 20px;
+}
+
+/* Pulsante iniziale/fine della barra */
+::-webkit-scrollbar-track-piece:start {
+  background: white; /* colore del pulsante iniziale */
+}
+
+/* Pulsante finale della barra */
+::-webkit-scrollbar-track-piece:end {
+  background: white; /* colore del pulsante finale */
+}

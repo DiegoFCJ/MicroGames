@@ -1,0 +1,20 @@
+<div class="page-bg">
+  <div class="first-text">
+    <p>HAI TOTALIZZATO <span>{{rating}}</span> PUNTI</p>
+  </div>
+  
+  <div class="first-text" style="line-height: 1.5;">
+    <p>Questo è l'ordine corretto dei film</p>
+    <p style="font-size: 20px;">Clicca sulla locandina del film che ti interessa e scegli tra le opzioni preposte</p>
+  </div>
+  
+  <div class="list">
+    <div *ngFor="let movieElement of ordMovies; let i = index">
+      <app-fav-card-list [movieElement]="movieElement" [i]="i"></app-fav-card-list>
+    </div>
+  </div>
+  
+  <div class="tasto-pos">
+    <app-button btn_text="GIOCA ANCORA" (click)="playAgain()"></app-button>
+  </div>
+</div>
