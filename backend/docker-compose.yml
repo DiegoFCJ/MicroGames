@@ -1,0 +1,87 @@
+version: '3.8'
+
+services:
+
+  discovery:
+    image: diegofois/microgames:discovery-v1
+    ports:
+      - "8091:8091"
+    depends_on:
+      - db
+    networks:
+      - microgames_network
+
+  gateway:
+    image: diegofois/microgames:gateway-v1
+    ports:
+      - "8090:8090"
+    environment:
+      - EUREKA_USERNAME=eureka
+      - EUREKA_PASSWORD=admin
+    depends_on:
+      - discovery
+    networks:
+      - microgames_network
+
+  user-service:
+    image: diegofois/microgames:user-service-v1
+    ports:
+      - "8092:8092"
+    environment:
+      - MYSQL_HOST=db
+      - EUREKA_USERNAME=eureka
+      - EUREKA_PASSWORD=admin
+    depends_on:
+      - discovery
+    links:
+      - db:mysql
+    networks:
+      - microgames_network
+
+  email-service:
+    image: diegofois/microgames:email-service-v1
+    ports:
+      - "8093:8093"
+    environment:
+      - MYSQL_HOST=db
+      - EUREKA_USERNAME=eureka
+      - EUREKA_PASSWORD=admin
+    depends_on:
+      - discovery
+    links:
+      - db:mysql
+    networks:
+      - microgames_network
+
+  score-service:
+    image: diegofois/microgames:score-service-v1
+    ports:
+      - "8094:8094"
+    environment:
+      - MYSQL_HOST=db
+      - EUREKA_USERNAME=eureka
+      - EUREKA_PASSWORD=admin
+    depends_on:
+      - discovery
+    links:
+      - db:mysql
+    networks:
+      - microgames_network
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: rowordproj
+    ports:
+      - "3307:3306"  # Porta della tua macchina host : Porta del servizio MySQL nel contenitore
+    volumes:
+      - ./mysql-data:/var/lib/mysql  # Percorso sulla tua macchina host dove memorizzare i dati di MySQL
+    networks:
+      - microgames_network
+
+networks:
+  microgames_network:
+    driver: bridge
+
+    #TODO aggiungi i cazzo di micro nuovi
