@@ -1,22 +1,27 @@
 package com.ro.service;
 
 import com.ro.Mapper.UserMapper;
+import com.ro.config.jwt.JwtService;
 import com.ro.dto.PasswordRecoveryResponseDTO;
 import com.ro.dto.RegistrationResponseDTO;
 import com.ro.model.User;
 import com.ro.dao.UserRepository;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@NoArgsConstructor
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
 
@@ -26,18 +31,22 @@ public class JpaUserDetailsService implements UserDetailsService {
     private UserRepository userRepo;
 
     @Autowired
-    PasswordEncoder encoder = new BCryptPasswordEncoder();
+    PasswordEncoder encoder;
 
     @Autowired
-    public JpaUserDetailsService(UserRepository userRepo) {
-        this.userRepo = userRepo;
-    }
+    private JwtService jwtService;
 
+    /**
+     * Loads a user by their username from the user repository.
+     *
+     * @param username The username of the user to load.
+     * @return The UserDetails object representing the user.
+     * @throws UsernameNotFoundException if the user is not found.
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return userRepo.findByUsername(username).orElseThrow(() ->
-                new UsernameNotFoundException(String.format("user with username %s not found", username))
-        );
+        return userRepo.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("Utente non trovato"));
     }
 
     public int getIdByUsername(String username){
@@ -58,11 +67,11 @@ public class JpaUserDetailsService implements UserDetailsService {
 
         if (doesUsernameExists(userToCheck.getUsername())){
             User userResult = userRepo.findByUsername(userToCheck.getUsername()).get();
-            String oraSeiLoggato = "Ora sei loggato!";
             if (encoder.matches(userToCheck.getPassword(), userResult.getPassword())){
                 if(userResult.isEnabled()){
+                    String jwtToken = jwtService.generateToken(userResult);
                     map.put("data", userResult);
-                    map.put("message", oraSeiLoggato);
+                    map.put("message", "Ora sei loggato!");
                     return new ResponseEntity<>(map, HttpStatus.ACCEPTED);
                 }
                 map.put("message", "vai alla tua mail per attivare il tuo account prima di accedere");

@@ -25,71 +25,71 @@ This repository contains the microservices architecture for the RowOrder applica
 
 ## 📋 Service Details
 
-### 1. User Service (`user-service`)
-
-- **Description**: Manages user registrations, authentication, and user profiles.
-- **Dependencies**:
-    - Spring Cloud Netflix Eureka Client
-    - Spring Boot Starter Web
-    - Spring Boot Starter Data JPA
-    - Lombok
-    - MySQL Connector
-    - JWT support
-    - Spring Boot Starter Test
-
-### 2. Score Service (`score-service`)
-
-- **Description**: Handles scoring functionalities for user activities.
-- **Dependencies**: Similar to User Service.
-
-### 3. Rating Service (`rating-service`)
-
-- **Description**: Manages ratings given by users for various items.
-- **Dependencies**: Similar to Score Service.
-
-### 4. Favorite & Like Service (`favoriteAndLike-service`)
-
-- **Description**: Handles user favorites and likes for items.
-- **Dependencies**: Similar to User Service.
-
-### 5. Comment Service (`comment-service`)
-
-- **Description**: Allows users to comment on items and manage their comments.
-- **Dependencies**:
-    - Spring Cloud Netflix Eureka Client
-    - Jakarta Persistence API
-    - Lombok
-    - MySQL Connector
-    - Spring Boot Starter Test
-    - Spring Boot Starter Web
-    - Spring Boot Starter Data JPA
-    - MapStruct
-
-### 6. Email Service (`email-service`)
-
-- **Description**: Sends email notifications and updates to users.
-- **Dependencies**:
-    - Spring Cloud Netflix Eureka Client
-    - Jakarta Persistence API
-    - Lombok
-    - MySQL Connector
-    - Spring Boot Starter Test
-    - Spring Boot Starter Web
-    - Spring Boot Starter Data JPA
-    - Spring Boot Starter Mail
-
-### 7. Discovery Service (`discovery`)
-
-- **Description**: Handles service registration and discovery using Eureka.
-- **Dependencies**:
-    - Spring Cloud Netflix Eureka Server
-
-### 8. API Gateway (`gateway`)
-
-- **Description**: Acts as a single entry point for all services.
-- **Dependencies**:
-    - Spring Cloud Starter Gateway
-    - Spring Cloud Netflix Eureka Client
+    ### 1. User Service (`user-service`)
+    
+    - **Description**: Manages user registrations, authentication, and user profiles.
+    - **Dependencies**:
+        - Spring Cloud Netflix Eureka Client
+        - Spring Boot Starter Web
+        - Spring Boot Starter Data JPA
+        - Lombok
+        - MySQL Connector
+        - JWT support
+        - Spring Boot Starter Test
+    
+    ### 2. Score Service (`score-service`)
+    
+    - **Description**: Handles scoring functionalities for user activities.
+    - **Dependencies**: Similar to User Service.
+    
+    ### 3. Rating Service (`rating-service`)
+    
+    - **Description**: Manages ratings given by users for various items.
+    - **Dependencies**: Similar to Score Service.
+    
+    ### 4. Favorite & Like Service (`favoriteAndLike-service`)
+    
+    - **Description**: Handles user favorites and likes for items.
+    - **Dependencies**: Similar to User Service.
+    
+    ### 5. Comment Service (`comment-service`)
+    
+    - **Description**: Allows users to comment on items and manage their comments.
+    - **Dependencies**:
+        - Spring Cloud Netflix Eureka Client
+        - Jakarta Persistence API
+        - Lombok
+        - MySQL Connector
+        - Spring Boot Starter Test
+        - Spring Boot Starter Web
+        - Spring Boot Starter Data JPA
+        - MapStruct
+    
+    ### 6. Email Service (`email-service`)
+    
+    - **Description**: Sends email notifications and updates to users.
+    - **Dependencies**:
+        - Spring Cloud Netflix Eureka Client
+        - Jakarta Persistence API
+        - Lombok
+        - MySQL Connector
+        - Spring Boot Starter Test
+        - Spring Boot Starter Web
+        - Spring Boot Starter Data JPA
+        - Spring Boot Starter Mail
+    
+    ### 7. Discovery Service (`discovery`)
+    
+    - **Description**: Handles service registration and discovery using Eureka.
+    - **Dependencies**:
+        - Spring Cloud Netflix Eureka Server
+    
+    ### 8. API Gateway (`gateway`)
+    
+    - **Description**: Acts as a single entry point for all services.
+    - **Dependencies**:
+        - Spring Cloud Starter Gateway
+        - Spring Cloud Netflix Eureka Client
 
 ## 🚀 Getting Started
 
@@ -98,20 +98,20 @@ This repository contains the microservices architecture for the RowOrder applica
    git clone https://github.com/yourusername/roworder.git
    ```
 
-2. **Navigate to the desired service directory**:
-   ```bash
-   cd path/to/service
-   ```
+   2. **Navigate to the desired service directory**:
+      ```bash
+      cd path/to/service
+      ```
 
-3. **Build the service**:
-   ```bash
-   mvn clean install
-   ```
+   3. **Build the service**:
+      ```bash
+      mvn clean install
+      ```
 
-4. **Run the service**:
-   ```bash
-   mvn spring-boot:run
-   ```
+   4. **Run the service**:
+      ```bash
+      mvn spring-boot:run
+      ```
 
 ## 📄 API Documentation
 For detailed API documentation, please refer to each service's respective documentation files.

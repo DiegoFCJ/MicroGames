@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.mail.MessagingException;
-
 @CrossOrigin(origins = "http://localhost:4200") // Consentire le richieste da localhost:4200
 @RestController
 @RequestMapping("/api/email")
